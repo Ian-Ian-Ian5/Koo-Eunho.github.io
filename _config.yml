@@ -4,8 +4,8 @@
 # =============================================================================
 
 # ----------------------------- Basic info ------------------------------------
-title: "Gu Lab @ JNU"
-short_title: "Gu Lab"
+title: "Koo Lab @ JNU"
+short_title: "Koo Lab"
 description: >-
   전남대학교 빅데이터융합학과 구은호 교수 연구실 — AI & Data Science (Deep Learning)
 url: "https://ian-ian-ian5.github.io"
@@ -13,17 +13,17 @@ baseurl: "/Koo-Eunho.github.io"          # 프로젝트 페이지 형태이므�
 
 # ----------------------------- Lab metadata ----------------------------------
 lab:
-  name_ko: "구은호 교수 연구실"
-  name_en: "Gu Lab"
+  name_ko: "구은호 교수 Lab"
+  name_en: "Koo Lab"
   affiliation_ko: "전남대학교 빅데이터융합학과"
   affiliation_en: "Department of Big Data Convergence, Chonnam National University"
-  building_ko: "전남대학교 광주캠퍼스"          # TODO: 정확한 건물/호수 입력
+  building_ko: "전남대학교 광주캠퍼스 자연과학대학 1호관 213호"          # TODO: 정확한 건물/호수 입력
   building_en: "Gwangju Campus, Chonnam National University"
-  email: "eunhogu@jnu.ac.kr"               # TODO: 실제 이메일 확인 후 교체
+  email: "kooeunho@jnu.ac.kr"               # TODO: 실제 이메일 확인 후 교체
   research_keywords:
     - "Deep Learning"
-    - "Computer Vision"
-    - "Natural Language Processing"
+    - "GNN"
+    - "PINN"
     - "Data Science"
 
 # ----------------------------- Professor -------------------------------------
