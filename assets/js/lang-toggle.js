@@ -34,7 +34,7 @@ const I18N = {
     "members.professor": "교수",
     "members.phd": "박사과정",
     "members.ms": "석사과정",
-    "members.undergrad": "학부 인턴",
+    "members.undergrad": "학사 및 석사 과정",
     "members.alumni": "졸업생",
 
     "pub.title": "논문",
@@ -81,7 +81,7 @@ const I18N = {
     "members.professor": "Professor",
     "members.phd": "PhD Students",
     "members.ms": "MS Students",
-    "members.undergrad": "Undergraduate Interns",
+    "members.undergrad": "Bachelor's and Master's degrees",
     "members.alumni": "Alumni",
 
     "pub.title": "Publications",
