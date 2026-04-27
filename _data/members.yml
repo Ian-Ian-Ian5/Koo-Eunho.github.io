@@ -4,8 +4,8 @@
 # 사진이 없으면 photo 필드를 비워두세요. 자동으로 이니셜이 표시됩니다.
 
 # ---------------------- PhD Students ----------------------
-- name_ko: "예시 박사과정"
-  name_en: "PhD Student Name"
+- name_ko: "박지홍"
+  name_en: "jihong Park"
   role: phd
   interests_ko: "딥러닝 · 컴퓨터 비전"
   interests_en: "Deep Learning · Computer Vision"
