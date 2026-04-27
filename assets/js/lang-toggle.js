@@ -81,7 +81,7 @@ const I18N = {
     "members.professor": "Professor",
     "members.phd": "PhD Students",
     "members.ms": "MS Students",
-    "members.undergrad": "Bachelor's and Master's degrees",
+    "members.undergrad": "Bachelor's & Master's",
     "members.alumni": "Alumni",
 
     "pub.title": "Publications",
