@@ -8,8 +8,8 @@ title: "Gu Lab @ JNU"
 short_title: "Gu Lab"
 description: >-
   전남대학교 빅데이터융합학과 구은호 교수 연구실 — AI & Data Science (Deep Learning)
-url: "https://eunhogu-lab.github.io"   # GitHub Pages 배포 시 사용자 URL로 변경
-baseurl: ""                              # repo 이름이 도메인이면 비워두기, 아니면 "/repo-name"
+url: "https://ian-ian-ian5.github.io"
+baseurl: "/Koo-Eunho.github.io"          # 프로젝트 페이지 형태이므로 레포명 prefix 필요
 
 # ----------------------------- Lab metadata ----------------------------------
 lab:
