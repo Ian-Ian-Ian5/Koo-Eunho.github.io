@@ -1,37 +1,35 @@
 # 멤버 목록. 그룹별로 분류:
 #   role: phd | ms | undergrad | alumni
-# 사진은 /assets/images/members/{file}.jpg 에 두면 됩니다.
-# 사진이 없으면 photo 필드를 비워두세요. 자동으로 이니셜이 표시됩니다.
 
 # ---------------------- PhD Students ----------------------
 - name_ko: "박지홍"
-  name_en: "jihong Park"
+  name_en: "Jihong Park"
   role: phd
   interests_ko: "딥러닝 · 컴퓨터 비전"
   interests_en: "Deep Learning · Computer Vision"
-  photo: "photo: "/assets/images/members/park_jihong.jpg"
+  photo: "/assets/images/members/park_jihong.jpg"
   email: ""
 
 # ---------------------- MS Students -----------------------
 - name_ko: "위훈성"
-  name_en: "MS Student 1"
+  name_en: "Hunsung Wi"
   role: ms
   interests_ko: "자연어처리"
-  interests_en: "NLP"
+  interests_en: "Natural Language Processing"
   photo: "/assets/images/members/wi_hunsung.jpg"
   email: ""
 
 - name_ko: "이형준"
-  name_en: "MS Student 2"
+  name_en: "Hyungjun Lee"
   role: ms
   interests_ko: "추천 시스템"
   interests_en: "Recommender Systems"
   photo: "/assets/images/members/lee_hyungjun.jpg"
   email: ""
 
-# ---------------------- Bachelor's and Master's degrees -------------
+# ---------------------- Undergraduate Interns -------------
 - name_ko: "강인균"
-  name_en: "Undergrad Intern"
+  name_en: "Ingyun Kang"
   role: undergrad
   interests_ko: "데이터 분석"
   interests_en: "Data Analytics"
@@ -45,11 +43,3 @@
   interests_en: "Data Analytics"
   photo: "/assets/images/members/byun_munsu.jpg"
   email: ""
-
-# ---------------------- Alumni ----------------------------
-# - name_ko: "졸업생 이름"
-#   name_en: "Alumni Name"
-#   role: alumni
-#   year: 2025
-#   next_ko: "OO기업 AI 연구원"
-#   next_en: "AI Researcher at XYZ"
