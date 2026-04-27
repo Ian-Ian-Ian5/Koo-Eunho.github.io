@@ -9,7 +9,7 @@
   role: phd
   interests_ko: "딥러닝 · 컴퓨터 비전"
   interests_en: "Deep Learning · Computer Vision"
-  photo: "photo: "/assets/images/members/park_jihong.jpg""
+  photo: "photo: "/assets/images/members/park_jihong.jpg"
   email: ""
 
 # ---------------------- MS Students -----------------------
@@ -38,7 +38,7 @@
   photo: "/assets/images/members/kang_ingyun.png"
   email: ""
 
-  - name_ko: "변문수"
+- name_ko: "변문수"
   name_en: "Munsu Byun"
   role: undergrad
   interests_ko: "데이터 분석"
