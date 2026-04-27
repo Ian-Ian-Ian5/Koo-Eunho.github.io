@@ -1,0 +1,26 @@
+<div class="member-card">
+  <div class="member-avatar">
+    {% if include.m.photo and include.m.photo != "" %}
+      <img src="{{ include.m.photo | relative_url }}" alt="{{ include.m.name_en }}">
+    {% else %}
+      {{ include.m.name_en | slice: 0, 1 | upcase }}
+    {% endif %}
+  </div>
+  <p class="member-name" data-ko="{{ include.m.name_ko }}" data-en="{{ include.m.name_en }}">{{ include.m.name_ko }}</p>
+  <p class="member-role">
+    {% if include.m.role == "phd" %}<span data-ko="박사과정" data-en="PhD Student">박사과정</span>
+    {% elsif include.m.role == "ms" %}<span data-ko="석사과정" data-en="MS Student">석사과정</span>
+    {% elsif include.m.role == "undergrad" %}<span data-ko="학부 인턴" data-en="Undergrad Intern">학부 인턴</span>
+    {% elsif include.m.role == "alumni" %}<span data-ko="졸업생" data-en="Alumni">졸업생</span>{% if include.m.year %} · {{ include.m.year }}{% endif %}
+    {% endif %}
+  </p>
+  {% if include.m.interests_ko %}
+    <p class="member-interests" data-ko="{{ include.m.interests_ko }}" data-en="{{ include.m.interests_en }}">{{ include.m.interests_ko }}</p>
+  {% endif %}
+  {% if include.m.next_ko %}
+    <p class="member-interests" data-ko="→ {{ include.m.next_ko }}" data-en="→ {{ include.m.next_en }}">→ {{ include.m.next_ko }}</p>
+  {% endif %}
+  {% if include.m.email and include.m.email != "" %}
+    <p class="member-interests"><a href="mailto:{{ include.m.email }}">{{ include.m.email }}</a></p>
+  {% endif %}
+</div>

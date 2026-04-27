@@ -1,0 +1,37 @@
+# 연구 분야 카드. 추가/수정만 해도 페이지에 반영됩니다.
+
+- icon: "DL"
+  title_ko: "딥러닝 기초"
+  title_en: "Foundations of Deep Learning"
+  desc_ko: "딥러닝 모델의 학습 동역학, 일반화, 최적화 등 이론적 토대를 연구합니다."
+  desc_en: "We study the theoretical foundations of deep learning — training dynamics, generalization, and optimization."
+
+- icon: "CV"
+  title_ko: "컴퓨터 비전"
+  title_en: "Computer Vision"
+  desc_ko: "이미지/영상 인식, 생성, 분할 등의 비전 문제에 딥러닝을 적용합니다."
+  desc_en: "Image and video understanding, generation, and segmentation with modern deep architectures."
+
+- icon: "NLP"
+  title_ko: "자연어처리"
+  title_en: "Natural Language Processing"
+  desc_ko: "대형 언어 모델, 텍스트 분류, 의미 표현 학습 등을 다룹니다."
+  desc_en: "Large language models, text classification, and semantic representation learning."
+
+- icon: "DS"
+  title_ko: "데이터 사이언스 응용"
+  title_en: "Data Science Applications"
+  desc_ko: "산업체 협력 과제를 통해 실제 데이터 문제에 딥러닝을 적용합니다."
+  desc_en: "Applying deep learning to real-world data problems through industry collaborations."
+
+- icon: "GEN"
+  title_ko: "생성 모델"
+  title_en: "Generative Models"
+  desc_ko: "Diffusion, GAN, VAE 등 생성 모델의 구조 및 응용을 연구합니다."
+  desc_en: "Research on diffusion models, GANs, VAEs, and their applications."
+
+- icon: "TS"
+  title_ko: "시계열 / 이상 탐지"
+  title_en: "Time-Series & Anomaly Detection"
+  desc_ko: "시계열 데이터 모델링과 이상 탐지에 관한 딥러닝 기법을 탐구합니다."
+  desc_en: "Deep learning methods for time-series modeling and anomaly detection."

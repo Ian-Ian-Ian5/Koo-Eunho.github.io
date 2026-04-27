@@ -1,0 +1,63 @@
+---
+layout: default
+title: Home
+permalink: /
+---
+
+<section class="hero">
+  <div class="container hero-inner">
+    <span class="tagline" data-i18n="hero.tagline">딥러닝 기반 인공지능 · 데이터 사이언스 연구실</span>
+    <h1 data-ko="구은호 교수 연구실" data-en="Gu Lab">구은호 교수 연구실</h1>
+    <p class="subtitle" data-i18n="hero.subtitle">전남대학교 빅데이터융합학과</p>
+    <div class="hero-cta">
+      <a class="btn btn-primary" href="{{ '/research/' | relative_url }}" data-i18n="hero.cta_research">연구 분야 보기</a>
+      <a class="btn btn-secondary" href="mailto:{{ site.lab.email }}" data-i18n="hero.cta_join">랩실 합류하기</a>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <p class="section-title">ABOUT</p>
+    <h2 class="section-heading" data-i18n="home.about_title">연구실 소개</h2>
+    <p data-i18n="home.about_body">
+      구은호 교수 연구실은 딥러닝을 중심으로 인공지능과 데이터 사이언스 분야의 핵심 문제를 탐구합니다.
+      우리는 모델 구조 설계, 학습 알고리즘, 그리고 실세계 응용까지 폭넓은 주제를 다루며,
+      산업계와의 협력 연구도 활발히 진행하고 있습니다.
+    </p>
+
+    <h3 style="margin-top:2rem;" data-i18n="home.research_title">주요 연구 키워드</h3>
+    <div class="tags">
+      {% for kw in site.lab.research_keywords %}
+        <span class="tag accent">{{ kw }}</span>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <p class="section-title">NEWS</p>
+    <h2 class="section-heading" data-i18n="home.news_title">News</h2>
+    <ul class="news-list">
+      {% for item in site.data.news limit:5 %}
+        <li>
+          <span class="date">{{ item.date }}</span>
+          <span data-ko="{{ item.ko | escape }}" data-en="{{ item.en | escape }}">{{ item.ko }}</span>
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <p class="section-title">JOIN US</p>
+    <h2 class="section-heading" data-i18n="home.join_title">함께 연구할 학생을 모집합니다</h2>
+    <p data-i18n="home.join_body">
+      딥러닝과 데이터 사이언스에 대한 열정을 가진 대학원생 및 학부 인턴을 환영합니다.
+      관심 있는 분은 교수님께 이메일로 문의 바랍니다.
+    </p>
+    <a class="btn btn-primary" href="mailto:{{ site.lab.email }}">{{ site.lab.email }}</a>
+  </div>
+</section>

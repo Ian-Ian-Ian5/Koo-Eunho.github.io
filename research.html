@@ -1,0 +1,23 @@
+---
+layout: default
+title: Research
+permalink: /research/
+---
+
+<section class="section">
+  <div class="container">
+    <p class="section-title">RESEARCH</p>
+    <h1 data-i18n="research.title">연구 분야</h1>
+    <p data-i18n="research.intro">본 연구실에서는 딥러닝의 이론과 응용을 폭넓게 다룹니다. 아래는 현재 진행 중인 주요 연구 주제입니다.</p>
+
+    <div class="grid grid-3" style="margin-top:2rem;">
+      {% for r in site.data.research %}
+        <div class="research-card">
+          <div class="icon">{{ r.icon }}</div>
+          <h3 data-ko="{{ r.title_ko }}" data-en="{{ r.title_en }}">{{ r.title_ko }}</h3>
+          <p data-ko="{{ r.desc_ko }}" data-en="{{ r.desc_en }}">{{ r.desc_ko }}</p>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>

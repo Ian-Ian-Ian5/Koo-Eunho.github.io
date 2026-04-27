@@ -1,0 +1,50 @@
+---
+layout: default
+title: Publications
+permalink: /publications/
+---
+
+<section class="section">
+  <div class="container">
+    <p class="section-title">PUBLICATIONS</p>
+    <h1 data-i18n="pub.title">논문</h1>
+    <p data-i18n="pub.intro">최근 발표한 연구 성과입니다. 전체 목록은 Google Scholar에서도 확인하실 수 있습니다.</p>
+
+    {% assign pubs_by_year = site.data.publications | group_by: "year" | sort: "name" | reverse %}
+
+    {% for group in pubs_by_year %}
+      <h2 class="pub-year">{{ group.name }}</h2>
+      <ul class="pub-list">
+        {% for p in group.items %}
+          <li class="pub-item">
+            <p class="pub-title">{{ p.title }}</p>
+            <p class="pub-authors">{{ p.authors }}</p>
+            <p class="pub-venue">{{ p.venue }}</p>
+            <div class="pub-links">
+              {% if p.links.pdf %}<a class="pub-link" href="{{ p.links.pdf }}" target="_blank" rel="noopener" data-i18n="pub.pdf">PDF</a>{% endif %}
+              {% if p.links.code %}<a class="pub-link" href="{{ p.links.code }}" target="_blank" rel="noopener" data-i18n="pub.code">Code</a>{% endif %}
+              {% if p.links.project %}<a class="pub-link" href="{{ p.links.project }}" target="_blank" rel="noopener">Project</a>{% endif %}
+              {% if p.bibtex %}<button class="pub-link bibtex-toggle" type="button" data-i18n="pub.bibtex">BibTeX</button>{% endif %}
+            </div>
+            {% if p.bibtex %}<pre class="bibtex">{{ p.bibtex | escape }}</pre>{% endif %}
+          </li>
+        {% endfor %}
+      </ul>
+    {% endfor %}
+  </div>
+</section>
+
+<script>
+  // BibTeX 토글
+  document.querySelectorAll(".bibtex-toggle").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const pre = btn.closest(".pub-item").querySelector(".bibtex");
+      if (pre) pre.classList.toggle("is-open");
+    });
+  });
+
+  // **저자** 강조 처리 (랩 멤버 이름)
+  document.querySelectorAll(".pub-authors").forEach((el) => {
+    el.innerHTML = el.innerHTML.replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>");
+  });
+</script>

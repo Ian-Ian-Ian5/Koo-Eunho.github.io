@@ -1,0 +1,86 @@
+---
+layout: default
+title: Members
+permalink: /members/
+---
+
+<section class="section">
+  <div class="container">
+    <p class="section-title">MEMBERS</p>
+    <h1 data-i18n="members.title">구성원</h1>
+    <p data-i18n="members.intro">다양한 배경과 관심사를 가진 연구자들이 함께하고 있습니다.</p>
+
+    <!-- Professor -->
+    <div class="prof-card" style="margin-top:2rem;">
+      <div class="prof-photo">
+        {% if site.professor.photo and site.professor.photo != "" %}
+          <img src="{{ site.professor.photo | relative_url }}" alt="{{ site.professor.name_en }}" onerror="this.parentNode.innerHTML='G';">
+        {% else %}
+          G
+        {% endif %}
+      </div>
+      <div>
+        <h2 class="prof-name" data-ko="{{ site.professor.name_ko }}" data-en="{{ site.professor.name_en }}">{{ site.professor.name_ko }}</h2>
+        <p class="prof-title">
+          <span data-ko="{{ site.professor.title_ko }}" data-en="{{ site.professor.title_en }}">{{ site.professor.title_ko }}</span>,
+          <span data-ko="{{ site.lab.affiliation_ko }}" data-en="{{ site.lab.affiliation_en }}">{{ site.lab.affiliation_ko }}</span>
+        </p>
+        <div class="prof-meta">
+          <span><span class="label">Email</span><a href="mailto:{{ site.professor.email }}">{{ site.professor.email }}</a></span>
+          <span><span class="label">Office</span><span data-ko="{{ site.professor.office_ko }}" data-en="{{ site.professor.office_en }}">{{ site.professor.office_ko }}</span></span>
+        </div>
+        <p data-ko="{{ site.professor.bio_ko }}" data-en="{{ site.professor.bio_en }}">{{ site.professor.bio_ko }}</p>
+        <div class="hero-cta" style="margin-top:0.6rem;">
+          {% if site.professor.cv %}<a class="btn btn-secondary" href="{{ site.professor.cv | relative_url }}">CV</a>{% endif %}
+          {% if site.professor.scholar %}<a class="btn btn-secondary" href="{{ site.professor.scholar }}" target="_blank" rel="noopener">Google Scholar</a>{% endif %}
+          {% if site.professor.github %}<a class="btn btn-secondary" href="{{ site.professor.github }}" target="_blank" rel="noopener">GitHub</a>{% endif %}
+        </div>
+      </div>
+    </div>
+
+    <!-- PhD Students -->
+    {% assign phds = site.data.members | where: "role", "phd" %}
+    {% if phds.size > 0 %}
+    <div class="members-group">
+      <h3 data-i18n="members.phd">박사과정</h3>
+      <div class="grid grid-4">
+        {% for m in phds %}{% include member-card.html m=m %}{% endfor %}
+      </div>
+    </div>
+    {% endif %}
+
+    <!-- MS Students -->
+    {% assign mss = site.data.members | where: "role", "ms" %}
+    {% if mss.size > 0 %}
+    <div class="members-group">
+      <h3 data-i18n="members.ms">석사과정</h3>
+      <div class="grid grid-4">
+        {% for m in mss %}{% include member-card.html m=m %}{% endfor %}
+      </div>
+    </div>
+    {% endif %}
+
+    <!-- Undergrad Interns -->
+    {% assign ugs = site.data.members | where: "role", "undergrad" %}
+    {% if ugs.size > 0 %}
+    <div class="members-group">
+      <h3 data-i18n="members.undergrad">학부 인턴</h3>
+      <div class="grid grid-4">
+        {% for m in ugs %}{% include member-card.html m=m %}{% endfor %}
+      </div>
+    </div>
+    {% endif %}
+
+    <!-- Alumni -->
+    {% assign alumni = site.data.members | where: "role", "alumni" %}
+    {% if alumni.size > 0 %}
+    <div class="members-group">
+      <h3 data-i18n="members.alumni">졸업생</h3>
+      <div class="grid grid-3">
+        {% for m in alumni %}{% include member-card.html m=m %}{% endfor %}
+      </div>
+    </div>
+    {% endif %}
+
+  </div>
+</section>

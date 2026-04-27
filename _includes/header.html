@@ -1,0 +1,27 @@
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="{{ '/' | relative_url }}">
+      <span class="brand-mark">G</span>
+      <span class="brand-text">
+        <span class="brand-name" data-i18n="brand.name">{{ site.lab.name_ko }}</span>
+        <span class="brand-affil" data-i18n="brand.affil">{{ site.lab.affiliation_ko }}</span>
+      </span>
+    </a>
+
+    <nav class="site-nav" aria-label="primary">
+      <a href="{{ '/' | relative_url }}" data-i18n="nav.home">Home</a>
+      <a href="{{ '/research/' | relative_url }}" data-i18n="nav.research">Research</a>
+      <a href="{{ '/publications/' | relative_url }}" data-i18n="nav.publications">Publications</a>
+      <a href="{{ '/members/' | relative_url }}" data-i18n="nav.members">Members</a>
+    </nav>
+
+    <button class="lang-toggle" type="button" aria-label="Toggle language">
+      <span data-lang-on="ko">EN</span>
+      <span data-lang-on="en">KO</span>
+    </button>
+
+    <button class="menu-toggle" type="button" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>

@@ -1,0 +1,35 @@
+# 논문 목록. 최신 논문이 가장 위에 오도록 작성.
+# year: 정수 (정렬 기준)
+# authors: 문자열. 우리 랩 저자는 **이름** 으로 감싸면 강조됩니다.
+# venue: 학회/저널명
+# links: 선택. pdf / code / project 등 자유롭게 추가
+# bibtex: BibTeX 원문 (선택)
+
+- title: "Sample Paper Title (예시 논문)"
+  authors: "Alice, **Eun-Ho Gu**, Bob"
+  venue: "NeurIPS 2025"
+  year: 2025
+  links:
+    pdf: "https://arxiv.org/abs/0000.00000"
+    code: "https://github.com/example/repo"
+  bibtex: |
+    @inproceedings{gu2025sample,
+      title     = {Sample Paper Title},
+      author    = {Alice and Eun-Ho Gu and Bob},
+      booktitle = {NeurIPS},
+      year      = {2025}
+    }
+
+- title: "Another Example Paper"
+  authors: "**Eun-Ho Gu**, Carol"
+  venue: "ICML 2024"
+  year: 2024
+  links:
+    pdf: "#"
+  bibtex: |
+    @inproceedings{gu2024another,
+      title     = {Another Example Paper},
+      author    = {Eun-Ho Gu and Carol},
+      booktitle = {ICML},
+      year      = {2024}
+    }
