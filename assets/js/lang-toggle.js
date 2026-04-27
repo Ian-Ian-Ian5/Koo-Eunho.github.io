@@ -53,7 +53,7 @@ const I18N = {
   },
 
   en: {
-    "brand.name": "Gu Lab",
+    "brand.name": "Koo Lab",
     "brand.affil": "Big Data Convergence, JNU",
     "nav.home": "Home",
     "nav.research": "Research",
