@@ -9,7 +9,7 @@
   role: phd
   interests_ko: "딥러닝 · 컴퓨터 비전"
   interests_en: "Deep Learning · Computer Vision"
-  photo: "/assets/imagesmembers/박지홍_증명사진.jpg"
+  photo: "photo: "/assets/images/members/park_jihong.jpg""
   email: ""
 
 # ---------------------- MS Students -----------------------
@@ -18,7 +18,7 @@
   role: ms
   interests_ko: "자연어처리"
   interests_en: "NLP"
-  photo: "/assets/imagesmembers/위훈성_증명사진.jpg"
+  photo: "/assets/images/members/wi_hunsung.jpg"
   email: ""
 
 - name_ko: "이형준"
@@ -26,7 +26,7 @@
   role: ms
   interests_ko: "추천 시스템"
   interests_en: "Recommender Systems"
-  photo: "/assets/imagesmembers/이형준_증명사진.jpg"
+  photo: "/assets/images/members/lee_hyungjun.jpg"
   email: ""
 
 # ---------------------- Bachelor's and Master's degrees -------------
@@ -35,7 +35,7 @@
   role: undergrad
   interests_ko: "데이터 분석"
   interests_en: "Data Analytics"
-  photo: "/assets/imagesmembers/강인균_증명사진.png"
+  photo: "/assets/images/members/kang_ingyun.png"
   email: ""
 
   - name_ko: "변문수"
@@ -43,7 +43,7 @@
   role: undergrad
   interests_ko: "데이터 분석"
   interests_en: "Data Analytics"
-  photo: "/assets/imagesmembers/변문수_증명사진.jpg"
+  photo: "/assets/images/members/byun_munsu.jpg"
   email: ""
 
 # ---------------------- Alumni ----------------------------
