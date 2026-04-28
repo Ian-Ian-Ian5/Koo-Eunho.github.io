@@ -35,7 +35,7 @@
         (triangles, tetrahedra) for node classification, overcoming the
         expressiveness limits of standard message-passing GNNs both theoretically
         and empirically.
-      image: ""
+      image: "/assets/images/research/simplicial-interactions.png"
       paper: "Node classification in networks via simplicial interactions"
       venue: "IEEE Transactions on Neural Networks and Learning Systems, 2025"
 
@@ -49,7 +49,7 @@
         Extension of simplicial interaction models with an algorithm that
         selectively augments maximal cliques in the graph, simultaneously
         improving the efficiency and accuracy of node representation learning.
-      image: ""
+      image: "/assets/images/research/augmented-cliques.png"
       paper: "Node classification via simplicial interaction with augmented maximal clique selection"
       venue: "Neurocomputing, 2025"
 
@@ -96,7 +96,7 @@
         of cryptocurrency time-series by decomposing the signal into multiple
         components, learning each with LSTM networks, and producing an integrated
         prediction.
-      image: ""
+      image: "/assets/images/research/bitcoin-lstm.png"
       paper: "Centralized decomposition approach in LSTM for Bitcoin price prediction"
       venue: "Expert Systems with Applications, 2024"
 
@@ -111,7 +111,7 @@
         networks and a distribution manipulation strategy to predict stock
         market volatility more accurately, leveraging the strengths of both
         paradigms.
-      image: ""
+      image: "/assets/images/research/garch-lstm.png"
       paper: "A hybrid prediction model integrating GARCH models with LSTM networks"
       venue: "IEEE Access, 2022 · Computational Economics, 2023"
 
@@ -125,7 +125,7 @@
         Focusing on the asymmetry and heavy-tail properties of price time-series
         distributions, we propose a strategy that actively manipulates (stretches)
         the data distribution during training to boost prediction accuracy.
-      image: ""
+      image: "/assets/images/research/distribution-manipulation.png"
       paper: "Prediction of Bitcoin price based on manipulating distribution strategy"
       venue: "Applied Soft Computing, 2021"
 
@@ -201,7 +201,7 @@
         regression models, we propose an empirical strategy that actively
         stretches the output distribution during training — particularly
         effective for improving prediction accuracy in the tails.
-      image: ""
+      image: "/assets/images/research/stretching-distributions.png"
       paper: "Empirical strategy for stretching probability distribution in neural-network-based regression"
       venue: "Neural Networks, 2021"
 
@@ -216,7 +216,7 @@
         amount retrieval and rain/no-rain classification from passive microwave
         satellite observations, leveraging shared representation between the
         two tasks for improved accuracy on both.
-      image: ""
+      image: "/assets/images/research/precipitation-mtl.png"
       paper: "Multi-task learning for simultaneous retrievals of passive microwave precipitation estimates and rain/no-rain classification"
       venue: "Geophysical Research Letters, 2023"
 
