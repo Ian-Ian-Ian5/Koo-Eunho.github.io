@@ -16,37 +16,44 @@ permalink: /
   </div>
 </section>
 
-<!-- Vanta.js NET animated background (Three.js) -->
+<!-- Vanta.js NET animated background (Three.js r134 + Vanta 0.5.24, 검증된 조합) -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.net.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vanta@0.5.24/dist/vanta.net.min.js"></script>
 <script>
   (function () {
     function initVanta() {
-      if (typeof VANTA === "undefined" || !VANTA.NET) return;
-      if (window._vantaEffect) return;
-      window._vantaEffect = VANTA.NET({
-        el: "#hero-bg",
-        mouseControls: true,
-        touchControls: true,
-        gyroControls: false,
-        minHeight: 200.00,
-        minWidth: 200.00,
-        scale: 1.00,
-        scaleMobile: 1.00,
-        color: 0x60a5fa,
-        backgroundColor: 0x0a1128,
-        points: 12.00,
-        maxDistance: 22.00,
-        spacing: 18.00
-      });
+      if (window._vantaEffect) return true;
+      if (typeof VANTA === "undefined" || !VANTA.NET || typeof THREE === "undefined") return false;
+      var el = document.getElementById("hero-bg");
+      if (!el) return false;
+      try {
+        window._vantaEffect = VANTA.NET({
+          el: el,
+          THREE: THREE,
+          mouseControls: true,
+          touchControls: true,
+          gyroControls: false,
+          minHeight: 200.00,
+          minWidth: 200.00,
+          scale: 1.00,
+          scaleMobile: 1.00,
+          color: 0x60a5fa,
+          backgroundColor: 0x0a1128,
+          points: 12.00,
+          maxDistance: 22.00,
+          spacing: 18.00
+        });
+        return true;
+      } catch (e) {
+        console.error("[Vanta init failed]", e);
+        return false;
+      }
     }
-    if (document.readyState === "loading") {
-      document.addEventListener("DOMContentLoaded", initVanta);
-    } else {
-      initVanta();
-    }
-    setTimeout(initVanta, 500);
-    setTimeout(initVanta, 1500);
+    var tries = 0;
+    var poll = setInterval(function () {
+      tries++;
+      if (initVanta() || tries > 20) clearInterval(poll);
+    }, 250);
   })();
 </script>
 
