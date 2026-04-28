@@ -34,7 +34,7 @@ const I18N = {
     "members.professor": "교수",
     "members.phd": "박사과정",
     "members.ms": "석사과정",
-    "members.undergrad": "학부 인턴",
+    "members.undergrad": "학사 및 석사 과정",
     "members.alumni": "졸업생",
 
     "pub.title": "논문",
@@ -71,7 +71,7 @@ const I18N = {
     "home.news_title": "News",
     "home.news_more": "See all →",
     "home.join_title": "We are hiring",
-    "home.join_body": "We welcome motivated graduate students and undergraduate interns who are passionate about deep learning and data science. Please contact Prof. Gu by email.",
+    "home.join_body": "We welcome motivated graduate students and undergraduate interns who are passionate about deep learning and data science. Please contact Prof. Koo by email.",
 
     "research.title": "Research",
     "research.intro": "We work on both the theory and application of deep learning. Below are our current research thrusts.",
@@ -81,7 +81,7 @@ const I18N = {
     "members.professor": "Professor",
     "members.phd": "PhD Students",
     "members.ms": "MS Students",
-    "members.undergrad": "Undergraduate Interns",
+    "members.undergrad": "Bachelor's and Master's degrees",
     "members.alumni": "Alumni",
 
     "pub.title": "Publications",
@@ -94,7 +94,7 @@ const I18N = {
     "footer.email_label": "Email",
     "footer.address": "Gwangju Campus, Chonnam National University",
     "footer.lab": "Lab",
-    "footer.lab_name": "Gu Lab",
+    "footer.lab_name": "Koo Lab",
     "footer.lab_affil": "Department of Big Data Convergence, CNU",
     "footer.links": "Links"
   }

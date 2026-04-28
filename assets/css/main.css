@@ -166,6 +166,55 @@ p { margin: 0 0 1rem; color: var(--color-text-soft); }
     linear-gradient(180deg, #fff 0%, var(--color-surface) 100%);
   border-bottom: 1px solid var(--color-border);
 }
+
+/* ----------------------------- Vanta NET Hero (animated network) -------- */
+.hero.hero-vanta {
+  position: relative;
+  background: #0a1128;
+  color: #fff;
+  min-height: 540px;
+  padding: 7rem 0 6rem;
+  border-bottom: none;
+  overflow: hidden;
+}
+.hero.hero-vanta .hero-inner {
+  position: relative;
+  z-index: 2;
+}
+.hero.hero-vanta h1 {
+  color: #fff;
+  text-shadow: 0 2px 24px rgba(0, 0, 0, 0.45);
+}
+.hero.hero-vanta .subtitle {
+  color: rgba(255, 255, 255, 0.85);
+  text-shadow: 0 1px 12px rgba(0, 0, 0, 0.4);
+}
+.hero.hero-vanta .tagline {
+  background: rgba(96, 165, 250, 0.18);
+  color: #93c5fd;
+  border: 1px solid rgba(96, 165, 250, 0.35);
+  backdrop-filter: blur(6px);
+}
+.hero.hero-vanta .btn-primary {
+  background: var(--color-accent);
+  color: #fff;
+  box-shadow: 0 4px 20px rgba(29, 78, 216, 0.45);
+}
+.hero.hero-vanta .btn-primary:hover {
+  background: #2563eb;
+  box-shadow: 0 6px 24px rgba(29, 78, 216, 0.6);
+}
+.hero.hero-vanta .btn-secondary {
+  background: rgba(255, 255, 255, 0.08);
+  color: #fff;
+  border-color: rgba(255, 255, 255, 0.28);
+  backdrop-filter: blur(8px);
+}
+.hero.hero-vanta .btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.18);
+  border-color: rgba(255, 255, 255, 0.55);
+  color: #fff;
+}
 .hero-inner { max-width: 760px; }
 .hero h1 {
   font-size: 2.7rem;
@@ -333,6 +382,139 @@ p { margin: 0 0 1rem; color: var(--color-text-soft); }
   font-size: 0.8rem;
   color: var(--color-text-soft);
   margin: 0;
+}
+
+/* ----------------------------- Member card link --------------------------*/
+a.member-card {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+a.member-card:hover {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* ----------------------------- Member detail page -------------------------*/
+.back-link {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  color: var(--color-text-mute);
+  margin-bottom: 1.5rem;
+  text-decoration: none;
+}
+.back-link:hover {
+  color: var(--color-accent);
+  text-decoration: none;
+}
+
+.member-detail {
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  gap: 2.5rem;
+  background: #fff;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: 2.5rem;
+  margin-bottom: 2.5rem;
+  box-shadow: var(--shadow-card);
+}
+.member-detail-photo {
+  width: 240px;
+  height: 280px;
+  border-radius: var(--radius-md);
+  background: var(--color-surface-alt);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-text-mute);
+  font-size: 5rem;
+  font-weight: 700;
+  overflow: hidden;
+}
+.member-detail-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.member-detail-info h1 {
+  font-size: 2rem;
+  margin-bottom: 0.4rem;
+}
+.member-detail-role {
+  font-size: 1rem;
+  color: var(--color-accent);
+  font-weight: 500;
+  margin-bottom: 0.8rem;
+}
+.member-detail-interests {
+  font-size: 0.95rem;
+  color: var(--color-text-soft);
+  font-style: italic;
+  margin-bottom: 1.2rem;
+}
+.member-detail-meta {
+  margin-bottom: 1.2rem;
+  font-size: 0.95rem;
+}
+.member-detail-meta p {
+  margin: 0.2rem 0;
+}
+.member-detail-meta .label {
+  color: var(--color-text-mute);
+  font-weight: 500;
+  margin-right: 0.4rem;
+}
+.member-detail-links {
+  display: flex;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+  margin-top: 0.6rem;
+}
+
+.member-detail-content {
+  background: #fff;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: 2rem 2.5rem;
+}
+.member-detail-content h2 {
+  font-size: 1.3rem;
+  margin-top: 2rem;
+  margin-bottom: 0.8rem;
+  padding-bottom: 0.4rem;
+  border-bottom: 2px solid var(--color-border);
+}
+.member-detail-content h2:first-child { margin-top: 0; }
+.member-detail-content h3 {
+  font-size: 1.05rem;
+  margin-top: 1.4rem;
+  margin-bottom: 0.5rem;
+}
+.member-detail-content ul {
+  padding-left: 1.4rem;
+  color: var(--color-text-soft);
+}
+.member-detail-content li { margin-bottom: 0.4rem; }
+.member-detail-content em {
+  color: var(--color-text-mute);
+  font-style: italic;
+}
+
+@media (max-width: 720px) {
+  .member-detail {
+    grid-template-columns: 1fr;
+    padding: 1.5rem;
+    gap: 1.5rem;
+  }
+  .member-detail-photo {
+    width: 100%;
+    height: 320px;
+  }
+  .member-detail-content {
+    padding: 1.5rem;
+  }
 }
 
 /* ----------------------------- Professor card ------------------------------*/

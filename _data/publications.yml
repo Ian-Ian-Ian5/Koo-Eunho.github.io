@@ -5,31 +5,193 @@
 # links: 선택. pdf / code / project 등 자유롭게 추가
 # bibtex: BibTeX 원문 (선택)
 
-- title: "Sample Paper Title (예시 논문)"
-  authors: "Alice, **Eun-Ho Gu**, Bob"
-  venue: "NeurIPS 2025"
+# ===========================================================================
+#  2025
+# ===========================================================================
+
+- title: "Node classification in networks via simplicial interactions"
+  authors: "**Eun-Ho Koo**, T. Lim"
+  venue: "IEEE Transactions on Neural Networks and Learning Systems, 36(8), 14428–14439"
   year: 2025
   links:
-    pdf: "https://arxiv.org/abs/0000.00000"
-    code: "https://github.com/example/repo"
+    scholar: "https://scholar.google.com/citations?user=13BRvZAAAAAJ&hl=ko"
   bibtex: |
-    @inproceedings{gu2025sample,
-      title     = {Sample Paper Title},
-      author    = {Alice and Eun-Ho Gu and Bob},
-      booktitle = {NeurIPS},
-      year      = {2025}
+    @article{koo2025node,
+      title   = {Node classification in networks via simplicial interactions},
+      author  = {Koo, Eun-Ho and Lim, T.},
+      journal = {IEEE Transactions on Neural Networks and Learning Systems},
+      volume  = {36},
+      number  = {8},
+      pages   = {14428--14439},
+      year    = {2025}
     }
 
-- title: "Another Example Paper"
-  authors: "**Eun-Ho Gu**, Carol"
-  venue: "ICML 2024"
+- title: "Node classification via simplicial interaction with augmented maximal clique selection"
+  authors: "**Eun-Ho Koo**, T. Lim"
+  venue: "Neurocomputing, 658, 131705"
+  year: 2025
+  links:
+    scholar: "https://scholar.google.com/citations?user=13BRvZAAAAAJ&hl=ko"
+  bibtex: |
+    @article{koo2025augmented,
+      title   = {Node classification via simplicial interaction with augmented maximal clique selection},
+      author  = {Koo, Eun-Ho and Lim, T.},
+      journal = {Neurocomputing},
+      volume  = {658},
+      pages   = {131705},
+      year    = {2025}
+    }
+
+# ===========================================================================
+#  2024
+# ===========================================================================
+
+- title: "Centralized decomposition approach in LSTM for Bitcoin price prediction"
+  authors: "**Eun-Ho Koo**, G. Kim"
+  venue: "Expert Systems with Applications, 237, 121401"
   year: 2024
   links:
-    pdf: "#"
+    scholar: "https://scholar.google.com/citations?user=13BRvZAAAAAJ&hl=ko"
   bibtex: |
-    @inproceedings{gu2024another,
-      title     = {Another Example Paper},
-      author    = {Eun-Ho Gu and Carol},
-      booktitle = {ICML},
-      year      = {2024}
+    @article{koo2024centralized,
+      title   = {Centralized decomposition approach in {LSTM} for Bitcoin price prediction},
+      author  = {Koo, Eun-Ho and Kim, G.},
+      journal = {Expert Systems with Applications},
+      volume  = {237},
+      pages   = {121401},
+      year    = {2024}
+    }
+
+# ===========================================================================
+#  2023
+# ===========================================================================
+
+- title: "Multi-task learning for simultaneous retrievals of passive microwave precipitation estimates and rain/no-rain classification"
+  authors: "T. Bannai, H. Xu, N. Utsumi, **Eun-Ho Koo**, K. Lu, H. Kim"
+  venue: "Geophysical Research Letters, 50(7), e2022GL102283"
+  year: 2023
+  links:
+    scholar: "https://scholar.google.com/citations?user=13BRvZAAAAAJ&hl=ko"
+  bibtex: |
+    @article{bannai2023multitask,
+      title   = {Multi-task learning for simultaneous retrievals of passive microwave precipitation estimates and rain/no-rain classification},
+      author  = {Bannai, T. and Xu, H. and Utsumi, N. and Koo, Eun-Ho and Lu, K. and Kim, H.},
+      journal = {Geophysical Research Letters},
+      volume  = {50},
+      number  = {7},
+      pages   = {e2022GL102283},
+      year    = {2023}
+    }
+
+- title: "A new neural network approach for predicting the volatility of stock market"
+  authors: "**Eun-Ho Koo**, G. Kim"
+  venue: "Computational Economics, 61(4), 1665–1679"
+  year: 2023
+  links:
+    scholar: "https://scholar.google.com/citations?user=13BRvZAAAAAJ&hl=ko"
+  bibtex: |
+    @article{koo2023neural,
+      title   = {A new neural network approach for predicting the volatility of stock market},
+      author  = {Koo, Eun-Ho and Kim, G.},
+      journal = {Computational Economics},
+      volume  = {61},
+      number  = {4},
+      pages   = {1665--1679},
+      year    = {2023}
+    }
+
+# ===========================================================================
+#  2022
+# ===========================================================================
+
+- title: "A hybrid prediction model integrating GARCH models with a distribution manipulation strategy based on LSTM networks for stock market volatility"
+  authors: "**Eun-Ho Koo**, G. Kim"
+  venue: "IEEE Access, 10, 34743–34754"
+  year: 2022
+  links:
+    scholar: "https://scholar.google.com/citations?user=13BRvZAAAAAJ&hl=ko"
+  bibtex: |
+    @article{koo2022hybrid,
+      title   = {A hybrid prediction model integrating {GARCH} models with a distribution manipulation strategy based on {LSTM} networks for stock market volatility},
+      author  = {Koo, Eun-Ho and Kim, G.},
+      journal = {IEEE Access},
+      volume  = {10},
+      pages   = {34743--34754},
+      year    = {2022}
+    }
+
+# ===========================================================================
+#  2021
+# ===========================================================================
+
+- title: "Prediction of Bitcoin price based on manipulating distribution strategy"
+  authors: "**Eun-Ho Koo**, G. Kim"
+  venue: "Applied Soft Computing, 110, 107738"
+  year: 2021
+  links:
+    scholar: "https://scholar.google.com/citations?user=13BRvZAAAAAJ&hl=ko"
+  bibtex: |
+    @article{koo2021prediction,
+      title   = {Prediction of Bitcoin price based on manipulating distribution strategy},
+      author  = {Koo, Eun-Ho and Kim, G.},
+      journal = {Applied Soft Computing},
+      volume  = {110},
+      pages   = {107738},
+      year    = {2021}
+    }
+
+- title: "Empirical strategy for stretching probability distribution in neural-network-based regression"
+  authors: "**Eun-Ho Koo**, H. Kim"
+  venue: "Neural Networks, 140, 113–120"
+  year: 2021
+  links:
+    scholar: "https://scholar.google.com/citations?user=13BRvZAAAAAJ&hl=ko"
+  bibtex: |
+    @article{koo2021empirical,
+      title   = {Empirical strategy for stretching probability distribution in neural-network-based regression},
+      author  = {Koo, Eun-Ho and Kim, H.},
+      journal = {Neural Networks},
+      volume  = {140},
+      pages   = {113--120},
+      year    = {2021}
+    }
+
+# ===========================================================================
+#  2017
+# ===========================================================================
+
+- title: "Explicit formula for the valuation of catastrophe put option with exponential jump and default risk"
+  authors: "**Eun-Ho Koo**, G. Kim"
+  venue: "Chaos, Solitons & Fractals, 101, 1–7"
+  year: 2017
+  links:
+    scholar: "https://scholar.google.com/citations?user=13BRvZAAAAAJ&hl=ko"
+  bibtex: |
+    @article{koo2017explicit,
+      title   = {Explicit formula for the valuation of catastrophe put option with exponential jump and default risk},
+      author  = {Koo, Eun-Ho and Kim, G.},
+      journal = {Chaos, Solitons \& Fractals},
+      volume  = {101},
+      pages   = {1--7},
+      year    = {2017}
+    }
+
+# ===========================================================================
+#  2016
+# ===========================================================================
+
+- title: "Closed-form pricing formula for exchange option with credit risk"
+  authors: "G. Kim, **Eun-Ho Koo**"
+  venue: "Chaos, Solitons & Fractals, 91, 221–227"
+  year: 2016
+  links:
+    scholar: "https://scholar.google.com/citations?user=13BRvZAAAAAJ&hl=ko"
+  bibtex: |
+    @article{kim2016closed,
+      title   = {Closed-form pricing formula for exchange option with credit risk},
+      author  = {Kim, G. and Koo, Eun-Ho},
+      journal = {Chaos, Solitons \& Fractals},
+      volume  = {91},
+      pages   = {221--227},
+      year    = {2016}
     }

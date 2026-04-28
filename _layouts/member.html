@@ -1,0 +1,71 @@
+---
+layout: default
+---
+
+<section class="section">
+  <div class="container">
+    <a href="{{ '/members/' | relative_url }}" class="back-link">
+      <span data-ko="← 구성원 목록으로" data-en="← Back to Members">← 구성원 목록으로</span>
+    </a>
+
+    <div class="member-detail">
+      <div class="member-detail-photo">
+        {% if page.photo and page.photo != "" %}
+          <img src="{{ page.photo | relative_url }}" alt="{{ page.name_en }}">
+        {% else %}
+          <span class="initial">{{ page.name_en | slice: 0, 1 | upcase }}</span>
+        {% endif %}
+      </div>
+
+      <div class="member-detail-info">
+        <h1 data-ko="{{ page.name_ko }}" data-en="{{ page.name_en }}">{{ page.name_ko }}</h1>
+
+        <p class="member-detail-role">
+          {% if page.role == "phd" %}<span data-ko="박사과정" data-en="PhD Student">박사과정</span>
+          {% elsif page.role == "ms" %}<span data-ko="석사과정" data-en="MS Student">석사과정</span>
+          {% elsif page.role == "undergrad" %}<span data-ko="학사 및 석사 과정" data-en="Bachelor's and Master's">학사 및 석사 과정</span>
+          {% elsif page.role == "alumni" %}<span data-ko="졸업생" data-en="Alumni">졸업생</span>
+          {% endif %}
+          {% if page.affiliation %} · {{ page.affiliation }}{% endif %}
+        </p>
+
+        {% if page.interests_ko %}
+          <p class="member-detail-interests" data-ko="{{ page.interests_ko }}" data-en="{{ page.interests_en }}">{{ page.interests_ko }}</p>
+        {% endif %}
+
+        <div class="member-detail-meta">
+          {% if page.email and page.email != "" %}
+            <p>
+              <span class="label" data-ko="이메일" data-en="Email">이메일</span>:
+              <a href="mailto:{{ page.email }}">{{ page.email }}</a>
+            </p>
+          {% endif %}
+          {% if page.joined %}
+            <p>
+              <span class="label" data-ko="합류 연도" data-en="Joined">합류 연도</span>:
+              {{ page.joined }}
+            </p>
+          {% endif %}
+          {% if page.office %}
+            <p>
+              <span class="label" data-ko="사무실" data-en="Office">사무실</span>:
+              {{ page.office }}
+            </p>
+          {% endif %}
+        </div>
+
+        <div class="member-detail-links">
+          {% if page.cv %}<a class="btn btn-secondary" href="{{ page.cv | relative_url }}" target="_blank" rel="noopener">CV</a>{% endif %}
+          {% if page.scholar %}<a class="btn btn-secondary" href="{{ page.scholar }}" target="_blank" rel="noopener">Google Scholar</a>{% endif %}
+          {% if page.github %}<a class="btn btn-secondary" href="{{ page.github }}" target="_blank" rel="noopener">GitHub</a>{% endif %}
+          {% if page.linkedin %}<a class="btn btn-secondary" href="{{ page.linkedin }}" target="_blank" rel="noopener">LinkedIn</a>{% endif %}
+          {% if page.website %}<a class="btn btn-secondary" href="{{ page.website }}" target="_blank" rel="noopener">Website</a>{% endif %}
+        </div>
+      </div>
+    </div>
+
+    <div class="member-detail-content">
+      {{ content }}
+    </div>
+  </div>
+</section>

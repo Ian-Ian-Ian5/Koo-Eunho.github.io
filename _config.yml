@@ -1,5 +1,5 @@
 # =============================================================================
-#  Jeonnam National University — Prof. Eun-Ho Gu Lab Website
+#  Jeonnam National University — Prof. Eun-Ho Koo Lab Website
 #  Built on Jekyll (al-folio inspired)
 # =============================================================================
 
@@ -29,21 +29,21 @@ lab:
 # ----------------------------- Professor -------------------------------------
 professor:
   name_ko: "구은호"
-  name_en: "Eun-Ho Gu"
+  name_en: "Eun-Ho Koo"
   title_ko: "교수"
   title_en: "Professor"
-  email: "eunhogu@jnu.ac.kr"               # TODO: 실제 이메일 확인 후 교체
+  email: "kooeunho@jnu.ac.kr"
   office_ko: "전남대학교 빅데이터융합학과"   # TODO: 정확한 사무실 입력
   office_en: "Dept. of Big Data Convergence, JNU"
   photo: "/assets/images/professor.jpg"
   cv: "/assets/files/cv.pdf"
-  scholar: "https://scholar.google.com/"   # TODO: 실제 링크 입력
+  scholar: "https://scholar.google.com/citations?user=13BRvZAAAAAJ&hl=ko"
   github: "https://github.com/"
   bio_ko: >-
     구은호 교수는 전남대학교 빅데이터융합학과 교수로, 딥러닝을 중심으로 한
     인공지능 및 데이터 사이언스 분야의 연구를 수행하고 있습니다.
   bio_en: >-
-    Eun-Ho Gu is a Professor in the Department of Big Data Convergence at
+    Eun-Ho Koo is a Professor in the Department of Big Data Convergence at
     Chonnam National University. His research focuses on Deep Learning,
     Artificial Intelligence, and Data Science.
 
@@ -59,12 +59,25 @@ plugins:
   - jekyll-sitemap
   - jekyll-feed
 
+# ----------------------------- Collections ----------------------------------
+# 학생별 개인 페이지를 위한 컬렉션. _members/ 폴더 안의 .md 파일들이 자동으로
+# /members/{name}/ 주소의 개별 페이지로 빌드됩니다.
+collections:
+  members:
+    output: true
+    permalink: /members/:path/
+
 # Default front matter
 defaults:
   - scope:
       path: ""
     values:
       layout: "default"
+  - scope:
+      path: ""
+      type: "members"
+    values:
+      layout: "member"
 
 # Exclude from build
 exclude:

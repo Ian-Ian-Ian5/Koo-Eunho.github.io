@@ -14,9 +14,9 @@ permalink: /members/
     <div class="prof-card" style="margin-top:2rem;">
       <div class="prof-photo">
         {% if site.professor.photo and site.professor.photo != "" %}
-          <img src="{{ site.professor.photo | relative_url }}" alt="{{ site.professor.name_en }}" onerror="this.parentNode.innerHTML='G';">
+          <img src="{{ site.professor.photo | relative_url }}" alt="{{ site.professor.name_en }}" onerror="this.parentNode.innerHTML='K';">
         {% else %}
-          G
+          K
         {% endif %}
       </div>
       <div>
@@ -39,7 +39,7 @@ permalink: /members/
     </div>
 
     <!-- PhD Students -->
-    {% assign phds = site.data.members | where: "role", "phd" %}
+    {% assign phds = site.members | where: "role", "phd" %}
     {% if phds.size > 0 %}
     <div class="members-group">
       <h3 data-i18n="members.phd">박사과정</h3>
@@ -50,7 +50,7 @@ permalink: /members/
     {% endif %}
 
     <!-- MS Students -->
-    {% assign mss = site.data.members | where: "role", "ms" %}
+    {% assign mss = site.members | where: "role", "ms" %}
     {% if mss.size > 0 %}
     <div class="members-group">
       <h3 data-i18n="members.ms">석사과정</h3>
@@ -60,11 +60,11 @@ permalink: /members/
     </div>
     {% endif %}
 
-    <!-- Undergrad Interns -->
-    {% assign ugs = site.data.members | where: "role", "undergrad" %}
+    <!-- Bachelor's & Master's (undergrad) -->
+    {% assign ugs = site.members | where: "role", "undergrad" %}
     {% if ugs.size > 0 %}
     <div class="members-group">
-      <h3 data-i18n="members.undergrad">학부 인턴</h3>
+      <h3 data-i18n="members.undergrad">학사 및 석사 과정</h3>
       <div class="grid grid-4">
         {% for m in ugs %}{% include member-card.html m=m %}{% endfor %}
       </div>
@@ -72,7 +72,7 @@ permalink: /members/
     {% endif %}
 
     <!-- Alumni -->
-    {% assign alumni = site.data.members | where: "role", "alumni" %}
+    {% assign alumni = site.members | where: "role", "alumni" %}
     {% if alumni.size > 0 %}
     <div class="members-group">
       <h3 data-i18n="members.alumni">졸업생</h3>
