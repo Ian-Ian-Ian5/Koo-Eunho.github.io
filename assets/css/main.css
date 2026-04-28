@@ -722,6 +722,156 @@ a.member-card:hover {
 }
 .bibtex.is-open { display: block; }
 
+/* ----------------------------- Research page (groups & projects) ----------*/
+.research-group {
+  margin-top: 3.5rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--color-border);
+}
+.research-group:first-of-type {
+  margin-top: 2rem;
+  padding-top: 0;
+  border-top: none;
+}
+.research-group-title {
+  font-size: 1.7rem;
+  margin-bottom: 0.8rem;
+  position: relative;
+  padding-left: 1rem;
+}
+.research-group-title::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.3rem;
+  bottom: 0.3rem;
+  width: 4px;
+  background: var(--color-accent);
+  border-radius: 2px;
+}
+.research-group-intro {
+  font-size: 1rem;
+  color: var(--color-text-soft);
+  margin-bottom: 2rem;
+  max-width: 800px;
+  line-height: 1.7;
+}
+
+.project-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.project-card {
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  gap: 1.8rem;
+  background: #fff;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 1.5rem;
+  transition: border-color 0.18s ease, box-shadow 0.18s ease, transform 0.18s ease;
+}
+.project-card:hover {
+  border-color: var(--color-accent);
+  box-shadow: var(--shadow-card);
+  transform: translateY(-2px);
+}
+
+.project-figure {
+  width: 320px;
+  height: 200px;
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+.project-figure img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.project-placeholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: rgba(255, 255, 255, 0.95);
+  text-align: center;
+  padding: 1rem;
+}
+.ph-acronym {
+  font-family: var(--font-mono);
+  font-size: 3rem;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.25);
+}
+.ph-venue {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  font-weight: 500;
+  margin-top: 0.6rem;
+  opacity: 0.85;
+  background: rgba(0, 0, 0, 0.18);
+  padding: 0.25rem 0.7rem;
+  border-radius: 12px;
+  backdrop-filter: blur(2px);
+}
+
+.project-info {
+  display: flex;
+  flex-direction: column;
+}
+.project-title {
+  font-size: 1.15rem;
+  margin: 0 0 0.5rem;
+  color: var(--color-text);
+}
+.project-desc {
+  font-size: 0.95rem;
+  color: var(--color-text-soft);
+  line-height: 1.65;
+  margin: 0 0 0.9rem;
+}
+.project-paper {
+  font-size: 0.85rem;
+  color: var(--color-text-mute);
+  margin: auto 0 0;
+  padding-top: 0.5rem;
+  border-top: 1px dashed var(--color-border);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  align-items: baseline;
+}
+.paper-icon { font-size: 0.95rem; }
+.paper-title {
+  color: var(--color-text);
+  font-weight: 500;
+  font-style: italic;
+}
+.paper-venue {
+  color: var(--color-accent);
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+}
+
+@media (max-width: 800px) {
+  .project-card {
+    grid-template-columns: 1fr;
+    gap: 1.2rem;
+  }
+  .project-figure {
+    width: 100%;
+    height: 220px;
+  }
+  .research-group-title { font-size: 1.4rem; }
+}
+
 /* ----------------------------- Research cards ------------------------------*/
 .research-card {
   background: #fff;

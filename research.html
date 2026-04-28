@@ -8,16 +8,47 @@ permalink: /research/
   <div class="container">
     <p class="section-title">RESEARCH</p>
     <h1 data-i18n="research.title">연구 분야</h1>
-    <p data-i18n="research.intro">본 연구실에서는 딥러닝의 이론과 응용을 폭넓게 다룹니다. 아래는 현재 진행 중인 주요 연구 주제입니다.</p>
+    <p data-i18n="research.intro">본 연구실은 딥러닝의 이론과 응용을 폭넓게 다룹니다. 아래는 현재 진행 중인 주요 연구 주제와 세부 프로젝트입니다.</p>
 
-    <div class="grid grid-3" style="margin-top:2rem;">
-      {% for r in site.data.research %}
-        <div class="research-card">
-          <div class="icon">{{ r.icon }}</div>
-          <h3 data-ko="{{ r.title_ko }}" data-en="{{ r.title_en }}">{{ r.title_ko }}</h3>
-          <p data-ko="{{ r.desc_ko }}" data-en="{{ r.desc_en }}">{{ r.desc_ko }}</p>
+    {% for group in site.data.research %}
+      <div class="research-group" id="{{ group.id }}">
+        <h2 class="research-group-title" data-ko="{{ group.title_ko }}" data-en="{{ group.title_en }}">{{ group.title_ko }}</h2>
+        <p class="research-group-intro" data-ko="{{ group.intro_ko | strip_newlines }}" data-en="{{ group.intro_en | strip_newlines }}">{{ group.intro_ko }}</p>
+
+        <div class="project-list">
+          {% for proj in group.projects %}
+            <div class="project-card">
+              <div class="project-figure"
+                   {% if proj.image == "" or proj.image == nil %}
+                     style="background: linear-gradient(135deg, {{ group.color_from }}, {{ group.color_to }});"
+                   {% endif %}>
+                {% if proj.image and proj.image != "" %}
+                  <img src="{{ proj.image | relative_url }}" alt="{{ proj.title_en }}">
+                {% else %}
+                  <div class="project-placeholder">
+                    <span class="ph-acronym">{{ group.acronym }}</span>
+                    <span class="ph-venue">{{ proj.venue }}</span>
+                  </div>
+                {% endif %}
+              </div>
+              <div class="project-info">
+                <h3 class="project-title" data-ko="{{ proj.title_ko }}" data-en="{{ proj.title_en }}">{{ proj.title_ko }}</h3>
+                <p class="project-desc" data-ko="{{ proj.desc_ko | strip_newlines }}" data-en="{{ proj.desc_en | strip_newlines }}">{{ proj.desc_ko }}</p>
+                {% if proj.paper and proj.paper != "" %}
+                  <p class="project-paper">
+                    <span class="paper-icon">📄</span>
+                    <span class="paper-title">{{ proj.paper }}</span>
+                    {% if proj.venue and proj.venue != "—" %}
+                      <span class="paper-venue">— {{ proj.venue }}</span>
+                    {% endif %}
+                  </p>
+                {% endif %}
+              </div>
+            </div>
+          {% endfor %}
         </div>
-      {% endfor %}
-    </div>
+      </div>
+    {% endfor %}
+
   </div>
 </section>

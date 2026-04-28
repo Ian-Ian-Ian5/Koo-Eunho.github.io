@@ -1,37 +1,235 @@
-# 연구 분야 카드. 추가/수정만 해도 페이지에 반영됩니다.
+# =============================================================================
+#  Research areas (그룹) → Projects (세부 프로젝트, 논문 또는 진행 중 연구)
+# =============================================================================
+#  각 프로젝트는 figure 이미지 한 장씩 보여주는 카드 형태로 렌더링됩니다.
+#  image: 비워두면 그룹 색상의 placeholder 카드가 표시됨.
+#  실제 figure 추가 시: assets/images/research/{filename}.png 에 업로드 후
+#  image 필드에 "/assets/images/research/{filename}.png" 입력.
+# =============================================================================
 
-- icon: "DL"
-  title_ko: "딥러닝 기초"
-  title_en: "Foundations of Deep Learning"
-  desc_ko: "딥러닝 모델의 학습 동역학, 일반화, 최적화 등 이론적 토대를 연구합니다."
-  desc_en: "We study the theoretical foundations of deep learning — training dynamics, generalization, and optimization."
+# ---------------------------------------------------------------------------
+- id: gnn
+  title_ko: "그래프 신경망 (GNN)"
+  title_en: "Graph Neural Networks"
+  intro_ko: >-
+    그래프 구조 데이터에서 노드 간 직접적 연결을 넘어 삼각형·사면체 같은
+    고차 상호작용(higher-order interactions)까지 학습하는 새로운 GNN 프레임워크를
+    연구합니다. 학생 연구자들과 함께 다양한 응용 영역으로 확장 중입니다.
+  intro_en: >-
+    We develop graph neural network frameworks that capture high-order
+    interactions (e.g., triangles, tetrahedra) beyond pairwise edges. We also
+    extend these methods to diverse application domains with student researchers.
+  color_from: "#60a5fa"
+  color_to: "#7c3aed"
+  acronym: "GNN"
+  projects:
+    - title_ko: "심플리셜 상호작용 기반 노드 분류"
+      title_en: "Simplicial Interactions for Node Classification"
+      desc_ko: >-
+        그래프의 노드 분류 문제에서 단순한 엣지 연결 외에도 삼각형, 사면체 등
+        고차 단체 복합체(simplicial complex) 구조를 학습에 통합하는 새로운 GNN
+        프레임워크를 제안합니다. 이를 통해 기존 메시지 전달(MPNN) GNN의 표현력
+        한계를 이론적·실험적으로 극복합니다.
+      desc_en: >-
+        A novel GNN framework that leverages simplicial complex structures
+        (triangles, tetrahedra) for node classification, overcoming the
+        expressiveness limits of standard message-passing GNNs both theoretically
+        and empirically.
+      image: ""
+      paper: "Node classification in networks via simplicial interactions"
+      venue: "IEEE Transactions on Neural Networks and Learning Systems, 2025"
 
-- icon: "CV"
-  title_ko: "컴퓨터 비전"
-  title_en: "Computer Vision"
-  desc_ko: "이미지/영상 인식, 생성, 분할 등의 비전 문제에 딥러닝을 적용합니다."
-  desc_en: "Image and video understanding, generation, and segmentation with modern deep architectures."
+    - title_ko: "최대 클리크 증강을 통한 노드 분류"
+      title_en: "Augmented Maximal Clique Selection"
+      desc_ko: >-
+        심플리셜 상호작용 모델을 확장하여, 그래프 내 최대 클리크(maximal clique)를
+        선별·증강하는 알고리즘을 통해 노드 표현 학습의 효율성과 정확도를 동시에
+        향상시키는 방법을 제안합니다.
+      desc_en: >-
+        Extension of simplicial interaction models with an algorithm that
+        selectively augments maximal cliques in the graph, simultaneously
+        improving the efficiency and accuracy of node representation learning.
+      image: ""
+      paper: "Node classification via simplicial interaction with augmented maximal clique selection"
+      venue: "Neurocomputing, 2025"
 
-- icon: "NLP"
-  title_ko: "자연어처리"
-  title_en: "Natural Language Processing"
-  desc_ko: "대형 언어 모델, 텍스트 분류, 의미 표현 학습 등을 다룹니다."
-  desc_en: "Large language models, text classification, and semantic representation learning."
+    - title_ko: "지구 과학 데이터를 위한 GNN"
+      title_en: "GNN for Earth Science Applications"
+      desc_ko: >-
+        대기·기상·해양 데이터처럼 공간적·시간적으로 복잡한 패턴을 가진 환경
+        데이터에 GNN을 적용하여, 강수 추정·이상 기후 탐지 등 지구 과학 문제의
+        해결 정확도를 향상시키는 연구를 진행 중입니다.
+      desc_en: >-
+        Applying GNNs to environmental data with complex spatial and temporal
+        patterns — such as atmospheric, weather, and ocean data — to improve
+        the accuracy of earth science problems like precipitation estimation
+        and extreme weather detection.
+      image: ""
+      paper: "Ongoing research with Hunsung Wi (MS)"
+      venue: "—"
 
-- icon: "DS"
-  title_ko: "데이터 사이언스 응용"
-  title_en: "Data Science Applications"
-  desc_ko: "산업체 협력 과제를 통해 실제 데이터 문제에 딥러닝을 적용합니다."
-  desc_en: "Applying deep learning to real-world data problems through industry collaborations."
+# ---------------------------------------------------------------------------
+- id: financial-ai
+  title_ko: "금융 AI"
+  title_en: "Financial AI"
+  intro_ko: >-
+    딥러닝과 통계적 모델링을 결합하여 주식 변동성 예측, 암호화폐 가격 예측,
+    옵션 가격 결정 등 금융 시계열 문제에 새로운 접근법을 제시합니다.
+    GARCH·LSTM·분포 변환 등 전통 계량경제학과 신경망의 시너지를 추구합니다.
+  intro_en: >-
+    We combine deep learning with statistical modeling to tackle financial
+    time-series problems — stock volatility forecasting, cryptocurrency price
+    prediction, and option pricing. Our work seeks synergies between classical
+    econometrics (GARCH, LSTM) and modern neural networks.
+  color_from: "#22c55e"
+  color_to: "#0ea5e9"
+  acronym: "FIN"
+  projects:
+    - title_ko: "LSTM 분해 기반 비트코인 가격 예측"
+      title_en: "Bitcoin Price Prediction via Centralized LSTM Decomposition"
+      desc_ko: >-
+        암호화폐 가격 시계열의 비정상성(non-stationarity)을 다루기 위해, 시계열을
+        다중 구성요소로 분해한 뒤 각각을 LSTM 네트워크로 학습하고 통합 예측치를
+        생성하는 중앙화된 분해 접근법을 제안합니다.
+      desc_en: >-
+        A centralized decomposition approach that addresses the non-stationarity
+        of cryptocurrency time-series by decomposing the signal into multiple
+        components, learning each with LSTM networks, and producing an integrated
+        prediction.
+      image: ""
+      paper: "Centralized decomposition approach in LSTM for Bitcoin price prediction"
+      venue: "Expert Systems with Applications, 2024"
 
-- icon: "GEN"
-  title_ko: "생성 모델"
-  title_en: "Generative Models"
-  desc_ko: "Diffusion, GAN, VAE 등 생성 모델의 구조 및 응용을 연구합니다."
-  desc_en: "Research on diffusion models, GANs, VAEs, and their applications."
+    - title_ko: "GARCH–LSTM 하이브리드 변동성 모델"
+      title_en: "Hybrid GARCH–LSTM for Stock Volatility"
+      desc_ko: >-
+        고전적 계량경제 모델인 GARCH와 LSTM 신경망을 결합하고, 분포 변형 전략을
+        도입하여 주식 시장의 변동성을 더 정확하게 예측합니다. 두 패러다임의
+        장점을 모두 활용하는 하이브리드 프레임워크입니다.
+      desc_en: >-
+        A hybrid framework that combines the classical GARCH model with LSTM
+        networks and a distribution manipulation strategy to predict stock
+        market volatility more accurately, leveraging the strengths of both
+        paradigms.
+      image: ""
+      paper: "A hybrid prediction model integrating GARCH models with LSTM networks"
+      venue: "IEEE Access, 2022 · Computational Economics, 2023"
 
-- icon: "TS"
-  title_ko: "시계열 / 이상 탐지"
-  title_en: "Time-Series & Anomaly Detection"
-  desc_ko: "시계열 데이터 모델링과 이상 탐지에 관한 딥러닝 기법을 탐구합니다."
-  desc_en: "Deep learning methods for time-series modeling and anomaly detection."
+    - title_ko: "분포 변형 전략을 통한 가격 예측"
+      title_en: "Distribution Manipulation Strategy"
+      desc_ko: >-
+        가격 시계열의 분포가 가지는 비대칭성·꼬리 두께(heavy tail) 특성에 주목하여,
+        학습 단계에서 데이터 분포를 능동적으로 변형(stretch)함으로써 예측 정확도를
+        끌어올리는 새로운 전략을 제안했습니다.
+      desc_en: >-
+        Focusing on the asymmetry and heavy-tail properties of price time-series
+        distributions, we propose a strategy that actively manipulates (stretches)
+        the data distribution during training to boost prediction accuracy.
+      image: ""
+      paper: "Prediction of Bitcoin price based on manipulating distribution strategy"
+      venue: "Applied Soft Computing, 2021"
+
+    - title_ko: "은행 시스템 AI"
+      title_en: "AI for Banking Systems"
+      desc_ko: >-
+        딥러닝을 활용한 은행 거래 분석 및 위험 모델링 등 금융 시스템 전반에 대한
+        AI 응용 연구를 진행 중입니다.
+      desc_en: >-
+        Ongoing research on AI applications across banking systems — including
+        transaction analysis and risk modeling — using deep learning.
+      image: ""
+      paper: "Ongoing research with Jihong Park (PhD)"
+      venue: "—"
+
+# ---------------------------------------------------------------------------
+- id: pinn
+  title_ko: "물리 정보 신경망 (PINN)"
+  title_en: "Physics-Informed Neural Networks"
+  intro_ko: >-
+    물리 법칙(미분 방정식 등)을 신경망 학습에 직접 통합하여, 데이터만으로
+    학습하기 어려운 복잡한 물리 시스템을 해석 가능하고 신뢰할 수 있는 방식으로
+    모델링하는 연구를 진행합니다.
+  intro_en: >-
+    We integrate physical laws (e.g., differential equations) directly into
+    neural network training to model complex physical systems in an
+    interpretable and reliable way — particularly when pure data-driven
+    learning is insufficient.
+  color_from: "#f59e0b"
+  color_to: "#ef4444"
+  acronym: "PINN"
+  projects:
+    - title_ko: "미분 방정식 시스템을 위한 PINN"
+      title_en: "PINN for Differential Equation Systems"
+      desc_ko: >-
+        물리 정보 신경망(PINN)의 학습 동역학과 일반화 성능을 분석하고, 다양한
+        미분 방정식 시스템(편미분 방정식, 상미분 방정식)에 적용하는 알고리즘을
+        설계합니다. 데이터와 도메인 지식을 결합한 하이브리드 모델링이 핵심입니다.
+      desc_en: >-
+        We analyze the training dynamics and generalization of Physics-Informed
+        Neural Networks (PINNs), and design algorithms for diverse differential
+        equation systems (PDEs, ODEs). The core idea is hybrid modeling that
+        combines data with domain knowledge.
+      image: ""
+      paper: "Ongoing research with Ingyun Kang (Bachelor's & Master's)"
+      venue: "—"
+
+# ---------------------------------------------------------------------------
+- id: ai-applications
+  title_ko: "AI 응용 (Methods & Applications)"
+  title_en: "AI Methods & Applications"
+  intro_ko: >-
+    딥러닝 기법을 다양한 실세계 문제에 적용하는 연구를 폭넓게 진행합니다.
+    확률 분포 학습, 위성 데이터 기반 강수 추정, 추천 시스템 등 응용 영역과
+    방법론 양쪽을 모두 다룹니다.
+  intro_en: >-
+    We apply deep learning methods to diverse real-world problems, working on
+    both the methodological side and applied domains — including probability
+    distribution learning, satellite-based precipitation retrieval, and
+    recommender systems.
+  color_from: "#a855f7"
+  color_to: "#ec4899"
+  acronym: "APP"
+  projects:
+    - title_ko: "회귀 모델의 확률 분포 변형"
+      title_en: "Stretching Probability Distributions in Regression"
+      desc_ko: >-
+        신경망 기반 회귀 모델이 일반적으로 정규분포 가정에 갇혀 있는 한계를
+        극복하기 위해, 학습 단계에서 출력 분포를 능동적으로 변형(stretching)하는
+        경험적 전략을 제시합니다. 꼬리 영역의 예측 정확도 개선에 효과적입니다.
+      desc_en: >-
+        To overcome the typical Gaussian-assumption limitation of neural-network
+        regression models, we propose an empirical strategy that actively
+        stretches the output distribution during training — particularly
+        effective for improving prediction accuracy in the tails.
+      image: ""
+      paper: "Empirical strategy for stretching probability distribution in neural-network-based regression"
+      venue: "Neural Networks, 2021"
+
+    - title_ko: "다중 작업 학습 기반 위성 강수 추정"
+      title_en: "Multi-task Learning for Satellite Precipitation Retrieval"
+      desc_ko: >-
+        수동 마이크로파 위성 관측에서 강수량 추정과 강수/무강수 분류를 동시에
+        수행하는 다중 작업 학습(multi-task learning) 모델을 제안합니다. 두 작업
+        간 정보 공유를 통해 양쪽 모두의 정확도를 향상시킵니다.
+      desc_en: >-
+        A multi-task learning model that simultaneously performs precipitation
+        amount retrieval and rain/no-rain classification from passive microwave
+        satellite observations, leveraging shared representation between the
+        two tasks for improved accuracy on both.
+      image: ""
+      paper: "Multi-task learning for simultaneous retrievals of passive microwave precipitation estimates and rain/no-rain classification"
+      venue: "Geophysical Research Letters, 2023"
+
+    - title_ko: "딥러닝 기반 추천 시스템"
+      title_en: "Deep Learning for Recommender Systems"
+      desc_ko: >-
+        사용자–아이템 상호작용 데이터에서 효과적으로 선호를 학습하기 위한
+        딥러닝 기반 추천 시스템 연구를 진행 중입니다. 모델 구조와 학습 알고리즘
+        모두를 탐구합니다.
+      desc_en: >-
+        Ongoing research on deep learning-based recommender systems that
+        effectively learn user preferences from user-item interaction data —
+        exploring both model architectures and training algorithms.
+      image: ""
+      paper: "Ongoing research with Hyungjun Lee (MS)"
+      venue: "—"
