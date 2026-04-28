@@ -138,41 +138,42 @@ permalink: /
 
     <h3 style="margin-top:2.5rem;" data-i18n="home.research_title">주요 연구 키워드</h3>
     <div class="venn-container">
-      <svg class="venn-diagram" viewBox="0 0 800 620" xmlns="http://www.w3.org/2000/svg" aria-label="Research areas Venn diagram" role="img">
-        <!-- 6개 원 — 육각형 배치, 가운데 모두 겹침 -->
-        <g style="mix-blend-mode: multiply;">
-          <!-- Top: Deep Learning -->
-          <circle cx="400" cy="220" r="135" fill="rgba(96, 165, 250, 0.32)" stroke="rgba(29, 78, 216, 0.55)" stroke-width="2"/>
-          <!-- Top-right: Graph Neural Networks -->
-          <circle cx="490" cy="270" r="135" fill="rgba(168, 85, 247, 0.32)" stroke="rgba(126, 34, 206, 0.55)" stroke-width="2"/>
-          <!-- Bottom-right: Physics-Informed Neural Networks -->
-          <circle cx="490" cy="370" r="135" fill="rgba(34, 197, 94, 0.32)" stroke="rgba(22, 163, 74, 0.55)" stroke-width="2"/>
-          <!-- Bottom: AI Applications -->
-          <circle cx="400" cy="420" r="135" fill="rgba(245, 158, 11, 0.32)" stroke="rgba(217, 119, 6, 0.55)" stroke-width="2"/>
-          <!-- Bottom-left: Financial AI -->
-          <circle cx="310" cy="370" r="135" fill="rgba(239, 68, 68, 0.32)" stroke="rgba(220, 38, 38, 0.55)" stroke-width="2"/>
-          <!-- Top-left: Data Science -->
-          <circle cx="310" cy="270" r="135" fill="rgba(14, 165, 233, 0.32)" stroke="rgba(2, 132, 199, 0.55)" stroke-width="2"/>
-        </g>
+      <svg class="venn-diagram" viewBox="0 0 800 620" xmlns="http://www.w3.org/2000/svg" aria-label="Research areas diagram" role="img">
+        <!-- 6개 원 — 육각형 꽃잎 배치, 인접한 원만 살짝 겹침 (가운데에서 만남) -->
+        <!-- Top: Deep Learning -->
+        <circle cx="400" cy="190" r="100" fill="rgba(96, 165, 250, 0.20)" stroke="rgba(29, 78, 216, 0.75)" stroke-width="2"/>
+        <!-- Top-right: Graph Neural Networks -->
+        <circle cx="504" cy="250" r="100" fill="rgba(168, 85, 247, 0.20)" stroke="rgba(126, 34, 206, 0.75)" stroke-width="2"/>
+        <!-- Bottom-right: Physics-Informed Neural Networks -->
+        <circle cx="504" cy="370" r="100" fill="rgba(34, 197, 94, 0.20)" stroke="rgba(22, 163, 74, 0.75)" stroke-width="2"/>
+        <!-- Bottom: AI Applications -->
+        <circle cx="400" cy="430" r="100" fill="rgba(245, 158, 11, 0.20)" stroke="rgba(217, 119, 6, 0.75)" stroke-width="2"/>
+        <!-- Bottom-left: Financial AI -->
+        <circle cx="296" cy="370" r="100" fill="rgba(239, 68, 68, 0.20)" stroke="rgba(220, 38, 38, 0.75)" stroke-width="2"/>
+        <!-- Top-left: Data Science -->
+        <circle cx="296" cy="250" r="100" fill="rgba(14, 165, 233, 0.20)" stroke="rgba(2, 132, 199, 0.75)" stroke-width="2"/>
 
-        <!-- Labels (각 원 바깥쪽에 배치) -->
-        <text class="venn-label" x="400" y="65" text-anchor="middle">Deep Learning</text>
+        <!-- 가운데 작은 라벨 -->
+        <text class="venn-center" x="400" y="316" text-anchor="middle">Koo Lab</text>
 
-        <text class="venn-label" x="690" y="252" text-anchor="middle">
-          <tspan x="690">Graph Neural</tspan>
-          <tspan x="690" dy="22">Networks</tspan>
+        <!-- Labels (각 원 바깥쪽 충분히 떨어뜨림) -->
+        <text class="venn-label" x="400" y="55" text-anchor="middle">Deep Learning</text>
+
+        <text class="venn-label" x="660" y="225" text-anchor="middle">
+          <tspan x="660">Graph Neural</tspan>
+          <tspan x="660" dy="22">Networks</tspan>
         </text>
 
-        <text class="venn-label" x="690" y="372" text-anchor="middle">
-          <tspan x="690">Physics-Informed</tspan>
-          <tspan x="690" dy="22">Neural Networks</tspan>
+        <text class="venn-label" x="660" y="385" text-anchor="middle">
+          <tspan x="660">Physics-Informed</tspan>
+          <tspan x="660" dy="22">Neural Networks</tspan>
         </text>
 
-        <text class="venn-label" x="400" y="595" text-anchor="middle">AI Applications</text>
+        <text class="venn-label" x="400" y="580" text-anchor="middle">AI Applications</text>
 
-        <text class="venn-label" x="110" y="380" text-anchor="middle">Financial AI</text>
+        <text class="venn-label" x="140" y="395" text-anchor="middle">Financial AI</text>
 
-        <text class="venn-label" x="110" y="265" text-anchor="middle">Data Science</text>
+        <text class="venn-label" x="140" y="245" text-anchor="middle">Data Science</text>
       </svg>
     </div>
   </div>
