@@ -53,7 +53,7 @@ const I18N = {
   },
 
   en: {
-    "brand.name": "Gu Lab",
+    "brand.name": "Koo Lab",
     "brand.affil": "Big Data Convergence, JNU",
     "nav.home": "Home",
     "nav.research": "Research",
@@ -66,7 +66,7 @@ const I18N = {
     "hero.cta_join": "Join the Lab",
 
     "home.about_title": "About the Lab",
-    "home.about_body": "Gu Lab investigates fundamental problems in artificial intelligence and data science, with a particular emphasis on deep learning. Our work spans model architectures, learning algorithms, and real-world applications, often in collaboration with industry partners.",
+    "home.about_body": "Koo Lab investigates fundamental problems in artificial intelligence and data science, with a particular emphasis on deep learning. Our work spans model architectures, learning algorithms, and real-world applications, often in collaboration with industry partners.",
     "home.research_title": "Research Keywords",
     "home.news_title": "News",
     "home.news_more": "See all →",
@@ -81,7 +81,7 @@ const I18N = {
     "members.professor": "Professor",
     "members.phd": "PhD Students",
     "members.ms": "MS Students",
-    "members.undergrad": "Bachelor's and Master's degrees",
+    "members.undergrad": "Bachelor's & Master's",
     "members.alumni": "Alumni",
 
     "pub.title": "Publications",

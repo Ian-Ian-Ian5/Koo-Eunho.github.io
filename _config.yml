@@ -9,7 +9,7 @@ short_title: "Koo Lab"
 description: >-
   전남대학교 빅데이터융합학과 구은호 교수 연구실 — AI & Data Science (Deep Learning)
 url: "https://ian-ian-ian5.github.io"
-baseurl: "/Koo-Eunho.github.io"          # 프로젝트 페이지 형태이므로 레포명 prefix 필요
+baseurl: "/Koo-Eunho.github.io"
 
 # ----------------------------- Lab metadata ----------------------------------
 lab:
@@ -17,9 +17,9 @@ lab:
   name_en: "Koo Lab"
   affiliation_ko: "전남대학교 빅데이터융합학과"
   affiliation_en: "Department of Big Data Convergence, Chonnam National University"
-  building_ko: "전남대학교 광주캠퍼스 자연과학대학 1호관 213호"          # TODO: 정확한 건물/호수 입력
+  building_ko: "전남대학교 광주캠퍼스 자연과학대학 1호관 213호"
   building_en: "Gwangju Campus, Chonnam National University"
-  email: "kooeunho@jnu.ac.kr"               # TODO: 실제 이메일 확인 후 교체
+  email: "kooeunho@jnu.ac.kr"
   research_keywords:
     - "Deep Learning"
     - "GNN"
@@ -33,8 +33,8 @@ professor:
   title_ko: "교수"
   title_en: "Professor"
   email: "kooeunho@jnu.ac.kr"
-  office_ko: "전남대학교 빅데이터융합학과"   # TODO: 정확한 사무실 입력
-  office_en: "Dept. of Big Data Convergence, JNU"
+  office_ko: "전남대학교 광주캠퍼스 자연과학대학 1호관 213호"
+  office_en: "Bldg. 1, Rm. 213, College of Natural Sciences, JNU"
   photo: "/assets/images/professor.jpg"
   cv: "/assets/files/cv.pdf"
   scholar: "https://scholar.google.com/citations?user=13BRvZAAAAAJ&hl=ko"
@@ -53,7 +53,6 @@ highlighter: rouge
 permalink: /:title/
 timezone: Asia/Seoul
 
-# Jekyll plugins (GitHub Pages whitelist)
 plugins:
   - jekyll-seo-tag
   - jekyll-sitemap
@@ -79,7 +78,6 @@ defaults:
     values:
       layout: "member"
 
-# Exclude from build
 exclude:
   - Gemfile
   - Gemfile.lock
