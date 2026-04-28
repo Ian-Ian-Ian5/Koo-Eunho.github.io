@@ -31,9 +31,9 @@ permalink: /members/
         </div>
         <p data-ko="{{ site.professor.bio_ko }}" data-en="{{ site.professor.bio_en }}">{{ site.professor.bio_ko }}</p>
         <div class="hero-cta" style="margin-top:0.6rem;">
-          {% if site.professor.cv %}<a class="btn btn-secondary" href="{{ site.professor.cv | relative_url }}">CV</a>{% endif %}
-          {% if site.professor.scholar %}<a class="btn btn-secondary" href="{{ site.professor.scholar }}" target="_blank" rel="noopener">Google Scholar</a>{% endif %}
-          {% if site.professor.github %}<a class="btn btn-secondary" href="{{ site.professor.github }}" target="_blank" rel="noopener">GitHub</a>{% endif %}
+          {% if site.professor.cv and site.professor.cv != "" %}<a class="btn btn-secondary" href="{{ site.professor.cv | relative_url }}">CV</a>{% endif %}
+          {% if site.professor.scholar and site.professor.scholar != "" %}<a class="btn btn-secondary" href="{{ site.professor.scholar }}" target="_blank" rel="noopener">Google Scholar</a>{% endif %}
+          {% if site.professor.github and site.professor.github != "" %}<a class="btn btn-secondary" href="{{ site.professor.github }}" target="_blank" rel="noopener">GitHub</a>{% endif %}
         </div>
       </div>
     </div>
