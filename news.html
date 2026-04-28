@@ -14,7 +14,7 @@ permalink: /news/
       {% for item in site.data.news %}
         <li>
           <span class="date">{{ item.date | date: "%b %d, %Y" }}</span>
-          <p class="news-text" data-ko="{{ item.ko }}" data-en="{{ item.en }}">{{ item.ko | markdownify }}</p>
+          <p class="news-text" data-ko="{{ item.ko }}" data-en="{{ item.en }}">{{ item.ko }}</p>
         </li>
       {% endfor %}
     </ul>
