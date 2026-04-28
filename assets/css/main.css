@@ -166,6 +166,54 @@ p { margin: 0 0 1rem; color: var(--color-text-soft); }
     linear-gradient(180deg, #fff 0%, var(--color-surface) 100%);
   border-bottom: 1px solid var(--color-border);
 }
+/* ----------------------------- Vanta NET Hero (animated network) -------- */
+.hero.hero-vanta {
+  position: relative;
+  background: #0a1128;
+  color: #fff;
+  min-height: 540px;
+  padding: 7rem 0 6rem;
+  border-bottom: none;
+  overflow: hidden;
+}
+.hero.hero-vanta .hero-inner {
+  position: relative;
+  z-index: 2;
+}
+.hero.hero-vanta h1 {
+  color: #fff;
+  text-shadow: 0 2px 24px rgba(0, 0, 0, 0.45);
+}
+.hero.hero-vanta .subtitle {
+  color: rgba(255, 255, 255, 0.85);
+  text-shadow: 0 1px 12px rgba(0, 0, 0, 0.4);
+}
+.hero.hero-vanta .tagline {
+  background: rgba(96, 165, 250, 0.18);
+  color: #93c5fd;
+  border: 1px solid rgba(96, 165, 250, 0.35);
+  backdrop-filter: blur(6px);
+}
+.hero.hero-vanta .btn-primary {
+  background: var(--color-accent);
+  color: #fff;
+  box-shadow: 0 4px 20px rgba(29, 78, 216, 0.45);
+}
+.hero.hero-vanta .btn-primary:hover {
+  background: #2563eb;
+  box-shadow: 0 6px 24px rgba(29, 78, 216, 0.6);
+}
+.hero.hero-vanta .btn-secondary {
+  background: rgba(255, 255, 255, 0.08);
+  color: #fff;
+  border-color: rgba(255, 255, 255, 0.28);
+  backdrop-filter: blur(8px);
+}
+.hero.hero-vanta .btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.18);
+  border-color: rgba(255, 255, 255, 0.55);
+  color: #fff;
+}
 .hero-inner { max-width: 760px; }
 .hero h1 {
   font-size: 2.7rem;
