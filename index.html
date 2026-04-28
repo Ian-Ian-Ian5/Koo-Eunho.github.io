@@ -129,16 +129,51 @@ permalink: /
     <p class="section-title">ABOUT</p>
     <h2 class="section-heading" data-i18n="home.about_title">연구실 소개</h2>
     <p data-i18n="home.about_body">
-      구은호 교수 연구실은 딥러닝을 중심으로 인공지능과 데이터 사이언스 분야의 핵심 문제를 탐구합니다.
-      우리는 모델 구조 설계, 학습 알고리즘, 그리고 실세계 응용까지 폭넓은 주제를 다루며,
-      산업계와의 협력 연구도 활발히 진행하고 있습니다.
+      Koo Lab은 전남대학교 빅데이터융합학과 소속의 인공지능 및 데이터 사이언스 연구실입니다.
+      우리는 딥러닝, 그래프 신경망(GNN), 물리 정보 신경망(PINN), 그리고 복잡한 실세계 문제를 위한
+      데이터 기반 모델링을 중심으로 연구합니다. 수학적 기초, 알고리즘 설계, 실험적 검증을 결합하여
+      신뢰할 수 있고 해석 가능하며 과학·공학·산업 전반에 응용 가능한 지능형 시스템을 개발하는 것을
+      목표로 합니다.
     </p>
 
-    <h3 style="margin-top:2rem;" data-i18n="home.research_title">주요 연구 키워드</h3>
-    <div class="tags">
-      {% for kw in site.lab.research_keywords %}
-        <span class="tag accent">{{ kw }}</span>
-      {% endfor %}
+    <h3 style="margin-top:2.5rem;" data-i18n="home.research_title">주요 연구 키워드</h3>
+    <div class="venn-container">
+      <svg class="venn-diagram" viewBox="0 0 800 620" xmlns="http://www.w3.org/2000/svg" aria-label="Research areas Venn diagram" role="img">
+        <!-- 6개 원 — 육각형 배치, 가운데 모두 겹침 -->
+        <g style="mix-blend-mode: multiply;">
+          <!-- Top: Deep Learning -->
+          <circle cx="400" cy="220" r="135" fill="rgba(96, 165, 250, 0.32)" stroke="rgba(29, 78, 216, 0.55)" stroke-width="2"/>
+          <!-- Top-right: Graph Neural Networks -->
+          <circle cx="490" cy="270" r="135" fill="rgba(168, 85, 247, 0.32)" stroke="rgba(126, 34, 206, 0.55)" stroke-width="2"/>
+          <!-- Bottom-right: Physics-Informed Neural Networks -->
+          <circle cx="490" cy="370" r="135" fill="rgba(34, 197, 94, 0.32)" stroke="rgba(22, 163, 74, 0.55)" stroke-width="2"/>
+          <!-- Bottom: AI Applications -->
+          <circle cx="400" cy="420" r="135" fill="rgba(245, 158, 11, 0.32)" stroke="rgba(217, 119, 6, 0.55)" stroke-width="2"/>
+          <!-- Bottom-left: Financial AI -->
+          <circle cx="310" cy="370" r="135" fill="rgba(239, 68, 68, 0.32)" stroke="rgba(220, 38, 38, 0.55)" stroke-width="2"/>
+          <!-- Top-left: Data Science -->
+          <circle cx="310" cy="270" r="135" fill="rgba(14, 165, 233, 0.32)" stroke="rgba(2, 132, 199, 0.55)" stroke-width="2"/>
+        </g>
+
+        <!-- Labels (각 원 바깥쪽에 배치) -->
+        <text class="venn-label" x="400" y="65" text-anchor="middle">Deep Learning</text>
+
+        <text class="venn-label" x="690" y="252" text-anchor="middle">
+          <tspan x="690">Graph Neural</tspan>
+          <tspan x="690" dy="22">Networks</tspan>
+        </text>
+
+        <text class="venn-label" x="690" y="372" text-anchor="middle">
+          <tspan x="690">Physics-Informed</tspan>
+          <tspan x="690" dy="22">Neural Networks</tspan>
+        </text>
+
+        <text class="venn-label" x="400" y="595" text-anchor="middle">AI Applications</text>
+
+        <text class="venn-label" x="110" y="380" text-anchor="middle">Financial AI</text>
+
+        <text class="venn-label" x="110" y="265" text-anchor="middle">Data Science</text>
+      </svg>
     </div>
   </div>
 </section>

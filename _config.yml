@@ -36,9 +36,9 @@ professor:
   office_ko: "전남대학교 광주캠퍼스 자연과학대학 1호관 213호"
   office_en: "Bldg. 1, Rm. 213, College of Natural Sciences, JNU"
   photo: "/assets/images/professor.jpg"
-  cv: "/assets/files/cv.pdf"
+  cv: ""
   scholar: "https://scholar.google.com/citations?user=13BRvZAAAAAJ&hl=ko"
-  github: "https://github.com/"
+  github: ""
   bio_ko: >-
     구은호 교수는 전남대학교 빅데이터융합학과 교수로, 딥러닝을 중심으로 한
     인공지능 및 데이터 사이언스 분야의 연구를 수행하고 있습니다.

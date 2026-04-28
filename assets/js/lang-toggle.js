@@ -19,7 +19,7 @@ const I18N = {
     "hero.cta_join": "랩실 합류하기",
 
     "home.about_title": "연구실 소개",
-    "home.about_body": "구은호 교수 연구실은 딥러닝을 중심으로 인공지능과 데이터 사이언스 분야의 핵심 문제를 탐구합니다. 우리는 모델 구조 설계, 학습 알고리즘, 그리고 실세계 응용까지 폭넓은 주제를 다루며, 산업계와의 협력 연구도 활발히 진행하고 있습니다.",
+    "home.about_body": "Koo Lab은 전남대학교 빅데이터융합학과 소속의 인공지능 및 데이터 사이언스 연구실입니다. 우리는 딥러닝, 그래프 신경망(GNN), 물리 정보 신경망(PINN), 그리고 복잡한 실세계 문제를 위한 데이터 기반 모델링을 중심으로 연구합니다. 수학적 기초, 알고리즘 설계, 실험적 검증을 결합하여 신뢰할 수 있고 해석 가능하며 과학·공학·산업 전반에 응용 가능한 지능형 시스템을 개발하는 것을 목표로 합니다.",
     "home.research_title": "주요 연구 키워드",
     "home.news_title": "News",
     "home.news_more": "더 보기 →",
@@ -66,7 +66,7 @@ const I18N = {
     "hero.cta_join": "Join the Lab",
 
     "home.about_title": "About the Lab",
-    "home.about_body": "Koo Lab investigates fundamental problems in artificial intelligence and data science, with a particular emphasis on deep learning. Our work spans model architectures, learning algorithms, and real-world applications, often in collaboration with industry partners.",
+    "home.about_body": "Koo Lab is an artificial intelligence and data science research group at the Department of Big Data Convergence, Chonnam National University. Our research focuses on deep learning, graph neural networks, physics-informed neural networks, and data-driven modeling for complex real-world problems. By combining mathematical foundations, algorithmic design, and empirical validation, we aim to develop intelligent systems that are reliable, interpretable, and applicable across science, engineering, and industry.",
     "home.research_title": "Research Keywords",
     "home.news_title": "News",
     "home.news_more": "See all →",

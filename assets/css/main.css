@@ -167,6 +167,32 @@ p { margin: 0 0 1rem; color: var(--color-text-soft); }
   border-bottom: 1px solid var(--color-border);
 }
 
+/* ----------------------------- Venn diagram (research areas) -----------*/
+.venn-container {
+  margin: 1.5rem 0 0;
+  display: flex;
+  justify-content: center;
+}
+.venn-diagram {
+  width: 100%;
+  max-width: 720px;
+  height: auto;
+  display: block;
+}
+.venn-label {
+  font-family: var(--font-sans);
+  font-size: 17px;
+  font-weight: 600;
+  fill: var(--color-text);
+}
+
+@media (max-width: 720px) {
+  .venn-label { font-size: 14px; }
+}
+@media (max-width: 480px) {
+  .venn-label { font-size: 12px; }
+}
+
 /* ----------------------------- Vanta NET Hero (animated network) -------- */
 .hero.hero-vanta {
   position: relative;
