@@ -591,6 +591,34 @@ a.member-card:hover {
 .prof-meta { display: flex; gap: 1.5rem; flex-wrap: wrap; font-size: 0.9rem; color: var(--color-text-soft); margin-bottom: 1rem; }
 .prof-meta .label { color: var(--color-text-mute); margin-right: 0.3rem; font-weight: 500; }
 
+/* ----------------------------- Professor sub-sections (Education / Exp) -- */
+.prof-section {
+  margin: 2rem 0 0;
+  padding-left: 1rem;
+  border-left: 4px solid var(--color-accent);
+}
+.prof-section-title {
+  font-size: 1.2rem;
+  margin-bottom: 0.7rem;
+  color: var(--color-text);
+}
+.prof-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.prof-list li {
+  margin-bottom: 0.55rem;
+  font-size: 0.95rem;
+  color: var(--color-text-soft);
+  line-height: 1.55;
+}
+.prof-list li strong {
+  color: var(--color-text);
+  font-weight: 600;
+  margin-right: 0.25rem;
+}
+
 /* ----------------------------- Publications --------------------------------*/
 .pub-year {
   font-family: var(--font-mono);

@@ -39,13 +39,45 @@ professor:
   cv: ""
   scholar: "https://scholar.google.com/citations?user=13BRvZAAAAAJ&hl=ko"
   github: ""
-  bio_ko: >-
-    구은호 교수는 전남대학교 빅데이터융합학과 교수로, 딥러닝을 중심으로 한
-    인공지능 및 데이터 사이언스 분야의 연구를 수행하고 있습니다.
-  bio_en: >-
-    Eun-Ho Koo is a Professor in the Department of Big Data Convergence at
-    Chonnam National University. His research focuses on Deep Learning,
-    Artificial Intelligence, and Data Science.
+  # ----- Education (위에서 아래로 시간 역순) -----
+  education:
+    - degree: "Ph.D."
+      year: 2017
+      field: "Mathematics"
+      school: "Yonsei University"
+      advisor: "Choe, Hi Jun"
+    - degree: "M.S."
+      year: 2007
+      field: "Mathematics"
+      school: "Yonsei University"
+      advisor: "Choe, Hi Jun"
+    - degree: "B.S."
+      year: 2004
+      field: "Mathematics"
+      school: "Yonsei University"
+
+  # ----- Experiences (시간 역순, 가장 최근이 위) -----
+  experiences:
+    - period: "Mar 2024 – Present"
+      role: "Associate Professor"
+      org: "Department of Big Data Convergence, Chonnam National University"
+      country: "South Korea"
+    - period: "Mar 2022 – Feb 2024"
+      role: "AI Research Fellow"
+      org: "Center for AI and Natural Sciences, Korea Institute for Advanced Study (KIAS)"
+      country: "South Korea"
+    - period: "Apr 2019 – Feb 2022"
+      role: "Research Assistant Professor"
+      org: "Center for Mathematical Analysis & Computation, Yonsei University"
+      country: "South Korea"
+    - period: "Sep 2017 – Mar 2019"
+      role: "Project Researcher"
+      org: "Institute of Industrial Science, The University of Tokyo"
+      country: "Japan"
+    - period: "Nov 2017 – Mar 2019"
+      role: "AI / Data Science Researcher"
+      org: "LTS, Inc."
+      country: "Japan"
 
 # ----------------------------- Build settings --------------------------------
 markdown: kramdown

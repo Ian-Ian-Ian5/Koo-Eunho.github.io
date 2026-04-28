@@ -29,7 +29,6 @@ permalink: /members/
           <span><span class="label">Email</span><a href="mailto:{{ site.professor.email }}">{{ site.professor.email }}</a></span>
           <span><span class="label">Office</span><span data-ko="{{ site.professor.office_ko }}" data-en="{{ site.professor.office_en }}">{{ site.professor.office_ko }}</span></span>
         </div>
-        <p data-ko="{{ site.professor.bio_ko }}" data-en="{{ site.professor.bio_en }}">{{ site.professor.bio_ko }}</p>
         <div class="hero-cta" style="margin-top:0.6rem;">
           {% if site.professor.cv and site.professor.cv != "" %}<a class="btn btn-secondary" href="{{ site.professor.cv | relative_url }}">CV</a>{% endif %}
           {% if site.professor.scholar and site.professor.scholar != "" %}<a class="btn btn-secondary" href="{{ site.professor.scholar }}" target="_blank" rel="noopener">Google Scholar</a>{% endif %}
@@ -37,6 +36,34 @@ permalink: /members/
         </div>
       </div>
     </div>
+
+    <!-- Education -->
+    {% if site.professor.education and site.professor.education.size > 0 %}
+    <div class="prof-section">
+      <h3 class="prof-section-title" data-ko="학력" data-en="Education">Education</h3>
+      <ul class="prof-list">
+        {% for edu in site.professor.education %}
+          <li>
+            <strong>{{ edu.degree }}</strong>, {{ edu.year }}, {{ edu.field }}, {{ edu.school }}{% if edu.advisor %} (Advisor: {{ edu.advisor }}){% endif %}
+          </li>
+        {% endfor %}
+      </ul>
+    </div>
+    {% endif %}
+
+    <!-- Experiences -->
+    {% if site.professor.experiences and site.professor.experiences.size > 0 %}
+    <div class="prof-section">
+      <h3 class="prof-section-title" data-ko="경력" data-en="Experiences">Experiences</h3>
+      <ul class="prof-list">
+        {% for exp in site.professor.experiences %}
+          <li>
+            <strong>{{ exp.period }}</strong>: {{ exp.role }}, {{ exp.org }}{% if exp.country %}, {{ exp.country }}{% endif %}
+          </li>
+        {% endfor %}
+      </ul>
+    </div>
+    {% endif %}
 
     <!-- PhD Students -->
     {% assign phds = site.members | where: "role", "phd" %}
