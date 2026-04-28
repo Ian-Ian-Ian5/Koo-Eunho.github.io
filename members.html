@@ -29,6 +29,25 @@ permalink: /members/
           <span><span class="label">Email</span><a href="mailto:{{ site.professor.email }}">{{ site.professor.email }}</a></span>
           <span><span class="label">Office</span><span data-ko="{{ site.professor.office_ko }}" data-en="{{ site.professor.office_en }}">{{ site.professor.office_ko }}</span></span>
         </div>
+
+        {% if site.professor.stats %}
+        <div class="prof-stats">
+          <div class="stat-item">
+            <span class="stat-num">{{ site.professor.stats.citations }}</span>
+            <span class="stat-label" data-ko="인용" data-en="Citations">Citations</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-num">{{ site.professor.stats.h_index }}</span>
+            <span class="stat-label">h-index</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-num">{{ site.professor.stats.i10_index }}</span>
+            <span class="stat-label">i10-index</span>
+          </div>
+          <div class="stat-source" data-ko="Google Scholar 기준" data-en="Source: Google Scholar">Source: Google Scholar</div>
+        </div>
+        {% endif %}
+
         <div class="hero-cta" style="margin-top:0.6rem;">
           {% if site.professor.cv and site.professor.cv != "" %}<a class="btn btn-secondary" href="{{ site.professor.cv | relative_url }}">CV</a>{% endif %}
           {% if site.professor.scholar and site.professor.scholar != "" %}<a class="btn btn-secondary" href="{{ site.professor.scholar }}" target="_blank" rel="noopener">Google Scholar</a>{% endif %}
