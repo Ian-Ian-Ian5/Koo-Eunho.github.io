@@ -357,6 +357,130 @@ p { margin: 0 0 1rem; color: var(--color-text-soft); }
 }
 .tag.accent { background: var(--color-accent-soft); color: var(--color-accent-deep); }
 
+/* ----------------------------- Research Interests (4 columns) ------------*/
+.interests-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+.interest-card {
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  color: inherit;
+  padding: 1.4rem 1.2rem;
+  border-radius: var(--radius-md);
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+.interest-card:hover {
+  background: var(--color-surface);
+  text-decoration: none;
+  color: inherit;
+  transform: translateY(-3px);
+}
+.interest-icon {
+  width: 48px;
+  height: 48px;
+  color: var(--color-accent);
+  margin-bottom: 1rem;
+}
+.interest-icon svg { width: 100%; height: 100%; }
+.interest-card h3 {
+  font-size: 1.05rem;
+  margin: 0 0 0.5rem;
+  font-weight: 700;
+  color: var(--color-text);
+}
+.interest-card p {
+  font-size: 0.9rem;
+  color: var(--color-text-soft);
+  line-height: 1.6;
+  margin: 0;
+}
+
+@media (max-width: 900px) {
+  .interests-grid { grid-template-columns: repeat(2, 1fr); gap: 1rem; }
+}
+@media (max-width: 480px) {
+  .interests-grid { grid-template-columns: 1fr; }
+}
+
+/* ----------------------------- News split layout -------------------------*/
+.news-split {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  gap: 3rem;
+  align-items: start;
+}
+.news-side {
+  position: sticky;
+  top: 90px;
+}
+.news-side .section-title {
+  margin-bottom: 0.4rem;
+}
+.news-side .section-heading {
+  font-size: 1.8rem;
+  margin-bottom: 0.8rem;
+}
+.view-all-link {
+  display: inline-block;
+  font-size: 0.9rem;
+  color: var(--color-text-mute);
+  text-decoration: none;
+  transition: color 0.15s ease;
+}
+.view-all-link:hover {
+  color: var(--color-accent);
+  text-decoration: none;
+}
+
+.news-list-detailed {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.news-list-detailed li {
+  display: grid;
+  grid-template-columns: 80px 1fr;
+  gap: 1.2rem;
+  padding: 1rem 0;
+  border-bottom: 1px dashed var(--color-border);
+  font-size: 0.96rem;
+}
+.news-list-detailed li:first-child { padding-top: 0; }
+.news-list-detailed li:last-child { border-bottom: none; }
+.news-list-detailed .date {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  color: var(--color-text-mute);
+  font-weight: 500;
+  padding-top: 0.15rem;
+}
+.news-list-detailed .news-text {
+  margin: 0;
+  color: var(--color-text-soft);
+  line-height: 1.6;
+}
+.news-list-detailed .news-text strong {
+  color: var(--color-text);
+  font-weight: 600;
+}
+.news-list-detailed .news-text em {
+  font-style: italic;
+  color: var(--color-text);
+}
+
+@media (max-width: 800px) {
+  .news-split {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  .news-side { position: static; }
+  .news-list-detailed li { grid-template-columns: 70px 1fr; gap: 0.8rem; }
+}
+
 /* ----------------------------- News list ----------------------------------*/
 .news-list { list-style: none; padding: 0; margin: 0; }
 .news-list li {

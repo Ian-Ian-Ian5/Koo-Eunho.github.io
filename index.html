@@ -176,18 +176,88 @@ permalink: /
   </div>
 </section>
 
+<!-- Research Interests (4 columns with icons) -->
 <section class="section">
   <div class="container">
-    <p class="section-title">NEWS</p>
-    <h2 class="section-heading" data-i18n="home.news_title">News</h2>
-    <ul class="news-list">
-      {% for item in site.data.news limit:5 %}
-        <li>
-          <span class="date">{{ item.date }}</span>
-          <span data-ko="{{ item.ko | escape }}" data-en="{{ item.en | escape }}">{{ item.ko }}</span>
-        </li>
-      {% endfor %}
-    </ul>
+    <p class="section-title">RESEARCH INTERESTS</p>
+    <h2 class="section-heading" data-i18n="home.interests_title">Research Interests</h2>
+
+    <div class="interests-grid">
+      <a class="interest-card" href="{{ '/research/#gnn' | relative_url }}">
+        <div class="interest-icon">
+          <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <line x1="8" y1="8" x2="24" y2="8"/>
+            <line x1="8" y1="8" x2="16" y2="22"/>
+            <line x1="24" y1="8" x2="16" y2="22"/>
+            <circle cx="8" cy="8" r="3" fill="currentColor"/>
+            <circle cx="24" cy="8" r="3" fill="currentColor"/>
+            <circle cx="16" cy="22" r="3" fill="currentColor"/>
+          </svg>
+        </div>
+        <h3 data-i18n="interests.gnn_title">Graph Neural Networks</h3>
+        <p data-i18n="interests.gnn_desc">High-order interactions, simplicial structures, node classification.</p>
+      </a>
+
+      <a class="interest-card" href="{{ '/research/#financial-ai' | relative_url }}">
+        <div class="interest-icon">
+          <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <polyline points="4,24 11,17 17,21 23,11 28,15"/>
+            <polyline points="23,6 28,6 28,11"/>
+            <line x1="23" y1="11" x2="28" y2="6"/>
+          </svg>
+        </div>
+        <h3 data-i18n="interests.fin_title">Financial AI</h3>
+        <p data-i18n="interests.fin_desc">Stock volatility, cryptocurrency prediction, GARCH–LSTM hybrids.</p>
+      </a>
+
+      <a class="interest-card" href="{{ '/research/#pinn' | relative_url }}">
+        <div class="interest-icon">
+          <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <ellipse cx="16" cy="16" rx="12" ry="5"/>
+            <ellipse cx="16" cy="16" rx="12" ry="5" transform="rotate(60 16 16)"/>
+            <ellipse cx="16" cy="16" rx="12" ry="5" transform="rotate(-60 16 16)"/>
+            <circle cx="16" cy="16" r="2" fill="currentColor"/>
+          </svg>
+        </div>
+        <h3 data-i18n="interests.pinn_title">Physics-Informed NN</h3>
+        <p data-i18n="interests.pinn_desc">Equation-aware learning, hybrid physics-data modeling.</p>
+      </a>
+
+      <a class="interest-card" href="{{ '/research/#ai-applications' | relative_url }}">
+        <div class="interest-icon">
+          <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <polygon points="16,4 28,11 16,18 4,11"/>
+            <polyline points="4,17 16,24 28,17"/>
+            <polyline points="4,23 16,30 28,23"/>
+          </svg>
+        </div>
+        <h3 data-i18n="interests.app_title">AI Applications</h3>
+        <p data-i18n="interests.app_desc">Climate AI, distributional learning, recommender systems.</p>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- News (split layout: side header on left, entries on right) -->
+<section class="section">
+  <div class="container">
+    <div class="news-split">
+      <div class="news-side">
+        <p class="section-title">NEWS</p>
+        <h2 class="section-heading" data-i18n="home.news_title">News</h2>
+        <a class="view-all-link" href="#" data-i18n="home.news_view_all">View all →</a>
+      </div>
+      <div class="news-content">
+        <ul class="news-list-detailed">
+          {% for item in site.data.news limit:5 %}
+            <li>
+              <span class="date">{{ item.date | date: "%b %d" }}</span>
+              <p class="news-text" data-ko="{{ item.ko }}" data-en="{{ item.en }}">{{ item.ko | markdownify | strip_html: false }}</p>
+            </li>
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
   </div>
 </section>
 
