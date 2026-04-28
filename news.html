@@ -1,0 +1,22 @@
+---
+layout: default
+title: News
+permalink: /news/
+---
+
+<section class="section">
+  <div class="container">
+    <p class="section-title">NEWS</p>
+    <h1 data-i18n="news.title">News</h1>
+    <p data-i18n="news.intro">랩실의 모든 활동, 수상, 발표, 모집 소식을 시간 순으로 보여드립니다.</p>
+
+    <ul class="news-list-detailed" style="margin-top:2rem;">
+      {% for item in site.data.news %}
+        <li>
+          <span class="date">{{ item.date | date: "%b %d, %Y" }}</span>
+          <p class="news-text" data-ko="{{ item.ko }}" data-en="{{ item.en }}">{{ item.ko | markdownify }}</p>
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
+</section>

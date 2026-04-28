@@ -19,7 +19,13 @@ lab:
   affiliation_en: "Department of Big Data Convergence, Chonnam National University"
   building_ko: "전남대학교 광주캠퍼스 자연과학대학 1호관 213호"
   building_en: "Gwangju Campus, Chonnam National University"
+  zip_code: "61186"
+  address_ko: "광주광역시 북구 용봉로 77 전남대학교 자연과학대학 1호관 213호"
+  address_en: "Bldg. 1, Rm. 213, College of Natural Sciences, Chonnam National University, 77 Yongbong-ro, Buk-gu, Gwangju 61186, Republic of Korea"
+  map_query: "전남대학교 자연과학대학 1호관"
   email: "kooeunho@jnu.ac.kr"
+  phone: ""                # 비워두면 Contact 페이지에 표시 안 됨
+  fax: ""                  # 비워두면 표시 안 됨
   research_keywords:
     - "Deep Learning"
     - "GNN"

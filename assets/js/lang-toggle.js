@@ -12,6 +12,8 @@ const I18N = {
     "nav.research": "연구",
     "nav.publications": "논문",
     "nav.members": "구성원",
+    "nav.news": "소식",
+    "nav.contact": "연락처",
 
     "hero.tagline": "딥러닝 기반 인공지능 · 데이터 사이언스 연구실",
     "hero.subtitle": "전남대학교 빅데이터융합학과",
@@ -41,6 +43,10 @@ const I18N = {
 
     "members.title": "구성원",
     "members.intro": "다양한 배경과 관심사를 가진 연구자들이 함께하고 있습니다.",
+
+    "news.title": "소식",
+    "news.intro": "랩실의 모든 활동, 수상, 발표, 모집 소식을 시간 순으로 보여드립니다.",
+    "contact.title": "연락처",
     "members.professor": "교수",
     "members.phd": "박사과정",
     "members.ms": "석사과정",
@@ -69,6 +75,8 @@ const I18N = {
     "nav.research": "Research",
     "nav.publications": "Publications",
     "nav.members": "Members",
+    "nav.news": "News",
+    "nav.contact": "Contact",
 
     "hero.tagline": "Deep Learning · AI · Data Science",
     "hero.subtitle": "Department of Big Data Convergence, Chonnam National University",
@@ -98,6 +106,10 @@ const I18N = {
 
     "members.title": "Members",
     "members.intro": "Researchers from diverse backgrounds and interests.",
+
+    "news.title": "News",
+    "news.intro": "All lab activities, awards, presentations, and recruitment announcements in chronological order.",
+    "contact.title": "Contact",
     "members.professor": "Professor",
     "members.phd": "PhD Students",
     "members.ms": "MS Students",

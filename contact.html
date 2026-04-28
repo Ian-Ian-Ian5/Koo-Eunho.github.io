@@ -1,0 +1,66 @@
+---
+layout: default
+title: Contact
+permalink: /contact/
+---
+
+<section class="section">
+  <div class="container">
+    <p class="section-title">CONTACT</p>
+    <h1 data-i18n="contact.title">Contact</h1>
+
+    <div class="contact-grid">
+      <!-- Address + Map -->
+      <div class="contact-block">
+        <h2 class="contact-heading" data-ko="주소" data-en="Address">Address</h2>
+        {% if site.lab.zip_code %}
+          <p class="contact-line">
+            <span data-ko="({{ site.lab.zip_code }}) {{ site.lab.address_ko }}" data-en="{{ site.lab.address_en }}">({{ site.lab.zip_code }}) {{ site.lab.address_ko }}</span>
+          </p>
+        {% else %}
+          <p class="contact-line" data-ko="{{ site.lab.building_ko }}" data-en="{{ site.lab.building_en }}">{{ site.lab.building_ko }}</p>
+        {% endif %}
+
+        <div class="contact-map">
+          <iframe
+            src="https://maps.google.com/maps?q={{ site.lab.map_query | url_encode }}&hl=ko&z=16&output=embed"
+            width="100%" height="380" style="border:0;" allowfullscreen=""
+            loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+      </div>
+
+      <!-- Email -->
+      <div class="contact-block">
+        <h2 class="contact-heading" data-ko="이메일" data-en="Email">Email</h2>
+        <p class="contact-line">
+          <a href="mailto:{{ site.lab.email }}">{{ site.lab.email }}</a>
+        </p>
+      </div>
+
+      <!-- Telephone (if filled in) -->
+      {% if site.lab.phone and site.lab.phone != "" %}
+      <div class="contact-block">
+        <h2 class="contact-heading" data-ko="전화" data-en="Tel">Tel</h2>
+        <p class="contact-line">{{ site.lab.phone }}</p>
+      </div>
+      {% endif %}
+
+      <!-- Fax (if filled in) -->
+      {% if site.lab.fax and site.lab.fax != "" %}
+      <div class="contact-block">
+        <h2 class="contact-heading" data-ko="팩스" data-en="Fax">Fax</h2>
+        <p class="contact-line">{{ site.lab.fax }}</p>
+      </div>
+      {% endif %}
+
+      <!-- Lab info -->
+      <div class="contact-block">
+        <h2 class="contact-heading" data-ko="연구실" data-en="Lab">Lab</h2>
+        <p class="contact-line">
+          <strong data-ko="{{ site.lab.name_ko }}" data-en="{{ site.lab.name_en }}">{{ site.lab.name_ko }}</strong><br>
+          <span data-ko="{{ site.lab.affiliation_ko }}" data-en="{{ site.lab.affiliation_en }}">{{ site.lab.affiliation_ko }}</span>
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
