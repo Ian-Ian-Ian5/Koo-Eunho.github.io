@@ -5,8 +5,8 @@
 - name_ko: "박지홍"
   name_en: "Jihong Park"
   role: phd
-  interests_ko: "딥러닝 · 컴퓨터 비전"
-  interests_en: "Deep Learning · Computer Vision"
+  interests_ko: "금융"
+  interests_en: "Bank system"
   photo: "/assets/images/members/park_jihong.jpg"
   email: ""
 
@@ -14,8 +14,8 @@
 - name_ko: "위훈성"
   name_en: "Hunsung Wi"
   role: ms
-  interests_ko: "자연어처리"
-  interests_en: "Natural Language Processing"
+  interests_ko: "기상 GNN"
+  interests_en: "earth GNN"
   photo: "/assets/images/members/wi_hunsung.jpg"
   email: ""
 
@@ -31,15 +31,15 @@
 - name_ko: "강인균"
   name_en: "Ingyun Kang"
   role: undergrad
-  interests_ko: "데이터 분석"
-  interests_en: "Data Analytics"
+  interests_ko: "PINN"
+  interests_en: "PINN"
   photo: "/assets/images/members/kang_ingyun.png"
   email: ""
 
 - name_ko: "변문수"
   name_en: "Munsu Byun"
   role: undergrad
-  interests_ko: "데이터 분석"
-  interests_en: "Data Analytics"
+  interests_ko: "GNN"
+  interests_en: "GNN"
   photo: "/assets/images/members/byun_munsu.jpg"
   email: ""
