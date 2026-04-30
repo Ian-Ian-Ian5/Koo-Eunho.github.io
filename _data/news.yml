@@ -1,8 +1,8 @@
 # =============================================================================
 #  News + Seminar / Reading Group entries
 #  News 페이지에서 자동으로 다음 3개 섹션으로 분리됨:
-#   1. 다가오는 세미나 (type: seminar, date > 오늘)
-#   2. 공지사항 (type: announcement, 최근순)
+#   1. 공지사항 (type: announcement, 최근순) — 최상단
+#   2. 다가오는 세미나 (type: seminar, date > 오늘)
 #   3. 지난 세미나 (type: seminar, date <= 오늘, 최근 8개)
 # =============================================================================
 #
@@ -15,26 +15,38 @@
 # =============================================================================
 
 # ============================================================
-#  세미나 / 리딩 그룹
+#  세미나 / 리딩 그룹 (다가오는 일정 — 최신 추가)
 # ============================================================
 
 - type: seminar
-  date: "2026-05-22"
+  date: "2026-05-04"
   presenter_ko: "위훈성"
   presenter_en: "Hunsung Wi"
-  title: "GraphCast Multi-mesh Analysis for Efficient Global Weather Forecasting"
-  venue_ko: "랩 회의실"
-  venue_en: "Lab Meeting Room"
-  time: "16:00"
+  title: "TBA"
+  venue_ko: "1호관 213호"
+  venue_en: "Bldg. 1, Rm. 213"
 
 - type: seminar
-  date: "2026-05-15"
-  presenter_ko: "박지홍"
-  presenter_en: "Jihong Park"
-  title: "Reliable Option Pricing through Deep Learning: An Anomaly Score Approach"
-  venue_ko: "온라인 (Zoom)"
-  venue_en: "Online (Zoom)"
+  date: "2026-05-06"
+  presenter_ko: "변문수"
+  presenter_en: "Munsu Byun"
+  title: "TBA"
+  venue_ko: "1호관 213호"
+  venue_en: "Bldg. 1, Rm. 213"
   time: "14:00"
+
+- type: seminar
+  date: "2026-05-06"
+  presenter_ko: "강인균"
+  presenter_en: "Ingyun Kang"
+  title: "TBA"
+  venue_ko: "1호관 213호"
+  venue_en: "Bldg. 1, Rm. 213"
+  time: "15:00"
+
+# ============================================================
+#  세미나 (지난 일정)
+# ============================================================
 
 - type: seminar
   date: "2026-04-24"

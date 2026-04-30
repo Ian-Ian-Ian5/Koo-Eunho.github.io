@@ -16,6 +16,18 @@ permalink: /news/
     <h1 data-i18n="news.title">소식</h1>
     <p data-i18n="news.intro">랩 세미나 일정과 모든 공지사항을 시간 순으로 정리했습니다.</p>
 
+    {% if announcements.size > 0 %}
+    <h2 class="news-section-title" data-ko="📋 공지사항" data-en="📋 Announcements">📋 공지사항</h2>
+    <ul class="news-list-detailed">
+      {% for item in announcements %}
+        <li>
+          <span class="date">{{ item.date | date: "%b %d, %Y" }}</span>
+          <p class="news-text" data-ko="{{ item.ko }}" data-en="{{ item.en }}">{{ item.ko }}</p>
+        </li>
+      {% endfor %}
+    </ul>
+    {% endif %}
+
     {% if upcoming.size > 0 %}
     <h2 class="news-section-title" data-ko="📅 다가오는 세미나 / 리딩 그룹" data-en="📅 Upcoming Seminars / Reading Group">📅 다가오는 세미나 / 리딩 그룹</h2>
     <ul class="seminar-list">
@@ -35,18 +47,6 @@ permalink: /news/
               </p>
             {% endif %}
           </div>
-        </li>
-      {% endfor %}
-    </ul>
-    {% endif %}
-
-    {% if announcements.size > 0 %}
-    <h2 class="news-section-title" data-ko="📋 공지사항" data-en="📋 Announcements">📋 공지사항</h2>
-    <ul class="news-list-detailed">
-      {% for item in announcements %}
-        <li>
-          <span class="date">{{ item.date | date: "%b %d, %Y" }}</span>
-          <p class="news-text" data-ko="{{ item.ko }}" data-en="{{ item.en }}">{{ item.ko }}</p>
         </li>
       {% endfor %}
     </ul>
