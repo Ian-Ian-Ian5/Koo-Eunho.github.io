@@ -5,8 +5,8 @@ role: ms
 photo: "/assets/images/members/lee_hyungjun.jpg"
 email: ""
 joined: 2024
-interests_ko: "추천 시스템 · 딥러닝"
-interests_en: "Recommender Systems · Deep Learning"
+interests_ko: "그래프 신경망 · 암호화폐 거래 분석"
+interests_en: "Graph Neural Networks · Cryptocurrency Transaction Analysis"
 scholar: ""
 github: ""
 linkedin: ""
@@ -15,22 +15,30 @@ website: ""
 
 ## 연구 분야 / Research Interests
 
-이형준은 딥러닝 기반 추천 시스템을 연구하고 있습니다. 사용자–아이템 상호작용
-데이터에서 효과적으로 선호를 학습하는 모델 구조와 학습 알고리즘에 관심이 있습니다.
+이형준은 암호화폐 거래 네트워크에서 자금 세탁과 같은 불법 거래를 탐지하는
+GNN 기반 모델을 연구합니다. 자금 세탁은 믹서(Mixer)나 텀블러(Tumbler)를
+통해 A → B → C → A 처럼 여러 거래를 방향성 있게 순환시켜 자금 출처를
+숨기는 수법인데, 기존 GNN은 노드 간 1:1 관계만 학습하므로 이러한 다자
+순환 구조를 포착하기 어렵습니다. 본 연구는 방향성 있는 짧은 사이클
+(directed cycle)을 탐지하여 노드 표현에 반영하는 모델을 제안합니다.
+이론적으로는 사이클을 위상수학의 1차 호몰로지(H₁)에 대응시키고, 방향성
+있는 단체 복합체(directed simplicial complex) 위에서 동작하는 GNN으로의
+확장 가능성을 탐색합니다.
 
-Hyungjun's research focuses on deep learning-based recommender systems —
-particularly model architectures and training algorithms that effectively
-capture user preferences from user-item interaction data.
+Hyungjun's research focuses on detecting illicit transactions — such as
+money laundering — in cryptocurrency networks using graph neural networks.
+Money laundering often hides funds through mixers or tumblers, creating
+directional cyclic transactions like A → B → C → A. Standard GNNs that
+learn only pairwise relationships struggle to capture these multi-party
+cycles. This work proposes a model that detects directed short cycles in
+crypto networks and incorporates them into node representations.
+Theoretically, the cycles correspond to first homology (H₁) in topology,
+and we explore extensions to GNNs operating on directed simplicial complexes.
 
-## 주요 프로젝트 / Selected Projects
+## 진행 중인 연구 / Ongoing Research
 
-- *(준비 중)*
-
-## 논문 / Publications
-
-*(논문이 게재되면 여기에 추가됩니다)*
+- *Learning Directed Cycles for Illicit Transaction Detection in Crypto Networks*
 
 ## 학력 / Education
 
 - (예정) MS, 빅데이터융합학과, 전남대학교 (2024 — 현재)
-- BS, 학과명, 학교명 (연도)

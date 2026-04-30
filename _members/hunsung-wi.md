@@ -5,8 +5,8 @@ role: ms
 photo: "/assets/images/members/wi_hunsung.jpg"
 email: ""
 joined: 2024
-interests_ko: "그래프 신경망 · 지구 과학 응용"
-interests_en: "Graph Neural Networks · Earth Science Applications"
+interests_ko: "그래프 신경망 · 전지구 기상 예측"
+interests_en: "Graph Neural Networks · Global Weather Forecasting"
 scholar: ""
 github: ""
 linkedin: ""
@@ -15,23 +15,26 @@ website: ""
 
 ## 연구 분야 / Research Interests
 
-위훈성은 그래프 신경망(GNN)을 지구 과학 데이터에 응용하는 연구를 진행하고 있습니다.
-복잡한 공간적·시간적 패턴을 가진 환경 데이터에서 GNN을 통해 의미 있는 신호를
-추출하는 데 관심이 있습니다.
+위훈성은 GraphCast 기반 전지구 기상 예측 모델의 멀티-메쉬(multi-mesh)
+그래프 구조를 분석하고, 계산 효율을 향상시킬 수 있는 구조적 개선 방안을
+탐색합니다. 대규모 기상 그래프에서 정보 전파 경로와 계산 비용을 동시에
+고려하여, 지역 간 중요한 상호작용은 보존하면서 불필요한 계산을 줄이는
+새로운 그래프 구조를 실험합니다. 예측 성능 손실을 최소화하면서 더 빠르고
+효율적인 전지구 기상 예측 모델로 가는 방향을 제시하는 것이 목표입니다.
 
-Hunsung's research applies graph neural networks (GNNs) to Earth science data,
-extracting meaningful signals from environmental data with complex spatial and
-temporal patterns.
+Hunsung studies the multi-mesh graph structure of GraphCast for global
+weather forecasting and explores structural improvements that enhance
+computational efficiency. He considers both information propagation paths
+and computational cost in large-scale weather graphs, experimenting with
+new graph structures that preserve important inter-regional interactions
+while reducing unnecessary computation — aiming to suggest a path toward
+faster and more efficient global weather forecasting models with minimal
+loss in predictive performance.
 
-## 주요 프로젝트 / Selected Projects
+## 진행 중인 연구 / Ongoing Research
 
-- *(준비 중)*
-
-## 논문 / Publications
-
-*(논문이 게재되면 여기에 추가됩니다)*
+- *Analysis and Extension of Computationally Efficient Graph Structures for GraphCast-based Global Weather Forecasting*
 
 ## 학력 / Education
 
 - (예정) MS, 빅데이터융합학과, 전남대학교 (2024 — 현재)
-- BS, 학과명, 학교명 (연도)
