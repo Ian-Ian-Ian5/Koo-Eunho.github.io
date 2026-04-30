@@ -499,7 +499,10 @@ p { margin: 0 0 1rem; color: var(--color-text-soft); }
 }
 
 /* ----------------------------- Members -------------------------------------*/
-.members-group { margin-bottom: 2.5rem; }
+.members-group {
+  margin-top: 4rem;
+  margin-bottom: 1rem;
+}
 .members-group h3 {
   font-size: 1.05rem;
   text-transform: uppercase;
