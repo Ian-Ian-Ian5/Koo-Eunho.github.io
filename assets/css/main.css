@@ -481,6 +481,80 @@ p { margin: 0 0 1rem; color: var(--color-text-soft); }
   .news-list-detailed li { grid-template-columns: 70px 1fr; gap: 0.8rem; }
 }
 
+/* ----------------------------- News page sections + Seminars -------------*/
+.news-section-title {
+  font-size: 1.25rem;
+  margin-top: 3rem;
+  margin-bottom: 1rem;
+  padding-bottom: 0.6rem;
+  border-bottom: 2px solid var(--color-border);
+}
+.news-section-title:first-of-type { margin-top: 1.5rem; }
+
+.seminar-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.seminar-entry {
+  display: grid;
+  grid-template-columns: 180px 1fr;
+  gap: 1.2rem;
+  padding: 1rem 0;
+  border-bottom: 1px dashed var(--color-border);
+}
+.seminar-entry:last-child { border-bottom: none; }
+.seminar-entry .date {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  color: var(--color-text-mute);
+  font-weight: 500;
+  padding-top: 0.15rem;
+  line-height: 1.4;
+}
+.seminar-entry.upcoming .date {
+  color: var(--color-accent);
+  font-weight: 700;
+}
+.seminar-presenter {
+  margin: 0;
+  color: var(--color-text);
+  line-height: 1.55;
+}
+.seminar-presenter strong {
+  font-weight: 700;
+  margin-right: 0.2rem;
+  color: var(--color-text);
+}
+.seminar-title-text {
+  color: var(--color-text-soft);
+  font-style: italic;
+}
+.seminar-meta {
+  margin: 0.3rem 0 0;
+  font-size: 0.85rem;
+  color: var(--color-text-mute);
+}
+
+/* News tag (used on Home page split list) */
+.news-tag {
+  display: inline-block;
+  background: var(--color-accent-soft);
+  color: var(--color-accent-deep);
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  font-weight: 600;
+  padding: 0.15rem 0.55rem;
+  border-radius: 999px;
+  margin-right: 0.45rem;
+  vertical-align: middle;
+  letter-spacing: 0.02em;
+}
+
+@media (max-width: 600px) {
+  .seminar-entry { grid-template-columns: 110px 1fr; gap: 0.8rem; }
+}
+
 /* ----------------------------- News list ----------------------------------*/
 .news-list { list-style: none; padding: 0; margin: 0; }
 .news-list li {

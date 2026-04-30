@@ -1,15 +1,83 @@
-# 사이트의 News 섹션에 표시할 항목.
-# 최신 항목을 가장 위에 두세요. 날짜는 YYYY-MM-DD 형식.
-# 날짜가 범위(예: May 4~6)인 경우 시작일을 적고 본문에 범위를 명시합니다.
+# =============================================================================
+#  News + Seminar / Reading Group entries
+#  News 페이지에서 자동으로 다음 3개 섹션으로 분리됨:
+#   1. 다가오는 세미나 (type: seminar, date > 오늘)
+#   2. 공지사항 (type: announcement, 최근순)
+#   3. 지난 세미나 (type: seminar, date <= 오늘, 최근 8개)
+# =============================================================================
+#
+#  공지 항목 (type: announcement) — 필수 필드:
+#    date, ko, en
+#
+#  세미나 항목 (type: seminar) — 필수 필드:
+#    date, presenter_ko, presenter_en, title
+#    선택 필드: venue_ko, venue_en, time
+# =============================================================================
 
-- date: "2026-05-04"
+# ============================================================
+#  세미나 / 리딩 그룹
+# ============================================================
+
+- type: seminar
+  date: "2026-05-22"
+  presenter_ko: "위훈성"
+  presenter_en: "Hunsung Wi"
+  title: "GraphCast Multi-mesh Analysis for Efficient Global Weather Forecasting"
+  venue_ko: "랩 회의실"
+  venue_en: "Lab Meeting Room"
+  time: "16:00"
+
+- type: seminar
+  date: "2026-05-15"
+  presenter_ko: "박지홍"
+  presenter_en: "Jihong Park"
+  title: "Reliable Option Pricing through Deep Learning: An Anomaly Score Approach"
+  venue_ko: "온라인 (Zoom)"
+  venue_en: "Online (Zoom)"
+  time: "14:00"
+
+- type: seminar
+  date: "2026-04-24"
+  presenter_ko: "강인균"
+  presenter_en: "Ingyun Kang"
+  title: "Discontinuity-Aware PINNs for Nonlinear Hyperbolic PDEs"
+  venue_ko: "랩 회의실"
+  venue_en: "Lab Meeting Room"
+  time: "16:00"
+
+- type: seminar
+  date: "2026-04-17"
+  presenter_ko: "변문수"
+  presenter_en: "Munsu Byun"
+  title: "ASGAT: Adaptive Structure Graph Attention Network"
+  venue_ko: "랩 회의실"
+  venue_en: "Lab Meeting Room"
+  time: "16:00"
+
+- type: seminar
+  date: "2026-04-10"
+  presenter_ko: "이형준"
+  presenter_en: "Hyungjun Lee"
+  title: "Directed Cycles for Crypto Illicit Transaction Detection"
+  venue_ko: "랩 회의실"
+  venue_en: "Lab Meeting Room"
+  time: "16:00"
+
+# ============================================================
+#  공지사항
+# ============================================================
+
+- type: announcement
+  date: "2026-05-04"
   ko: "5월 4일~6일 랩 미팅이 일주일 미뤄졌습니다. 일정 변경에 유의해 주시기 바랍니다."
   en: "Lab meetings scheduled for May 4–6 have been postponed by one week. Please note the schedule change."
 
-- date: "2026-05-01"
+- type: announcement
+  date: "2026-05-01"
   ko: "Koo Lab 웹사이트가 공식 오픈했습니다."
   en: "The Koo Lab website is officially online."
 
-- date: "2026-04-21"
+- type: announcement
+  date: "2026-04-21"
   ko: "4월 21일·23일 중간고사 감독관은 시간을 엄수해 주시기 바랍니다."
   en: "Proctors for the midterm exams on April 21 and 23 are requested to be on time."

@@ -45,7 +45,7 @@ const I18N = {
     "members.intro": "다양한 배경과 관심사를 가진 연구자들이 함께하고 있습니다.",
 
     "news.title": "소식",
-    "news.intro": "랩실의 모든 활동, 수상, 발표, 모집 소식을 시간 순으로 보여드립니다.",
+    "news.intro": "랩 세미나 일정과 모든 공지사항을 시간 순으로 정리했습니다.",
     "contact.title": "찾아오는 곳",
     "members.professor": "교수",
     "members.phd": "박사과정",
@@ -108,7 +108,7 @@ const I18N = {
     "members.intro": "Researchers from diverse backgrounds and interests.",
 
     "news.title": "News",
-    "news.intro": "All lab activities, awards, presentations, and recruitment announcements in chronological order.",
+    "news.intro": "Reading group / seminar schedule and all lab announcements in chronological order.",
     "contact.title": "Contact",
     "members.professor": "Professor",
     "members.phd": "PhD Students",

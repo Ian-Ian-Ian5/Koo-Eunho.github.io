@@ -249,10 +249,18 @@ permalink: /
       </div>
       <div class="news-content">
         <ul class="news-list-detailed">
-          {% for item in site.data.news limit:5 %}
+          {% assign all_news_sorted = site.data.news | sort: "date" | reverse %}
+          {% for item in all_news_sorted limit:5 %}
             <li>
               <span class="date">{{ item.date | date: "%b %d" }}</span>
-              <p class="news-text" data-ko="{{ item.ko }}" data-en="{{ item.en }}">{{ item.ko }}</p>
+              {% if item.type == "seminar" %}
+                <p class="news-text">
+                  <span class="news-tag" data-ko="세미나" data-en="Seminar">세미나</span>
+                  <span data-ko="{{ item.presenter_ko }} — {{ item.title }}" data-en="{{ item.presenter_en }} — {{ item.title }}">{{ item.presenter_ko }} — {{ item.title }}</span>
+                </p>
+              {% else %}
+                <p class="news-text" data-ko="{{ item.ko }}" data-en="{{ item.en }}">{{ item.ko }}</p>
+              {% endif %}
             </li>
           {% endfor %}
         </ul>

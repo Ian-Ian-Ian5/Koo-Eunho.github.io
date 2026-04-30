@@ -4,19 +4,70 @@ title: News
 permalink: /news/
 ---
 
+{% assign today = "now" | date: "%Y-%m-%d" %}
+{% assign all_seminars = site.data.news | where: "type", "seminar" %}
+{% assign upcoming = all_seminars | where_exp: "s", "s.date > today" | sort: "date" %}
+{% assign past_seminars = all_seminars | where_exp: "s", "s.date <= today" | sort: "date" | reverse %}
+{% assign announcements = site.data.news | where: "type", "announcement" | sort: "date" | reverse %}
+
 <section class="section">
   <div class="container">
     <p class="section-title">NEWS</p>
-    <h1 data-i18n="news.title">News</h1>
-    <p data-i18n="news.intro">랩실의 모든 활동, 수상, 발표, 모집 소식을 시간 순으로 보여드립니다.</p>
+    <h1 data-i18n="news.title">소식</h1>
+    <p data-i18n="news.intro">랩 세미나 일정과 모든 공지사항을 시간 순으로 정리했습니다.</p>
 
-    <ul class="news-list-detailed" style="margin-top:2rem;">
-      {% for item in site.data.news %}
+    {% if upcoming.size > 0 %}
+    <h2 class="news-section-title" data-ko="📅 다가오는 세미나 / 리딩 그룹" data-en="📅 Upcoming Seminars / Reading Group">📅 다가오는 세미나 / 리딩 그룹</h2>
+    <ul class="seminar-list">
+      {% for s in upcoming %}
+        <li class="seminar-entry upcoming">
+          <span class="date">
+            {{ s.date | date: "%b %d, %Y" }}{% if s.time %} · {{ s.time }}{% endif %}
+          </span>
+          <div class="seminar-info">
+            <p class="seminar-presenter">
+              <strong data-ko="{{ s.presenter_ko }}" data-en="{{ s.presenter_en }}">{{ s.presenter_ko }}</strong>
+              <span class="seminar-title-text"> — {{ s.title }}</span>
+            </p>
+            {% if s.venue_ko %}
+              <p class="seminar-meta">
+                <span data-ko="📍 {{ s.venue_ko }}" data-en="📍 {{ s.venue_en }}">📍 {{ s.venue_ko }}</span>
+              </p>
+            {% endif %}
+          </div>
+        </li>
+      {% endfor %}
+    </ul>
+    {% endif %}
+
+    {% if announcements.size > 0 %}
+    <h2 class="news-section-title" data-ko="📋 공지사항" data-en="📋 Announcements">📋 공지사항</h2>
+    <ul class="news-list-detailed">
+      {% for item in announcements %}
         <li>
           <span class="date">{{ item.date | date: "%b %d, %Y" }}</span>
           <p class="news-text" data-ko="{{ item.ko }}" data-en="{{ item.en }}">{{ item.ko }}</p>
         </li>
       {% endfor %}
     </ul>
+    {% endif %}
+
+    {% if past_seminars.size > 0 %}
+    <h2 class="news-section-title" data-ko="📚 지난 세미나" data-en="📚 Past Seminars">📚 지난 세미나</h2>
+    <ul class="seminar-list">
+      {% for s in past_seminars limit: 8 %}
+        <li class="seminar-entry past">
+          <span class="date">{{ s.date | date: "%b %d, %Y" }}</span>
+          <div class="seminar-info">
+            <p class="seminar-presenter">
+              <strong data-ko="{{ s.presenter_ko }}" data-en="{{ s.presenter_en }}">{{ s.presenter_ko }}</strong>
+              <span class="seminar-title-text"> — {{ s.title }}</span>
+            </p>
+          </div>
+        </li>
+      {% endfor %}
+    </ul>
+    {% endif %}
+
   </div>
 </section>
