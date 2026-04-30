@@ -50,7 +50,7 @@ const I18N = {
     "members.professor": "교수",
     "members.phd": "박사과정",
     "members.ms": "석사과정",
-    "members.undergrad": "학사 및 석사 과정",
+    "members.undergrad": "학석사 연계과정",
     "members.alumni": "졸업생",
 
     "pub.title": "논문",
@@ -113,7 +113,7 @@ const I18N = {
     "members.professor": "Professor",
     "members.phd": "PhD Students",
     "members.ms": "MS Students",
-    "members.undergrad": "Bachelor's & Master's",
+    "members.undergrad": "Integrated B.S.–M.S. Program",
     "members.alumni": "Alumni",
 
     "pub.title": "Publications",
