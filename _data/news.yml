@@ -1,14 +1,15 @@
-# 사이트의 News 섹션에서 보여줄 항목.
+# 사이트의 News 섹션에 표시할 항목.
 # 최신 항목을 가장 위에 두세요. 날짜는 YYYY-MM-DD 형식.
+# 날짜가 범위(예: May 4~6)인 경우 시작일을 적고 본문에 범위를 명시합니다.
 
-- date: "2026-04-01"
-  ko: "랩실 웹사이트가 새롭게 오픈했습니다."
-  en: "The lab website has officially launched."
+- date: "2026-05-04"
+  ko: "5월 4일~6일 랩 미팅이 일주일 미뤄졌습니다. 일정 변경에 유의해 주시기 바랍니다."
+  en: "Lab meetings scheduled for May 4–6 have been postponed by one week. Please note the schedule change."
 
-- date: "2026-03-15"
-  ko: "신학기 신규 대학원생을 모집합니다. (지원 마감: 추후 공지)"
-  en: "We are recruiting new graduate students for the upcoming semester."
+- date: "2026-05-01"
+  ko: "Koo Lab 웹사이트가 공식 오픈했습니다."
+  en: "The Koo Lab website is officially online."
 
-- date: "2026-02-20"
-  ko: "학부 인턴 프로그램 신청을 받습니다. 자세한 내용은 교수님께 문의 바랍니다."
-  en: "Applications open for the undergraduate internship program."
+- date: "2026-04-21"
+  ko: "4월 21일·23일 중간고사 감독관은 시간을 엄수해 주시기 바랍니다."
+  en: "Proctors for the midterm exams on April 21 and 23 are requested to be on time."
