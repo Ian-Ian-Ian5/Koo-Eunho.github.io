@@ -53,19 +53,45 @@
       paper: "Node classification via simplicial interaction with augmented maximal clique selection"
       venue: "Neurocomputing, 2025"
 
-    - title_ko: "지구 과학 데이터를 위한 GNN"
-      title_en: "GNN for Earth Science Applications"
+    - title_ko: "GraphCast 기반 효율적 전지구 기상 예측"
+      title_en: "Efficient Graph Structures for GraphCast-based Weather Forecasting"
       desc_ko: >-
-        대기·기상·해양 데이터처럼 공간적·시간적으로 복잡한 패턴을 가진 환경
-        데이터에 GNN을 적용하여, 강수 추정·이상 기후 탐지 등 지구 과학 문제의
-        해결 정확도를 향상시키는 연구를 진행 중입니다.
+        GraphCast의 멀티-메쉬(multi-mesh) 그래프 구조를 분석하고, 전지구 기상
+        예측의 계산 효율을 높일 수 있는 구조적 개선 방안을 탐색합니다. 정보
+        전파 경로와 계산 비용을 함께 고려해 지역 간 중요한 상호작용은 보존하면서
+        불필요한 계산을 줄이는 새로운 그래프 구조를 실험합니다. 예측 성능 손실을
+        최소화하면서 더 빠른 전지구 기상 예측 모델로 가는 경로를 제안합니다.
       desc_en: >-
-        Applying GNNs to environmental data with complex spatial and temporal
-        patterns — such as atmospheric, weather, and ocean data — to improve
-        the accuracy of earth science problems like precipitation estimation
-        and extreme weather detection.
+        Analyzing GraphCast's multi-mesh graph structure and exploring
+        structural improvements to enhance computational efficiency for global
+        weather forecasting. By jointly considering information propagation
+        paths and compute cost, we test new graph structures that preserve
+        important inter-regional interactions while reducing unnecessary
+        computation — pointing toward faster forecasting models with minimal
+        loss in predictive performance.
       image: ""
-      paper: "Ongoing research with Hunsung Wi (MS)"
+      paper: "Analysis and Extension of Computationally Efficient Graph Structures for GraphCast-based Global Weather Forecasting (Hunsung Wi, MS)"
+      venue: "—"
+
+    - title_ko: "ASGAT: 적응형 그래프 구조 학습"
+      title_en: "ASGAT: Adaptive Structure Graph Attention"
+      desc_ko: >-
+        실제 그래프에는 유의미한 연결이 누락되거나 노이즈성 엣지가 포함되어
+        있어 메시지 전달의 효율성이 저하됩니다. ASGAT는 GATv2 백본 위에서
+        학습된 노드 임베딩 간 코사인 유사도를 활용해 잠재적으로 유익한 후보
+        엣지를 탐색하고, 통계적 프루닝(mean − λ·std) 기반의 필터링으로 그래프
+        구조를 반복적으로 정제합니다. 동질적·이질적 그래프 모두에서 노드
+        분류 성능을 향상시키는 것을 목표로 합니다.
+      desc_en: >-
+        Real-world graphs often suffer from missing meaningful connections and
+        noisy edges that degrade message-passing efficiency. ASGAT addresses
+        this by using cosine similarity between learned node embeddings (over
+        a GATv2 backbone) to discover useful candidate edges, iteratively
+        refining the graph structure via statistical pruning (mean − λ·std).
+        The approach aims to boost node classification performance on both
+        homophilic and heterophilic graphs.
+      image: ""
+      paper: "ASGAT: Adaptive Structure Graph Attention for Iterative Graph Refinement (Munsu Byun, BS–MS Track)"
       venue: "—"
 
 # ---------------------------------------------------------------------------
@@ -129,16 +155,22 @@
       paper: "Prediction of Bitcoin price based on manipulating distribution strategy"
       venue: "Applied Soft Computing, 2021"
 
-    - title_ko: "은행 시스템 AI"
-      title_en: "AI for Banking Systems"
+    - title_ko: "신뢰할 수 있는 옵션 가격 결정과 변동성 예측"
+      title_en: "Reliable Option Pricing & Volatility Prediction"
       desc_ko: >-
-        딥러닝을 활용한 은행 거래 분석 및 위험 모델링 등 금융 시스템 전반에 대한
-        AI 응용 연구를 진행 중입니다.
+        딥러닝의 금융 응용에서 신뢰성과 해석가능성을 높이는 연구를 진행합니다.
+        이상 점수(anomaly score) 기반의 옵션 가격 결정 모델, 금융 변동성 예측에서
+        신경망의 내부 추론(logical reasoning) vs 패턴 학습(pattern fitting)을
+        해부하는 분석, 그리고 PINN을 활용한 변동성 곡면 보정(deep OTM smile
+        포함) 등을 다룹니다.
       desc_en: >-
-        Ongoing research on AI applications across banking systems — including
-        transaction analysis and risk modeling — using deep learning.
+        Improving the reliability and interpretability of deep learning in
+        finance — anomaly-score-based reliable option pricing, deciphering
+        the internal evidence (logical reasoning vs pattern fitting) of neural
+        networks in volatility prediction, and PINN-based volatility surface
+        calibration with deep OTM smile.
       image: ""
-      paper: "Ongoing research with Jihong Park (PhD)"
+      paper: "Reliable option pricing through DL · Logical Reasoning vs Pattern Fitting · Rough Volatility + PINN (Jihong Park, PhD)"
       venue: "—"
 
 # ---------------------------------------------------------------------------
@@ -158,19 +190,23 @@
   color_to: "#ef4444"
   acronym: "PINN"
   projects:
-    - title_ko: "미분 방정식 시스템을 위한 PINN"
-      title_en: "PINN for Differential Equation Systems"
+    - title_ko: "불연속 인지 PINN: 비선형 쌍곡형 PDE 해석"
+      title_en: "Discontinuity-Aware PINNs for Nonlinear Hyperbolic PDEs"
       desc_ko: >-
-        물리 정보 신경망(PINN)의 학습 동역학과 일반화 성능을 분석하고, 다양한
-        미분 방정식 시스템(편미분 방정식, 상미분 방정식)에 적용하는 알고리즘을
-        설계합니다. 데이터와 도메인 지식을 결합한 하이브리드 모델링이 핵심입니다.
+        물리 정보 신경망(PINN)을 활용하여 쌍곡형 편미분방정식을 해석합니다.
+        특히 충격파(shock)와 같은 불연속 현상을 안정적으로 포착하고, 비선형
+        파동 문제에서 정확도와 강건성을 높일 수 있는 학습 기법과 신경망 구조를
+        탐구합니다. 충격파와 불연속 해를 보다 효과적으로 다룰 수 있는 PINN
+        기반 방법론 개발이 현재 핵심 주제입니다.
       desc_en: >-
-        We analyze the training dynamics and generalization of Physics-Informed
-        Neural Networks (PINNs), and design algorithms for diverse differential
-        equation systems (PDEs, ODEs). The core idea is hybrid modeling that
-        combines data with domain knowledge.
+        Solving hyperbolic partial differential equations with Physics-Informed
+        Neural Networks (PINNs) — with a focus on stably capturing discontinuous
+        phenomena such as shocks, and improving accuracy and robustness on
+        nonlinear wave problems. Current efforts center on PINN-based
+        methodologies that handle shock waves and discontinuous solutions more
+        effectively.
       image: ""
-      paper: "Ongoing research with Ingyun Kang (Bachelor's & Master's)"
+      paper: "Learning Discontinuity-Aware PINNs for Nonlinear Hyperbolic PDEs (Ingyun Kang, BS–MS Track)"
       venue: "—"
 
 # ---------------------------------------------------------------------------
@@ -220,16 +256,25 @@
       paper: "Multi-task learning for simultaneous retrievals of passive microwave precipitation estimates and rain/no-rain classification"
       venue: "Geophysical Research Letters, 2023"
 
-    - title_ko: "딥러닝 기반 추천 시스템"
-      title_en: "Deep Learning for Recommender Systems"
+    - title_ko: "Directed Cycle 기반 암호화폐 자금세탁 탐지"
+      title_en: "Directed Cycles for Crypto Illicit Transaction Detection"
       desc_ko: >-
-        사용자–아이템 상호작용 데이터에서 효과적으로 선호를 학습하기 위한
-        딥러닝 기반 추천 시스템 연구를 진행 중입니다. 모델 구조와 학습 알고리즘
-        모두를 탐구합니다.
+        암호화폐 거래 네트워크에서 믹서·텀블러를 통한 자금 세탁 패턴(A → B
+        → C → A 같은 방향성 순환)을 탐지하는 GNN 기반 모델을 연구합니다.
+        기존 GNN이 노드 간 1:1 관계만 학습해 다자 순환 구조를 포착하지
+        못하는 한계를 극복하기 위해, 방향성 있는 짧은 사이클을 탐지하여 노드
+        표현에 반영하는 모델을 제안합니다. 이론적으로는 사이클을 위상수학의
+        1차 호몰로지(H₁)에 대응시키고, 방향성 단체 복합체 위에서 동작하는
+        GNN으로의 확장을 탐색합니다.
       desc_en: >-
-        Ongoing research on deep learning-based recommender systems that
-        effectively learn user preferences from user-item interaction data —
-        exploring both model architectures and training algorithms.
+        A GNN-based model for detecting money-laundering patterns —
+        directional cyclic transactions (A → B → C → A) often produced by
+        mixers and tumblers — in cryptocurrency networks. Standard GNNs that
+        learn only pairwise relationships struggle with such multi-party
+        cycles, so this work proposes detecting directed short cycles and
+        embedding them into node representations. Theoretically, the cycles
+        correspond to first homology (H₁) in topology, and we explore
+        extensions to GNNs operating on directed simplicial complexes.
       image: ""
-      paper: "Ongoing research with Hyungjun Lee (MS)"
+      paper: "Learning Directed Cycles for Illicit Transaction Detection in Crypto Networks (Hyungjun Lee, MS)"
       venue: "—"
