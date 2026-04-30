@@ -1,0 +1,44 @@
+name: Update Google Scholar Stats
+
+# 매주 일요일 18:00 UTC (= 한국 시간 월요일 03:00)에 자동 실행
+# 또는 GitHub UI의 Actions 탭에서 "Run workflow" 버튼으로 수동 실행
+on:
+  schedule:
+    - cron: '0 18 * * 0'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  update-stats:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install scholarly==1.7.11
+
+      - name: Fetch Google Scholar metrics and update _config.yml
+        run: python .github/scripts/update_stats.py
+        continue-on-error: true   # Scholar가 봇을 막아도 워크플로우는 깨지지 않게
+
+      - name: Commit changes (only if updated)
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          if git diff --quiet _config.yml; then
+            echo "No changes to commit — Scholar stats unchanged or fetch failed."
+          else
+            git add _config.yml
+            git commit -m "chore: auto-update Google Scholar stats"
+            git push
+          fi
