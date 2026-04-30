@@ -5,8 +5,8 @@ role: undergrad
 photo: "/assets/images/members/byun_munsu.jpg"
 email: ""
 joined: 2024
-interests_ko: "그래프 신경망 · 그래프 구조 학습"
-interests_en: "Graph Neural Networks · Graph Structure Learning"
+interests_ko: "그래프 구조 학습"
+interests_en: "Graph Structure Learning"
 scholar: ""
 github: ""
 linkedin: ""

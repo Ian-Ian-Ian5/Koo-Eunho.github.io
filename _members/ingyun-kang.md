@@ -5,8 +5,8 @@ role: undergrad
 photo: "/assets/images/members/kang_ingyun.png"
 email: ""
 joined: 2024
-interests_ko: "물리 정보 신경망 · 쌍곡형 편미분방정식"
-interests_en: "Physics-Informed Neural Networks · Hyperbolic PDEs"
+interests_ko: "쌍곡형 편미분방정식"
+interests_en: "Hyperbolic PDEs"
 scholar: ""
 github: ""
 linkedin: ""

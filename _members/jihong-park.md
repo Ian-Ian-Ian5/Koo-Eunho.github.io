@@ -5,8 +5,8 @@ role: phd
 photo: "/assets/images/members/park_jihong.jpg"
 email: ""
 joined: 2024
-interests_ko: "금융 AI · 옵션 가격 · PINN"
-interests_en: "Financial AI · Option Pricing · PINN"
+interests_ko: "금융 AI · 옵션 가격"
+interests_en: "Financial AI · Option Pricing"
 scholar: ""
 github: ""
 linkedin: ""

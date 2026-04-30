@@ -5,8 +5,8 @@ role: ms
 photo: "/assets/images/members/lee_hyungjun.jpg"
 email: ""
 joined: 2024
-interests_ko: "그래프 신경망 · 암호화폐 거래 분석"
-interests_en: "Graph Neural Networks · Cryptocurrency Transaction Analysis"
+interests_ko: "암호화폐 거래 분석"
+interests_en: "Cryptocurrency Transaction Analysis"
 scholar: ""
 github: ""
 linkedin: ""

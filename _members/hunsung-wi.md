@@ -5,8 +5,8 @@ role: ms
 photo: "/assets/images/members/wi_hunsung.jpg"
 email: ""
 joined: 2024
-interests_ko: "그래프 신경망 · 전지구 기상 예측"
-interests_en: "Graph Neural Networks · Global Weather Forecasting"
+interests_ko: "전지구 기상 예측"
+interests_en: "Global Weather Forecasting"
 scholar: ""
 github: ""
 linkedin: ""
