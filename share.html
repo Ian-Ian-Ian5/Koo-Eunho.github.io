@@ -278,7 +278,7 @@
     <div class="field">
       <label>파일 <span class="req">*</span></label>
       <label class="filebox" id="filebox" for="file">
-        <span class="hint" id="fileHint">여기를 클릭해서 파일을 선택하세요 · <b>최대 10MB</b></span>
+        <span class="hint" id="fileHint">여기를 클릭해서 파일을 선택하세요 · <b>최대 30MB</b></span>
         <input type="file" id="file" />
       </label>
     </div>
@@ -310,7 +310,7 @@
   const SUPABASE_URL      = "https://sgmmdrufgiryknkmnuow.supabase.co";   // ← 프로젝트 URL
   const SUPABASE_ANON_KEY = "sb_publishable_FibDlTeGYci2_8ib9MsDhw_4mcMdjcJ";               // ← anon public key
   const BUCKET            = "uploads";                            // Storage 버킷 이름
-  const MAX_MB            = 10;                                   // 파일 최대 용량(MB)
+  const MAX_MB            = 30;                                   // 파일 최대 용량(MB)
   /* ============================================================ */
 
   const sb = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
