@@ -134,6 +134,33 @@
   }
   textarea { resize: vertical; min-height: 78px; }
 
+  select {
+    width: 100%;
+    padding: 11px 13px;
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    font-family: inherit;
+    font-size: 14.5px;
+    color: var(--ink);
+    background: #fff;
+    cursor: pointer;
+    transition: border-color .15s ease, box-shadow .15s ease;
+  }
+  select:focus { outline: none; border-color: var(--accent); box-shadow: 0 0 0 3px var(--accent-soft); }
+
+  .group { margin-bottom: 8px; }
+  .group-label {
+    display: flex; align-items: center; gap: 8px;
+    font-size: 15px; font-weight: 700; color: var(--ink);
+    margin: 30px 0 14px;
+  }
+  .group-label::before {
+    content: ""; width: 3px; height: 16px;
+    background: var(--accent); border-radius: 2px;
+  }
+  .group-label .count { font-size: 12px; font-weight: 600; color: var(--faint); }
+  .group:first-child .group-label { margin-top: 4px; }
+
   /* File input */
   .filebox {
     border: 1.5px dashed var(--line);
@@ -272,6 +299,10 @@
       <input type="text" id="title" placeholder="예: 세미나 발표자료 (5월)" maxlength="120" />
     </div>
     <div class="field">
+      <label for="category">주차 <span class="req">*</span></label>
+      <select id="category"></select>
+    </div>
+    <div class="field">
       <label for="desc">설명 <span style="color:var(--faint);font-weight:400;">(선택)</span></label>
       <textarea id="desc" placeholder="자료에 대한 간단한 설명을 적어주세요." maxlength="1000"></textarea>
     </div>
@@ -311,6 +342,11 @@
   const SUPABASE_ANON_KEY = "sb_publishable_FibDlTeGYci2_8ib9MsDhw_4mcMdjcJ";               // ← anon public key
   const BUCKET            = "uploads";                            // Storage 버킷 이름
   const MAX_MB            = 30;                                   // 파일 최대 용량(MB)
+  // 주차 분류 목록 — 원하는 대로 수정/추가 가능 (예: "특강", "프로젝트" 등)
+  const CATEGORIES = [
+    "1주차","2주차","3주차","4주차","5주차","6주차","7주차","8주차",
+    "9주차","10주차","11주차","12주차","13주차","14주차","15주차","16주차","기타"
+  ];
   /* ============================================================ */
 
   const sb = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
@@ -360,9 +396,10 @@
 
   // --- upload ---
   submitBtn.addEventListener("click", async () => {
-    const title = $("title").value.trim();
-    const desc  = $("desc").value.trim();
-    const file  = fileInput.files[0];
+    const title    = $("title").value.trim();
+    const desc     = $("desc").value.trim();
+    const category = $("category").value;
+    const file     = fileInput.files[0];
 
     if (!title)  { setStatus("제목을 입력해주세요.", "err"); return; }
     if (!file)   { setStatus("파일을 선택해주세요.", "err"); return; }
@@ -391,6 +428,7 @@
       const ins = await sb.from("posts").insert({
         title: title,
         description: desc || null,
+        category: category || null,
         file_url: fileUrl,
         file_name: file.name,
         file_type: file.type || "application/octet-stream",
@@ -431,13 +469,37 @@
       return;
     }
 
-    const grid = document.createElement("div");
-    grid.className = "grid";
+    // 카테고리(주차)별로 묶기
+    const groups = {};
+    data.forEach((post) => {
+      const key = (post.category && post.category.trim()) ? post.category.trim() : "기타";
+      (groups[key] = groups[key] || []).push(post);
+    });
+    // 표시 순서: CATEGORIES 순서대로, 목록에 없는 분류는 뒤에
+    const ordered = CATEGORIES.filter((c) => groups[c]);
+    Object.keys(groups).forEach((k) => { if (!ordered.includes(k)) ordered.push(k); });
 
-    data.forEach((post, i) => {
-      const item = document.createElement("div");
-      item.className = "item";
-      item.style.animationDelay = (i * 0.04) + "s";
+    feed.innerHTML = "";
+    let i = 0;
+    ordered.forEach((cat) => {
+      const section = document.createElement("div");
+      section.className = "group";
+      const glabel = document.createElement("div");
+      glabel.className = "group-label";
+      glabel.textContent = cat;
+      const gcount = document.createElement("span");
+      gcount.className = "count";
+      gcount.textContent = "(" + groups[cat].length + ")";
+      glabel.appendChild(gcount);
+      section.appendChild(glabel);
+
+      const grid = document.createElement("div");
+      grid.className = "grid";
+
+      groups[cat].forEach((post) => {
+        const item = document.createElement("div");
+        item.className = "item";
+        item.style.animationDelay = (i++ * 0.04) + "s";
 
       // 이미지면 썸네일, 아니면 파일 다운로드 블록
       if (isImage(post.file_type)) {
@@ -500,11 +562,22 @@
 
       item.appendChild(body);
       grid.appendChild(item);
-    });
+      });
 
-    feed.innerHTML = "";
-    feed.appendChild(grid);
+      section.appendChild(grid);
+      feed.appendChild(section);
+    });
   }
+
+  // 주차 선택지 채우기
+  (function () {
+    const sel = $("category");
+    CATEGORIES.forEach((c) => {
+      const o = document.createElement("option");
+      o.value = c; o.textContent = c;
+      sel.appendChild(o);
+    });
+  })();
 
   loadPosts();
 </script>
