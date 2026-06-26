@@ -31,8 +31,8 @@ permalink: /
     // 시각 옵션 (취향대로 조절)
     var PARTICLE_COUNT = 150;           // 노드 개수 (많을수록 빽빽)
     var MAX_DISTANCE  = 190;            // 노드 연결 최대 거리(px)
-    var PARTICLE_RGB  = "96, 165, 250"; // 점 색 (밝은 블루)
-    var LINE_RGB      = "147, 197, 253";// 선 색
+    var PARTICLE_RGB  = "165, 160, 250"; // 점 색 (밝은 인디고)
+    var LINE_RGB      = "190, 186, 252"; // 선 색 (연한 인디고)
     var SPEED         = 0.4;
 
     var w = 0, h = 0, dpr = 1;
@@ -139,19 +139,52 @@ permalink: /
     <h3 style="margin-top:2.5rem;" data-i18n="home.research_title">주요 연구 키워드</h3>
     <div class="venn-container">
       <svg class="venn-diagram" viewBox="0 0 800 620" xmlns="http://www.w3.org/2000/svg" aria-label="Research areas diagram" role="img">
-        <!-- 6개 원 — 육각형 꽃잎 배치, 인접한 원만 살짝 겹침 (가운데에서 만남) -->
-        <!-- Top: Deep Learning -->
-        <circle cx="400" cy="190" r="100" fill="rgba(96, 165, 250, 0.20)" stroke="rgba(29, 78, 216, 0.75)" stroke-width="2"/>
-        <!-- Top-right: Graph Neural Networks -->
-        <circle cx="504" cy="250" r="100" fill="rgba(168, 85, 247, 0.20)" stroke="rgba(126, 34, 206, 0.75)" stroke-width="2"/>
-        <!-- Bottom-right: Physics-Informed Neural Networks -->
-        <circle cx="504" cy="370" r="100" fill="rgba(34, 197, 94, 0.20)" stroke="rgba(22, 163, 74, 0.75)" stroke-width="2"/>
-        <!-- Bottom: AI Applications -->
-        <circle cx="400" cy="430" r="100" fill="rgba(245, 158, 11, 0.20)" stroke="rgba(217, 119, 6, 0.75)" stroke-width="2"/>
-        <!-- Bottom-left: Financial AI -->
-        <circle cx="296" cy="370" r="100" fill="rgba(239, 68, 68, 0.20)" stroke="rgba(220, 38, 38, 0.75)" stroke-width="2"/>
-        <!-- Top-left: Data Science -->
-        <circle cx="296" cy="250" r="100" fill="rgba(14, 165, 233, 0.20)" stroke="rgba(2, 132, 199, 0.75)" stroke-width="2"/>
+        <defs>
+          <radialGradient id="v-dl" cx="35%" cy="30%" r="78%">
+            <stop offset="0%" stop-color="#dbeafe"/><stop offset="50%" stop-color="#60a5fa"/><stop offset="100%" stop-color="#1d4ed8"/>
+          </radialGradient>
+          <radialGradient id="v-gnn" cx="35%" cy="30%" r="78%">
+            <stop offset="0%" stop-color="#ede9fe"/><stop offset="50%" stop-color="#a78bfa"/><stop offset="100%" stop-color="#7c3aed"/>
+          </radialGradient>
+          <radialGradient id="v-pinn" cx="35%" cy="30%" r="78%">
+            <stop offset="0%" stop-color="#d1fae5"/><stop offset="50%" stop-color="#34d399"/><stop offset="100%" stop-color="#059669"/>
+          </radialGradient>
+          <radialGradient id="v-app" cx="35%" cy="30%" r="78%">
+            <stop offset="0%" stop-color="#fef3c7"/><stop offset="50%" stop-color="#fbbf24"/><stop offset="100%" stop-color="#d97706"/>
+          </radialGradient>
+          <radialGradient id="v-fin" cx="35%" cy="30%" r="78%">
+            <stop offset="0%" stop-color="#ffe4e6"/><stop offset="50%" stop-color="#fb7185"/><stop offset="100%" stop-color="#e11d48"/>
+          </radialGradient>
+          <radialGradient id="v-ds" cx="35%" cy="30%" r="78%">
+            <stop offset="0%" stop-color="#cffafe"/><stop offset="50%" stop-color="#22d3ee"/><stop offset="100%" stop-color="#0891b2"/>
+          </radialGradient>
+          <radialGradient id="v-gloss" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stop-color="#ffffff" stop-opacity="0.9"/><stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
+          </radialGradient>
+          <filter id="v-shadow" x="-25%" y="-25%" width="150%" height="160%">
+            <feDropShadow dx="0" dy="9" stdDeviation="13" flood-color="#3a2a10" flood-opacity="0.30"/>
+          </filter>
+        </defs>
+
+        <!-- 입체 구(球) — 육각형 꽃잎 배치 -->
+        <g filter="url(#v-shadow)">
+          <circle class="venn-orb" cx="400" cy="190" r="100" fill="url(#v-dl)"/>
+          <circle class="venn-orb" cx="504" cy="250" r="100" fill="url(#v-gnn)"/>
+          <circle class="venn-orb" cx="504" cy="370" r="100" fill="url(#v-pinn)"/>
+          <circle class="venn-orb" cx="400" cy="430" r="100" fill="url(#v-app)"/>
+          <circle class="venn-orb" cx="296" cy="370" r="100" fill="url(#v-fin)"/>
+          <circle class="venn-orb" cx="296" cy="250" r="100" fill="url(#v-ds)"/>
+        </g>
+
+        <!-- 광택 하이라이트 -->
+        <g class="venn-gloss">
+          <ellipse cx="372" cy="156" rx="36" ry="21" fill="url(#v-gloss)" transform="rotate(-28 372 156)"/>
+          <ellipse cx="476" cy="216" rx="36" ry="21" fill="url(#v-gloss)" transform="rotate(-28 476 216)"/>
+          <ellipse cx="476" cy="336" rx="36" ry="21" fill="url(#v-gloss)" transform="rotate(-28 476 336)"/>
+          <ellipse cx="372" cy="396" rx="36" ry="21" fill="url(#v-gloss)" transform="rotate(-28 372 396)"/>
+          <ellipse cx="268" cy="336" rx="36" ry="21" fill="url(#v-gloss)" transform="rotate(-28 268 336)"/>
+          <ellipse cx="268" cy="216" rx="36" ry="21" fill="url(#v-gloss)" transform="rotate(-28 268 216)"/>
+        </g>
 
         <!-- Labels (각 원 바깥쪽 충분히 떨어뜨림) -->
         <text class="venn-label" x="400" y="55" text-anchor="middle">Deep Learning</text>
