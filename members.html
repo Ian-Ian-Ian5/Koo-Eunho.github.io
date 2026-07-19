@@ -96,6 +96,17 @@ permalink: /members/
     </div>
     {% endif %}
 
+    <!-- Integrated MS-PhD -->
+    {% assign integrated = site.members | where: "role", "integrated" %}
+    {% if integrated.size > 0 %}
+    <div class="members-group">
+      <h3 data-i18n="members.integrated">석박통합과정</h3>
+      <div class="grid grid-4">
+        {% for m in integrated %}{% include member-card.html m=m %}{% endfor %}
+      </div>
+    </div>
+    {% endif %}
+
     <!-- MS Students -->
     {% assign mss = site.members | where: "role", "ms" %}
     {% if mss.size > 0 %}
@@ -114,6 +125,17 @@ permalink: /members/
       <h3 data-i18n="members.undergrad">학사 및 석사 과정</h3>
       <div class="grid grid-4">
         {% for m in ugs %}{% include member-card.html m=m %}{% endfor %}
+      </div>
+    </div>
+    {% endif %}
+
+    <!-- Undergraduate Researchers -->
+    {% assign ugrs = site.members | where: "role", "undergrad_researcher" %}
+    {% if ugrs.size > 0 %}
+    <div class="members-group">
+      <h3 data-i18n="members.undergrad_researcher">학부연구생</h3>
+      <div class="grid grid-4">
+        {% for m in ugrs %}{% include member-card.html m=m %}{% endfor %}
       </div>
     </div>
     {% endif %}

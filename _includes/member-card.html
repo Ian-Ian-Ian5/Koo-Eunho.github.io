@@ -9,8 +9,10 @@
   <p class="member-name" data-ko="{{ include.m.name_ko }}" data-en="{{ include.m.name_en }}">{{ include.m.name_ko }}</p>
   <p class="member-role">
     {% if include.m.role == "phd" %}<span data-ko="박사과정" data-en="PhD Student">박사과정</span>
+    {% elsif include.m.role == "integrated" %}<span data-ko="석박통합과정" data-en="Integrated MS-PhD">석박통합과정</span>
     {% elsif include.m.role == "ms" %}<span data-ko="석사과정" data-en="MS Student">석사과정</span>
     {% elsif include.m.role == "undergrad" %}<span data-ko="학석사 연계과정" data-en="BS–MS Track">학석사 연계과정</span>
+    {% elsif include.m.role == "undergrad_researcher" %}<span data-ko="학부연구생" data-en="Undergraduate Researcher">학부연구생</span>
     {% elsif include.m.role == "alumni" %}<span data-ko="졸업생" data-en="Alumni">졸업생</span>{% if include.m.year %} · {{ include.m.year }}{% endif %}
     {% endif %}
   </p>

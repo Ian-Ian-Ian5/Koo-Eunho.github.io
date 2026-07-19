@@ -51,8 +51,10 @@ const I18N = {
     "contact.title": "찾아오는 곳",
     "members.professor": "교수",
     "members.phd": "박사과정",
+    "members.integrated": "석박통합과정",
     "members.ms": "석사과정",
     "members.undergrad": "학석사 연계과정",
+    "members.undergrad_researcher": "학부연구생",
     "members.alumni": "졸업생",
 
     "pub.title": "논문",
@@ -116,8 +118,10 @@ const I18N = {
     "contact.title": "Contact",
     "members.professor": "Professor",
     "members.phd": "PhD Students",
+    "members.integrated": "Integrated MS-PhD",
     "members.ms": "MS Students",
     "members.undergrad": "BS–MS Track",
+    "members.undergrad_researcher": "Undergraduate Researchers",
     "members.alumni": "Alumni",
 
     "pub.title": "Publications",
