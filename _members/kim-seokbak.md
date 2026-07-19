@@ -1,7 +1,7 @@
 ---
 name_ko: "김의현"
 name_en: "Ui-hyun kim"
-role: integrated
+role: undergrad_researcher
 photo: "/assets/images/members/kim_seokbak.png"
 email: ""
 joined: 2026
