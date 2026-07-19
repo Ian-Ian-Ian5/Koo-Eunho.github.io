@@ -1,6 +1,6 @@
 ---
 name_ko: "이정환"
-name_en: "Lee Jeong-hwan"
+name_en: "Jeong-hwan Lee"
 role: undergrad_researcher
 photo: "/assets/images/members/hong_gildong.png"
 email: ""
