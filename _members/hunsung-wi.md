@@ -1,7 +1,7 @@
 ---
 name_ko: "위훈성"
 name_en: "Hunsung Wi"
-role: ms
+role: integrated
 photo: "/assets/images/members/wi_hunsung.jpg"
 email: ""
 joined: 2024
