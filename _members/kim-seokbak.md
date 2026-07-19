@@ -1,6 +1,6 @@
 ---
-name_ko: "김석박"
-name_en: "Seokbak Kim"
+name_ko: "김의현"
+name_en: "Ui-hyun kim"
 role: integrated
 photo: "/assets/images/members/kim_seokbak.png"
 email: ""
