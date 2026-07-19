@@ -1,7 +1,7 @@
 ---
 name_ko: "강인균"
 name_en: "Ingyun Kang"
-role: undergrad
+role: ms
 photo: "/assets/images/members/kang_ingyun.png"
 email: ""
 joined: 2024
@@ -35,4 +35,4 @@ and discontinuous solutions.
 
 ## 학력 / Education
 
-- 학석사 연계과정 (학부 4학년), 빅데이터융합학과, 전남대학교
+- 석사과정, 빅데이터융합학과, 전남대학교
