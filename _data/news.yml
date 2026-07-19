@@ -19,15 +19,25 @@
 # ============================================================
 
 - type: seminar
-  date: "2026-05-04"
+  date: "2026-07-20"
   presenter_ko: "위훈성"
   presenter_en: "Hunsung Wi"
   title: "TBA"
   venue_ko: "1호관 213호"
   venue_en: "Bldg. 1, Rm. 213"
+  time: "10:00"
+
+  type: seminar
+  date: "2026-07-20"
+  presenter_ko: "이형"
+  presenter_en: "HyungjunsLee"
+  title: "TBA"
+  venue_ko: "1호관 213호"
+  venue_en: "Bldg. 1, Rm. 213"
+  time: "10:00"
 
 - type: seminar
-  date: "2026-05-06"
+  date: "2026-07-21"
   presenter_ko: "변문수"
   presenter_en: "Munsu Byun"
   title: "TBA"
@@ -36,7 +46,7 @@
   time: "14:00"
 
 - type: seminar
-  date: "2026-05-06"
+  date: "2026-07-21"
   presenter_ko: "강인균"
   presenter_en: "Ingyun Kang"
   title: "TBA"
@@ -49,7 +59,7 @@
 # ============================================================
 
 - type: seminar
-  date: "2026-04-24"
+  date: "2026-07-14"
   presenter_ko: "강인균"
   presenter_en: "Ingyun Kang"
   title: "Discontinuity-Aware PINNs for Nonlinear Hyperbolic PDEs"
@@ -58,7 +68,7 @@
   time: "16:00"
 
 - type: seminar
-  date: "2026-04-17"
+  date: "2026-07-14"
   presenter_ko: "변문수"
   presenter_en: "Munsu Byun"
   title: "ASGAT: Adaptive Structure Graph Attention Network"
@@ -67,7 +77,7 @@
   time: "16:00"
 
 - type: seminar
-  date: "2026-04-10"
+  date: "2026-07-13"
   presenter_ko: "이형준"
   presenter_en: "Hyungjun Lee"
   title: "Directed Cycles for Crypto Illicit Transaction Detection"
@@ -80,16 +90,16 @@
 # ============================================================
 
 - type: announcement
-  date: "2026-05-04"
-  ko: "5월 4일~6일 랩 미팅이 일주일 미뤄졌습니다. 일정 변경에 유의해 주시기 바랍니다."
-  en: "Lab meetings scheduled for May 4–6 have been postponed by one week. Please note the schedule change."
+  date: "2026-07-18"
+  ko: "7월 24일 세미나는 교수님의 요청으로 한주 미뤄줬음을 알려드립니다. 다음 세미나는 07월 31일 시행합니다."
+  en: "Please be advised that the July 24 seminar has been postponed by one week at the professor’s request. The next seminar will be held on July 31."
 
 - type: announcement
-  date: "2026-05-01"
-  ko: "Koo Lab 웹사이트가 공식 오픈했습니다."
-  en: "The Koo Lab website is officially online."
+  date: "2026-07-20"
+  ko: "07월 31일 세미나는 위훈성, 박지홍 학생이 발표합니다. 발표 논문은 미리 자료실에 올려주시길 바랍니다."
+  en: "At the seminar on July 31, students Wi Hoon-sung and Park Ji-hong will give presentations. Please upload your presentation papers to the resource library in advance."
 
 - type: announcement
-  date: "2026-04-21"
-  ko: "4월 21일·23일 중간고사 감독관은 시간을 엄수해 주시기 바랍니다."
-  en: "Proctors for the midterm exams on April 21 and 23 are requested to be on time."
+  date: "2026-07-20"
+  ko: "요번주는 미팅을 오전에 하니 시간 엄수해주시길 바랍니다."
+  en: "Since the meeting is in the morning this week, please be punctual."
