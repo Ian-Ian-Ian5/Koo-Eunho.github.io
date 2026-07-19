@@ -13,6 +13,8 @@ const I18N = {
     "nav.publications": "논문",
     "nav.members": "구성원",
     "nav.news": "소식",
+    "nav.activities": "활동사진",
+    "nav.share": "자료실",
     "nav.contact": "찾아오는 곳",
 
     "hero.tagline": "딥러닝 기반 인공지능 · 데이터 사이언스 연구실",
@@ -76,6 +78,8 @@ const I18N = {
     "nav.publications": "Publications",
     "nav.members": "Members",
     "nav.news": "News",
+    "nav.activities": "Activity Photos",
+    "nav.share": "Resources",
     "nav.contact": "Contact",
 
     "hero.tagline": "Deep Learning · AI · Data Science",
