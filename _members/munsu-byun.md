@@ -2,8 +2,8 @@
 name_ko: "변문수"
 name_en: "Munsu Byun"
 role: undergrad
-photo: "/assets/images/members/byun_munsu.jpg"
-email: ""
+photo: "/assets/images/members/Munsubyun.jpg"
+email: "munsubyeon@gmail.com"
 joined: 2024
 interests_ko: "그래프 구조 학습"
 interests_en: "Graph Structure Learning"
