@@ -10,16 +10,28 @@ permalink: /activities/
     <h1>활동사진</h1>
     <p>세미나, 학회, 엠티(MT), 회식 등 연구실 활동 사진을 모아둔 공간입니다.</p>
 
-    {% assign photos = site.static_files | where_exp: "f", "f.path contains '/assets/images/activities/'" | sort: "name" | reverse %}
+    {% assign groups = site.data.activities %}
+    {% assign total_photos = 0 %}
+    {% for group in groups %}
+      {% assign total_photos = total_photos | plus: group.photos.size %}
+    {% endfor %}
 
-    {% if photos.size > 0 %}
-      <div class="activity-grid">
-        {% for photo in photos %}
-          <a class="activity-photo" href="{{ photo.path | relative_url }}" target="_blank" rel="noopener">
-            <img src="{{ photo.path | relative_url }}" loading="lazy" alt="lab activity photo">
-          </a>
-        {% endfor %}
-      </div>
+    {% if groups and total_photos > 0 %}
+      {% for group in groups %}
+        {% if group.photos and group.photos.size > 0 %}
+          <div class="activity-group">
+            <h2 class="activity-group-title">{{ group.date }}</h2>
+            <div class="grid grid-3 activity-gallery">
+              {% for photo in group.photos %}
+                {% assign photo_path = "/assets/images/activities/" | append: photo %}
+                <a class="activity-photo" href="{{ photo_path | relative_url }}" target="_blank" rel="noopener">
+                  <img src="{{ photo_path | relative_url }}" loading="lazy" alt="{{ group.date }} lab activity photo">
+                </a>
+              {% endfor %}
+            </div>
+          </div>
+        {% endif %}
+      {% endfor %}
     {% else %}
       <p style="color: var(--color-text-mute); margin-top: 1.5rem;">아직 올라온 사진이 없습니다.</p>
     {% endif %}
@@ -27,11 +39,38 @@ permalink: /activities/
 </section>
 
 <style>
-  .activity-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-    gap: 14px;
-    margin-top: 1.75rem;
+  /* 날짜 그룹 (연구 분야 페이지의 research-group과 동일한 시각 언어) */
+  .activity-group {
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--color-border);
+  }
+  .activity-group:first-of-type {
+    margin-top: 2rem;
+    padding-top: 0;
+    border-top: none;
+  }
+  .activity-group-title {
+    font-size: 1.4rem;
+    margin-bottom: 1.5rem;
+    position: relative;
+    padding-left: 1rem;
+  }
+  .activity-group-title::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0.2rem;
+    bottom: 0.2rem;
+    width: 4px;
+    background: var(--color-accent);
+    border-radius: 2px;
+  }
+
+  /* 사진 갤러리 — 전역 .grid .grid-3 반응형 규칙을 그대로 사용
+     (데스크톱 3열 → 820px 이하 2열 → 520px 이하 1열, main.css 공통 규칙) */
+  .activity-gallery {
+    margin-top: 0;
   }
   .activity-photo {
     display: block;

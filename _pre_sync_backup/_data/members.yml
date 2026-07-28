@@ -1,0 +1,45 @@
+# 멤버 목록. 그룹별로 분류:
+#   role: phd | ms | undergrad | alumni
+
+# ---------------------- PhD Students ----------------------
+- name_ko: "박지홍"
+  name_en: "Jihong Park"
+  role: phd
+  interests_ko: "금융"
+  interests_en: "Bank system"
+  photo: "/assets/images/members/park_jihong.jpg"
+  email: ""
+
+# ---------------------- MS Students -----------------------
+- name_ko: "위훈성"
+  name_en: "Hunsung Wi"
+  role: ms
+  interests_ko: "기상 GNN"
+  interests_en: "earth GNN"
+  photo: "/assets/images/members/wi_hunsung.jpg"
+  email: ""
+
+- name_ko: "이형준"
+  name_en: "Hyungjun Lee"
+  role: ms
+  interests_ko: "추천 시스템"
+  interests_en: "Recommender Systems"
+  photo: "/assets/images/members/lee_hyungjun.jpg"
+  email: ""
+
+# ---------------------- Bachelor's and Master's degrees -------------
+- name_ko: "강인균"
+  name_en: "Ingyun Kang"
+  role: undergrad
+  interests_ko: "PINN"
+  interests_en: "PINN"
+  photo: "/assets/images/members/kang_ingyun.png"
+  email: ""
+
+- name_ko: "변문수"
+  name_en: "Munsu Byun"
+  role: undergrad
+  interests_ko: "GNN"
+  interests_en: "GNN"
+  photo: "/assets/images/members/byun_munsu.jpg"
+  email: ""

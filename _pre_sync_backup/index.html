@@ -1,0 +1,304 @@
+---
+layout: default
+title: Home
+permalink: /
+---
+
+<section class="hero hero-vanta" id="hero-bg">
+  <div class="container hero-inner">
+    <span class="tagline" data-i18n="hero.tagline">딥러닝 기반 인공지능 · 데이터 사이언스 연구실</span>
+    <h1 data-ko="구은호 교수 연구실" data-en="Koo Lab">구은호 교수 연구실</h1>
+    <p class="subtitle" data-i18n="hero.subtitle">전남대학교 빅데이터융합학과</p>
+    <div class="hero-cta">
+      <a class="btn btn-primary" href="{{ '/research/' | relative_url }}" data-i18n="hero.cta_research">연구 분야 보기</a>
+      <a class="btn btn-secondary" href="mailto:{{ site.lab.email }}" data-i18n="hero.cta_join">랩실 합류하기</a>
+    </div>
+  </div>
+</section>
+
+<!-- 커스텀 네트워크 애니메이션 (외부 라이브러리 없음, 순수 HTML5 Canvas) -->
+<script>
+  (function () {
+    var hero = document.getElementById("hero-bg");
+    if (!hero) return;
+
+    var canvas = document.createElement("canvas");
+    canvas.style.cssText =
+      "position:absolute;top:0;left:0;width:100%;height:100%;z-index:0;pointer-events:none;display:block;";
+    hero.insertBefore(canvas, hero.firstChild);
+    var ctx = canvas.getContext("2d");
+
+    // 시각 옵션 (취향대로 조절)
+    var PARTICLE_COUNT = 150;           // 노드 개수 (많을수록 빽빽)
+    var MAX_DISTANCE  = 190;            // 노드 연결 최대 거리(px)
+    var PARTICLE_RGB  = "165, 160, 250"; // 점 색 (밝은 인디고)
+    var LINE_RGB      = "190, 186, 252"; // 선 색 (연한 인디고)
+    var SPEED         = 0.4;
+
+    var w = 0, h = 0, dpr = 1;
+    var particles = [];
+    var mouseX = -9999, mouseY = -9999;
+
+    function resize() {
+      var rect = hero.getBoundingClientRect();
+      dpr = window.devicePixelRatio || 1;
+      w = rect.width;
+      h = rect.height;
+      canvas.width  = Math.floor(w * dpr);
+      canvas.height = Math.floor(h * dpr);
+      canvas.style.width  = w + "px";
+      canvas.style.height = h + "px";
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    }
+
+    function spawn() {
+      particles = [];
+      for (var i = 0; i < PARTICLE_COUNT; i++) {
+        particles.push({
+          x: Math.random() * w,
+          y: Math.random() * h,
+          vx: (Math.random() - 0.5) * SPEED,
+          vy: (Math.random() - 0.5) * SPEED,
+          r: 1.3 + Math.random() * 0.8
+        });
+      }
+    }
+
+    function frame() {
+      ctx.clearRect(0, 0, w, h);
+
+      // 위치 업데이트
+      for (var i = 0; i < particles.length; i++) {
+        var p = particles[i];
+        p.x += p.vx; p.y += p.vy;
+        if (p.x < 0 || p.x > w) p.vx *= -1;
+        if (p.y < 0 || p.y > h) p.vy *= -1;
+      }
+
+      // 마우스도 가상 노드로 추가
+      var nodes = particles.concat([{ x: mouseX, y: mouseY }]);
+
+      // 가까운 노드끼리 선 연결
+      for (var i = 0; i < nodes.length; i++) {
+        for (var j = i + 1; j < nodes.length; j++) {
+          var dx = nodes[i].x - nodes[j].x;
+          var dy = nodes[i].y - nodes[j].y;
+          var d  = Math.sqrt(dx * dx + dy * dy);
+          if (d < MAX_DISTANCE) {
+            var alpha = (1 - d / MAX_DISTANCE) * 0.55;
+            ctx.strokeStyle = "rgba(" + LINE_RGB + "," + alpha + ")";
+            ctx.lineWidth = 1;
+            ctx.beginPath();
+            ctx.moveTo(nodes[i].x, nodes[i].y);
+            ctx.lineTo(nodes[j].x, nodes[j].y);
+            ctx.stroke();
+          }
+        }
+      }
+
+      // 노드 점
+      ctx.fillStyle = "rgba(" + PARTICLE_RGB + ",0.9)";
+      for (var i = 0; i < particles.length; i++) {
+        var p = particles[i];
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+        ctx.fill();
+      }
+
+      requestAnimationFrame(frame);
+    }
+
+    hero.addEventListener("mousemove", function (e) {
+      var rect = hero.getBoundingClientRect();
+      mouseX = e.clientX - rect.left;
+      mouseY = e.clientY - rect.top;
+    });
+    hero.addEventListener("mouseleave", function () {
+      mouseX = -9999; mouseY = -9999;
+    });
+    window.addEventListener("resize", resize);
+
+    resize();
+    spawn();
+    frame();
+  })();
+</script>
+
+<section class="section">
+  <div class="container">
+    <p class="section-title">ABOUT</p>
+    <h2 class="section-heading" data-i18n="home.about_title">연구실 소개</h2>
+    <p data-i18n="home.about_body">
+      Koo Lab은 전남대학교 빅데이터융합학과 소속의 인공지능 및 데이터 사이언스 연구실입니다.
+      우리는 딥러닝, 그래프 신경망(GNN), 물리 정보 신경망(PINN), 그리고 복잡한 실세계 문제를 위한
+      데이터 기반 모델링을 중심으로 연구합니다. 수학적 기초, 알고리즘 설계, 실험적 검증을 결합하여
+      신뢰할 수 있고 해석 가능하며 과학·공학·산업 전반에 응용 가능한 지능형 시스템을 개발하는 것을
+      목표로 합니다.
+    </p>
+
+    <h3 style="margin-top:2.5rem;" data-i18n="home.research_title">주요 연구 키워드</h3>
+    <div class="venn-container">
+      <svg class="venn-diagram" viewBox="0 0 800 620" xmlns="http://www.w3.org/2000/svg" aria-label="Research areas diagram" role="img">
+        <defs>
+          <radialGradient id="v-dl" cx="35%" cy="30%" r="78%">
+            <stop offset="0%" stop-color="#dbeafe"/><stop offset="50%" stop-color="#60a5fa"/><stop offset="100%" stop-color="#1d4ed8"/>
+          </radialGradient>
+          <radialGradient id="v-gnn" cx="35%" cy="30%" r="78%">
+            <stop offset="0%" stop-color="#ede9fe"/><stop offset="50%" stop-color="#a78bfa"/><stop offset="100%" stop-color="#7c3aed"/>
+          </radialGradient>
+          <radialGradient id="v-pinn" cx="35%" cy="30%" r="78%">
+            <stop offset="0%" stop-color="#d1fae5"/><stop offset="50%" stop-color="#34d399"/><stop offset="100%" stop-color="#059669"/>
+          </radialGradient>
+          <radialGradient id="v-app" cx="35%" cy="30%" r="78%">
+            <stop offset="0%" stop-color="#fef3c7"/><stop offset="50%" stop-color="#fbbf24"/><stop offset="100%" stop-color="#d97706"/>
+          </radialGradient>
+          <radialGradient id="v-fin" cx="35%" cy="30%" r="78%">
+            <stop offset="0%" stop-color="#ffe4e6"/><stop offset="50%" stop-color="#fb7185"/><stop offset="100%" stop-color="#e11d48"/>
+          </radialGradient>
+          <radialGradient id="v-ds" cx="35%" cy="30%" r="78%">
+            <stop offset="0%" stop-color="#cffafe"/><stop offset="50%" stop-color="#22d3ee"/><stop offset="100%" stop-color="#0891b2"/>
+          </radialGradient>
+          <radialGradient id="v-gloss" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stop-color="#ffffff" stop-opacity="0.9"/><stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
+          </radialGradient>
+          <filter id="v-shadow" x="-25%" y="-25%" width="150%" height="160%">
+            <feDropShadow dx="0" dy="9" stdDeviation="13" flood-color="#3a2a10" flood-opacity="0.30"/>
+          </filter>
+        </defs>
+
+        <!-- 입체 구(球) — 육각형 꽃잎 배치 -->
+        <g filter="url(#v-shadow)">
+          <circle class="venn-orb" cx="400" cy="190" r="100" fill="url(#v-dl)"/>
+          <circle class="venn-orb" cx="504" cy="250" r="100" fill="url(#v-gnn)"/>
+          <circle class="venn-orb" cx="504" cy="370" r="100" fill="url(#v-pinn)"/>
+          <circle class="venn-orb" cx="400" cy="430" r="100" fill="url(#v-app)"/>
+          <circle class="venn-orb" cx="296" cy="370" r="100" fill="url(#v-fin)"/>
+          <circle class="venn-orb" cx="296" cy="250" r="100" fill="url(#v-ds)"/>
+        </g>
+
+        <!-- 광택 하이라이트 -->
+        <g class="venn-gloss">
+          <ellipse cx="372" cy="156" rx="36" ry="21" fill="url(#v-gloss)" transform="rotate(-28 372 156)"/>
+          <ellipse cx="476" cy="216" rx="36" ry="21" fill="url(#v-gloss)" transform="rotate(-28 476 216)"/>
+          <ellipse cx="476" cy="336" rx="36" ry="21" fill="url(#v-gloss)" transform="rotate(-28 476 336)"/>
+          <ellipse cx="372" cy="396" rx="36" ry="21" fill="url(#v-gloss)" transform="rotate(-28 372 396)"/>
+          <ellipse cx="268" cy="336" rx="36" ry="21" fill="url(#v-gloss)" transform="rotate(-28 268 336)"/>
+          <ellipse cx="268" cy="216" rx="36" ry="21" fill="url(#v-gloss)" transform="rotate(-28 268 216)"/>
+        </g>
+
+        <!-- Labels (각 원 바깥쪽 충분히 떨어뜨림) -->
+        <text class="venn-label" x="400" y="55" text-anchor="middle">Deep Learning</text>
+
+        <text class="venn-label" x="660" y="225" text-anchor="middle">
+          <tspan x="660">Graph Neural</tspan>
+          <tspan x="660" dy="22">Networks</tspan>
+        </text>
+
+        <text class="venn-label" x="660" y="385" text-anchor="middle">
+          <tspan x="660">Physics-Informed</tspan>
+          <tspan x="660" dy="22">Neural Networks</tspan>
+        </text>
+
+        <text class="venn-label" x="400" y="580" text-anchor="middle">AI Applications</text>
+
+        <text class="venn-label" x="140" y="395" text-anchor="middle">Financial AI</text>
+
+        <text class="venn-label" x="140" y="245" text-anchor="middle">Data Science</text>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<!-- Research Interests (4 columns with icons) -->
+<section class="section">
+  <div class="container">
+    <p class="section-title">RESEARCH INTERESTS</p>
+    <h2 class="section-heading" data-i18n="home.interests_title">Research Interests</h2>
+
+    <div class="interests-grid">
+      <a class="interest-card" href="{{ '/research/#gnn' | relative_url }}">
+        <div class="interest-icon">
+          <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <line x1="8" y1="8" x2="24" y2="8"/>
+            <line x1="8" y1="8" x2="16" y2="22"/>
+            <line x1="24" y1="8" x2="16" y2="22"/>
+            <circle cx="8" cy="8" r="3" fill="currentColor"/>
+            <circle cx="24" cy="8" r="3" fill="currentColor"/>
+            <circle cx="16" cy="22" r="3" fill="currentColor"/>
+          </svg>
+        </div>
+        <h3 data-i18n="interests.gnn_title">Graph Neural Networks</h3>
+        <p data-i18n="interests.gnn_desc">High-order interactions, simplicial structures, node classification.</p>
+      </a>
+
+      <a class="interest-card" href="{{ '/research/#financial-ai' | relative_url }}">
+        <div class="interest-icon">
+          <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <polyline points="4,24 11,17 17,21 23,11 28,15"/>
+            <polyline points="23,6 28,6 28,11"/>
+            <line x1="23" y1="11" x2="28" y2="6"/>
+          </svg>
+        </div>
+        <h3 data-i18n="interests.fin_title">Financial AI</h3>
+        <p data-i18n="interests.fin_desc">Stock volatility, cryptocurrency prediction, GARCH–LSTM hybrids.</p>
+      </a>
+
+      <a class="interest-card" href="{{ '/research/#pinn' | relative_url }}">
+        <div class="interest-icon">
+          <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <ellipse cx="16" cy="16" rx="12" ry="5"/>
+            <ellipse cx="16" cy="16" rx="12" ry="5" transform="rotate(60 16 16)"/>
+            <ellipse cx="16" cy="16" rx="12" ry="5" transform="rotate(-60 16 16)"/>
+            <circle cx="16" cy="16" r="2" fill="currentColor"/>
+          </svg>
+        </div>
+        <h3 data-i18n="interests.pinn_title">Physics-Informed NN</h3>
+        <p data-i18n="interests.pinn_desc">Equation-aware learning, hybrid physics-data modeling.</p>
+      </a>
+
+      <a class="interest-card" href="{{ '/research/#ai-applications' | relative_url }}">
+        <div class="interest-icon">
+          <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <polygon points="16,4 28,11 16,18 4,11"/>
+            <polyline points="4,17 16,24 28,17"/>
+            <polyline points="4,23 16,30 28,23"/>
+          </svg>
+        </div>
+        <h3 data-i18n="interests.app_title">AI Applications</h3>
+        <p data-i18n="interests.app_desc">Climate AI, distributional learning, recommender systems.</p>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- News (split layout: side header on left, entries on right) -->
+<section class="section">
+  <div class="container">
+    <div class="news-split">
+      <div class="news-side">
+        <p class="section-title">NEWS</p>
+        <h2 class="section-heading" data-i18n="home.news_title">News</h2>
+        <a class="view-all-link" href="{{ '/news/' | relative_url }}" data-i18n="home.news_view_all">View all →</a>
+      </div>
+      <div class="news-content">
+        <ul class="news-list-detailed">
+          {% assign all_news_sorted = site.data.news | sort: "date" | reverse %}
+          {% for item in all_news_sorted limit:5 %}
+            <li>
+              <span class="date">{{ item.date | date: "%b %d" }}</span>
+              {% if item.type == "seminar" %}
+                <p class="news-text">
+                  <span class="news-tag" data-ko="세미나" data-en="Seminar">세미나</span>
+                  <span data-ko="{{ item.presenter_ko }} — {{ item.title }}" data-en="{{ item.presenter_en }} — {{ item.title }}">{{ item.presenter_ko }} — {{ item.title }}</span>
+                </p>
+              {% else %}
+                <p class="news-text" data-ko="{{ item.ko }}" data-en="{{ item.en }}">{{ item.ko }}</p>
+              {% endif %}
+            </li>
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+

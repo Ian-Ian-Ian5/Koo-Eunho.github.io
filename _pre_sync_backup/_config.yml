@@ -1,0 +1,131 @@
+# =============================================================================
+#  Jeonnam National University — Prof. Eun-Ho Koo Lab Website
+#  Built on Jekyll (al-folio inspired)
+# =============================================================================
+
+# ----------------------------- Basic info ------------------------------------
+title: "Koo Lab @ JNU"
+short_title: "Koo Lab"
+description: >-
+  전남대학교 빅데이터융합학과 구은호 교수 연구실 — AI & Data Science (Deep Learning)
+url: "https://ian-ian-ian5.github.io"
+baseurl: "/Koo-Eunho.github.io"
+
+# ----------------------------- Lab metadata ----------------------------------
+lab:
+  name_ko: "구은호 교수 Lab"
+  name_en: "Koo Lab"
+  affiliation_ko: "전남대학교 빅데이터융합학과"
+  affiliation_en: "Department of Big Data Convergence, Chonnam National University"
+  building_ko: "전남대학교 광주캠퍼스 자연과학대학 1호관 213호"
+  building_en: "Gwangju Campus, Chonnam National University"
+  zip_code: "61186"
+  address_ko: "광주광역시 북구 용봉로 77 전남대학교 자연과학대학 1호관 213호"
+  address_en: "Bldg. 1, Rm. 213, College of Natural Sciences, Chonnam National University, 77 Yongbong-ro, Buk-gu, Gwangju 61186, Republic of Korea"
+  map_query: "전남대학교 자연과학대학 1호관"
+  email: "kooeunho@jnu.ac.kr"
+  phone: ""                # 비워두면 Contact 페이지에 표시 안 됨
+  fax: ""                  # 비워두면 표시 안 됨
+  research_keywords:
+    - "Deep Learning"
+    - "GNN"
+    - "PINN"
+    - "Data Science"
+
+# ----------------------------- Professor -------------------------------------
+professor:
+  name_ko: "구은호"
+  name_en: "Eun-Ho Koo"
+  title_ko: "교수"
+  title_en: "Professor"
+  email: "kooeunho@jnu.ac.kr"
+  office_ko: "전남대학교 광주캠퍼스 자연과학대학 1호관 213호"
+  office_en: "Bldg. 1, Rm. 213, College of Natural Sciences, JNU"
+  photo: "/assets/images/professor.jpg"
+  cv: ""
+  scholar: "https://scholar.google.com/citations?user=13BRvZAAAAAJ&hl=ko"
+  github: ""
+
+  # ----- Citation Stats (Google Scholar에서 주기적으로 수동 업데이트) -----
+  stats:
+    citations: 274
+    h_index: 8
+    i10_index: 8
+  # ----- Education (위에서 아래로 시간 역순) -----
+  education:
+    - degree: "Ph.D."
+      year: 2017
+      field: "Mathematics"
+      school: "Yonsei University"
+      advisor: "Choe, Hi Jun"
+    - degree: "M.S."
+      year: 2007
+      field: "Mathematics"
+      school: "Yonsei University"
+      advisor: "Choe, Hi Jun"
+    - degree: "B.S."
+      year: 2004
+      field: "Mathematics"
+      school: "Yonsei University"
+
+  # ----- Experiences (시간 역순, 가장 최근이 위) -----
+  experiences:
+    - period: "Mar 2024 – Present"
+      role: "Associate Professor"
+      org: "Department of Big Data Convergence, Chonnam National University"
+      country: "South Korea"
+    - period: "Mar 2022 – Feb 2024"
+      role: "AI Research Fellow"
+      org: "Center for AI and Natural Sciences, Korea Institute for Advanced Study (KIAS)"
+      country: "South Korea"
+    - period: "Apr 2019 – Feb 2022"
+      role: "Research Assistant Professor"
+      org: "Center for Mathematical Analysis & Computation, Yonsei University"
+      country: "South Korea"
+    - period: "Sep 2017 – Mar 2019"
+      role: "Project Researcher"
+      org: "Institute of Industrial Science, The University of Tokyo"
+      country: "Japan"
+    - period: "Nov 2017 – Mar 2019"
+      role: "AI / Data Science Researcher"
+      org: "LTS, Inc."
+      country: "Japan"
+
+# ----------------------------- Build settings --------------------------------
+markdown: kramdown
+highlighter: rouge
+permalink: /:title/
+timezone: Asia/Seoul
+
+plugins:
+  - jekyll-seo-tag
+  - jekyll-sitemap
+  - jekyll-feed
+
+# ----------------------------- Collections ----------------------------------
+# 학생별 개인 페이지를 위한 컬렉션. _members/ 폴더 안의 .md 파일들이 자동으로
+# /members/{name}/ 주소의 개별 페이지로 빌드됩니다.
+collections:
+  members:
+    output: true
+    permalink: /members/:path/
+
+# Default front matter
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: "default"
+  - scope:
+      path: ""
+      type: "members"
+    values:
+      layout: "member"
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - vendor
+  - node_modules
+  - README.md
+  - .gitignore

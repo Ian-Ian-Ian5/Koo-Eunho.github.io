@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>자료실 | Koo Lab @ JNU</title>
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@500;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" as="style" crossorigin
+  href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.css" />
+
+<style>
+  :root {
+    --paper: #fbfbf8;
+    --card: #ffffff;
+    --ink: #1a1f2e;
+    --muted: #6b7280;
+    --faint: #9aa0ac;
+    --accent: #1f4e79;
+    --accent-soft: #eef3f8;
+    --line: #e7e7e0;
+    --danger: #9b2c2c;
+    --radius: 8px;
+    --maxw: 940px;
+    --serif: "Noto Serif KR", Georgia, serif;
+    --sans: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont,
+            system-ui, "Segoe UI", "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--sans);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .topbar {
+    height: 4px;
+    background: var(--accent);
+    width: 100%;
+  }
+
+  .wrap {
+    max-width: var(--maxw);
+    margin: 0 auto;
+    padding: 48px 24px 80px;
+  }
+
+  /* Header */
+  header { margin-bottom: 40px; }
+  .eyebrow {
+    font-size: 12px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--accent);
+    font-weight: 700;
+    margin: 0 0 10px;
+  }
+  h1 {
+    font-family: var(--serif);
+    font-size: clamp(30px, 5vw, 44px);
+    font-weight: 700;
+    margin: 0 0 12px;
+    letter-spacing: -0.01em;
+  }
+  .lede {
+    color: var(--muted);
+    font-size: 15.5px;
+    max-width: 640px;
+    margin: 0;
+  }
+  .home-link {
+    display: inline-block;
+    margin-bottom: 28px;
+    font-size: 13.5px;
+    color: var(--muted);
+    text-decoration: none;
+    transition: color .15s ease;
+  }
+  .home-link:hover { color: var(--accent); }
+
+  /* Section label */
+  .section-label {
+    font-size: 12px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--faint);
+    font-weight: 700;
+    border-top: 1px solid var(--line);
+    padding-top: 16px;
+    margin: 56px 0 22px;
+  }
+
+  /* Upload card */
+  .panel {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: 28px;
+    box-shadow: 0 1px 2px rgba(20,30,50,0.04), 0 8px 24px rgba(20,30,50,0.04);
+  }
+  .field { margin-bottom: 18px; }
+  .field:last-child { margin-bottom: 0; }
+  label {
+    display: block;
+    font-size: 13px;
+    font-weight: 600;
+    margin-bottom: 7px;
+    color: var(--ink);
+  }
+  label .req { color: var(--danger); margin-left: 2px; }
+  input[type="text"], textarea {
+    width: 100%;
+    padding: 11px 13px;
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    font-family: inherit;
+    font-size: 14.5px;
+    color: var(--ink);
+    background: #fff;
+    transition: border-color .15s ease, box-shadow .15s ease;
+  }
+  input[type="text"]:focus, textarea:focus {
+    outline: none;
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px var(--accent-soft);
+  }
+  textarea { resize: vertical; min-height: 78px; }
+
+  select {
+    width: 100%;
+    padding: 11px 13px;
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    font-family: inherit;
+    font-size: 14.5px;
+    color: var(--ink);
+    background: #fff;
+    cursor: pointer;
+    transition: border-color .15s ease, box-shadow .15s ease;
+  }
+  select:focus { outline: none; border-color: var(--accent); box-shadow: 0 0 0 3px var(--accent-soft); }
+
+  .group { margin-bottom: 8px; }
+  .group-label {
+    display: flex; align-items: center; gap: 8px;
+    font-size: 15px; font-weight: 700; color: var(--ink);
+    margin: 30px 0 14px;
+  }
+  .group-label::before {
+    content: ""; width: 3px; height: 16px;
+    background: var(--accent); border-radius: 2px;
+  }
+  .group-label .count { font-size: 12px; font-weight: 600; color: var(--faint); }
+  .group:first-child .group-label { margin-top: 4px; }
+
+  /* File input */
+  .filebox {
+    border: 1.5px dashed var(--line);
+    border-radius: 6px;
+    padding: 20px;
+    text-align: center;
+    cursor: pointer;
+    transition: border-color .15s ease, background .15s ease;
+    background: #fcfcfa;
+  }
+  .filebox:hover { border-color: var(--accent); background: var(--accent-soft); }
+  .filebox.has-file { border-style: solid; border-color: var(--accent); background: #fff; text-align: left; }
+  .filebox input { display: none; }
+  .filebox .hint { color: var(--muted); font-size: 13.5px; }
+  .filebox .hint b { color: var(--accent); }
+  .file-chosen { font-size: 14px; }
+  .file-chosen .name { font-weight: 600; word-break: break-all; }
+  .file-chosen .size { color: var(--faint); font-size: 12.5px; margin-left: 6px; }
+
+  .actions { margin-top: 22px; display: flex; align-items: center; gap: 14px; flex-wrap: wrap; }
+  button.submit {
+    background: var(--accent);
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    padding: 11px 24px;
+    font-family: inherit;
+    font-size: 14.5px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: filter .15s ease, transform .05s ease;
+  }
+  button.submit:hover:not(:disabled) { filter: brightness(1.08); }
+  button.submit:active:not(:disabled) { transform: translateY(1px); }
+  button.submit:disabled { opacity: .55; cursor: not-allowed; }
+
+  .status { font-size: 13.5px; }
+  .status.ok { color: var(--accent); }
+  .status.err { color: var(--danger); }
+
+  /* Feed */
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 18px;
+  }
+  .empty, .loading {
+    color: var(--faint);
+    font-size: 14px;
+    padding: 36px 0;
+    text-align: center;
+    border: 1px dashed var(--line);
+    border-radius: var(--radius);
+  }
+
+  .item {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    animation: rise .45s ease both;
+  }
+  @keyframes rise {
+    from { opacity: 0; transform: translateY(10px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  .item .thumb {
+    display: block;
+    aspect-ratio: 16 / 10;
+    background: #f1f1ec;
+    overflow: hidden;
+  }
+  .item .thumb img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform .3s ease;
+  }
+  .item .thumb:hover img { transform: scale(1.04); }
+
+  .item .fileface {
+    display: flex; align-items: center; gap: 12px;
+    padding: 22px 18px;
+    background: var(--accent-soft);
+    text-decoration: none;
+    color: var(--accent);
+    border-bottom: 1px solid var(--line);
+  }
+  .item .fileface svg { flex: none; }
+  .item .fileface .fmeta { min-width: 0; }
+  .item .fileface .fname {
+    font-weight: 600; font-size: 13.5px; color: var(--ink);
+    white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+  }
+  .item .fileface .fdl { font-size: 12px; color: var(--accent); }
+
+  .item .body { padding: 14px 16px 16px; display: flex; flex-direction: column; gap: 6px; flex: 1; }
+  .item .body h3 { margin: 0; font-size: 15px; font-weight: 600; line-height: 1.4; }
+  .item .body p { margin: 0; font-size: 13.5px; color: var(--muted); white-space: pre-wrap; word-break: break-word; }
+  .item .body .meta { margin-top: auto; padding-top: 8px; font-size: 12px; color: var(--faint); display: flex; gap: 8px; align-items: center; }
+  .tag {
+    font-size: 10.5px; letter-spacing: 0.04em; text-transform: uppercase;
+    background: #f1f1ec; color: var(--muted); padding: 2px 7px; border-radius: 999px; font-weight: 600;
+  }
+
+  footer {
+    margin-top: 72px; padding-top: 22px; border-top: 1px solid var(--line);
+    font-size: 12.5px; color: var(--faint);
+  }
+  footer a { color: var(--muted); text-decoration: none; }
+  footer a:hover { color: var(--accent); }
+</style>
+</head>
+<body>
+<div class="topbar"></div>
+<div class="wrap">
+
+  <a class="home-link" href="https://ian-ian-ian5.github.io/Koo-Eunho.github.io/">← Koo Lab 홈으로</a>
+
+  <header>
+    <p class="eyebrow">Shared Files · 자료실</p>
+    <h1>연구실 자료실</h1>
+    <p class="lede">
+      누구나 자료를 올리고 공유할 수 있는 공간입니다. 이미지·문서·코드 등 파일을 업로드하면
+      아래 목록에 바로 표시됩니다.
+    </p>
+  </header>
+
+  <!-- Upload -->
+  <div class="section-label">자료 올리기</div>
+  <div class="panel">
+    <div class="field">
+      <label for="title">제목 <span class="req">*</span></label>
+      <input type="text" id="title" placeholder="예: 세미나 발표자료 (5월)" maxlength="120" />
+    </div>
+    <div class="field">
+      <label for="category">주차 <span class="req">*</span></label>
+      <select id="category"></select>
+    </div>
+    <div class="field">
+      <label for="desc">설명 <span style="color:var(--faint);font-weight:400;">(선택)</span></label>
+      <textarea id="desc" placeholder="자료에 대한 간단한 설명을 적어주세요." maxlength="1000"></textarea>
+    </div>
+    <div class="field">
+      <label>파일 <span class="req">*</span></label>
+      <label class="filebox" id="filebox" for="file">
+        <span class="hint" id="fileHint">여기를 클릭해서 파일을 선택하세요 · <b>최대 30MB</b></span>
+        <input type="file" id="file" />
+      </label>
+    </div>
+    <div class="actions">
+      <button class="submit" id="submitBtn">업로드</button>
+      <span class="status" id="status"></span>
+    </div>
+  </div>
+
+  <!-- Feed -->
+  <div class="section-label">올라온 자료</div>
+  <div id="feed">
+    <div class="loading">불러오는 중…</div>
+  </div>
+
+  <footer>
+    구은호 교수 Lab · 전남대학교 빅데이터융합학과 ·
+    <a href="https://ian-ian-ian5.github.io/Koo-Eunho.github.io/">koo lab @ jnu</a>
+  </footer>
+
+</div>
+
+<!-- Supabase JS -->
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script>
+  /* ============================================================
+     설정 — 아래 3개만 본인 Supabase 값으로 바꾸면 됩니다.
+     ============================================================ */
+  const SUPABASE_URL      = "https://sgmmdrufgiryknkmnuow.supabase.co";   // ← 프로젝트 URL
+  const SUPABASE_ANON_KEY = "sb_publishable_FibDlTeGYci2_8ib9MsDhw_4mcMdjcJ";               // ← anon public key
+  const BUCKET            = "uploads";                            // Storage 버킷 이름
+  const MAX_MB            = 30;                                   // 파일 최대 용량(MB)
+  // 주차 분류 목록 — 원하는 대로 수정/추가 가능 (예: "특강", "프로젝트" 등)
+  const CATEGORIES = [
+    "1주차","2주차","3주차","4주차","5주차","6주차","7주차","8주차",
+    "9주차","10주차","11주차","12주차","13주차","14주차","15주차","16주차","기타"
+  ];
+  /* ============================================================ */
+
+  const sb = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+
+  const $ = (id) => document.getElementById(id);
+  const fileInput = $("file");
+  const filebox   = $("filebox");
+  const fileHint  = $("fileHint");
+  const statusEl  = $("status");
+  const submitBtn = $("submitBtn");
+
+  // --- helpers ---
+  function fmtSize(bytes) {
+    if (bytes < 1024) return bytes + " B";
+    if (bytes < 1024 * 1024) return (bytes / 1024).toFixed(1) + " KB";
+    return (bytes / 1024 / 1024).toFixed(1) + " MB";
+  }
+  function fmtDate(ts) {
+    const d = new Date(ts);
+    return d.getFullYear() + "." +
+      String(d.getMonth() + 1).padStart(2, "0") + "." +
+      String(d.getDate()).padStart(2, "0");
+  }
+  function isImage(type) { return (type || "").startsWith("image/"); }
+  function sanitize(name) {
+    return name.replace(/[^\w.\-]+/g, "_").replace(/_+/g, "_").slice(-80);
+  }
+  function setStatus(msg, kind) {
+    statusEl.textContent = msg;
+    statusEl.className = "status" + (kind ? " " + kind : "");
+  }
+
+  // --- file selection UI ---
+  fileInput.addEventListener("change", () => {
+    const f = fileInput.files[0];
+    if (!f) {
+      filebox.classList.remove("has-file");
+      fileHint.innerHTML = "여기를 클릭해서 파일을 선택하세요 · <b>최대 " + MAX_MB + "MB</b>";
+      return;
+    }
+    filebox.classList.add("has-file");
+    fileHint.innerHTML =
+      '<span class="file-chosen"><span class="name">' +
+      f.name.replace(/</g, "&lt;") +
+      '</span><span class="size">' + fmtSize(f.size) + "</span></span>";
+  });
+
+  // --- upload ---
+  submitBtn.addEventListener("click", async () => {
+    const title    = $("title").value.trim();
+    const desc     = $("desc").value.trim();
+    const category = $("category").value;
+    const file     = fileInput.files[0];
+
+    if (!title)  { setStatus("제목을 입력해주세요.", "err"); return; }
+    if (!file)   { setStatus("파일을 선택해주세요.", "err"); return; }
+    if (file.size > MAX_MB * 1024 * 1024) {
+      setStatus("파일이 너무 큽니다. (최대 " + MAX_MB + "MB)", "err"); return;
+    }
+
+    submitBtn.disabled = true;
+    setStatus("업로드 중…", "");
+
+    try {
+      const path = Date.now() + "-" + sanitize(file.name);
+
+      // 1) 파일을 Storage에 업로드
+      const up = await sb.storage.from(BUCKET).upload(path, file, {
+        cacheControl: "3600",
+        upsert: false,
+      });
+      if (up.error) throw up.error;
+
+      // 2) 공개 URL 가져오기
+      const pub = sb.storage.from(BUCKET).getPublicUrl(path);
+      const fileUrl = pub.data.publicUrl;
+
+      // 3) 게시물 정보를 DB에 저장
+      const ins = await sb.from("posts").insert({
+        title: title,
+        description: desc || null,
+        category: category || null,
+        file_url: fileUrl,
+        file_name: file.name,
+        file_type: file.type || "application/octet-stream",
+      });
+      if (ins.error) throw ins.error;
+
+      // 초기화 + 새로고침
+      $("title").value = "";
+      $("desc").value = "";
+      fileInput.value = "";
+      filebox.classList.remove("has-file");
+      fileHint.innerHTML = "여기를 클릭해서 파일을 선택하세요 · <b>최대 " + MAX_MB + "MB</b>";
+      setStatus("업로드 완료!", "ok");
+      loadPosts();
+    } catch (err) {
+      console.error(err);
+      setStatus("업로드 실패: " + (err.message || "알 수 없는 오류"), "err");
+    } finally {
+      submitBtn.disabled = false;
+    }
+  });
+
+  // --- feed ---
+  async function loadPosts() {
+    const feed = $("feed");
+    const { data, error } = await sb
+      .from("posts")
+      .select("*")
+      .order("created_at", { ascending: false });
+
+    if (error) {
+      feed.innerHTML = '<div class="empty">목록을 불러오지 못했습니다. 설정을 확인해주세요.</div>';
+      console.error(error);
+      return;
+    }
+    if (!data || data.length === 0) {
+      feed.innerHTML = '<div class="empty">아직 올라온 자료가 없습니다. 첫 자료를 올려보세요!</div>';
+      return;
+    }
+
+    // 카테고리(주차)별로 묶기
+    const groups = {};
+    data.forEach((post) => {
+      const key = (post.category && post.category.trim()) ? post.category.trim() : "기타";
+      (groups[key] = groups[key] || []).push(post);
+    });
+    // 표시 순서: CATEGORIES 순서대로, 목록에 없는 분류는 뒤에
+    const ordered = CATEGORIES.filter((c) => groups[c]);
+    Object.keys(groups).forEach((k) => { if (!ordered.includes(k)) ordered.push(k); });
+
+    feed.innerHTML = "";
+    let i = 0;
+    ordered.forEach((cat) => {
+      const section = document.createElement("div");
+      section.className = "group";
+      const glabel = document.createElement("div");
+      glabel.className = "group-label";
+      glabel.textContent = cat;
+      const gcount = document.createElement("span");
+      gcount.className = "count";
+      gcount.textContent = "(" + groups[cat].length + ")";
+      glabel.appendChild(gcount);
+      section.appendChild(glabel);
+
+      const grid = document.createElement("div");
+      grid.className = "grid";
+
+      groups[cat].forEach((post) => {
+        const item = document.createElement("div");
+        item.className = "item";
+        item.style.animationDelay = (i++ * 0.04) + "s";
+
+      // 이미지면 썸네일, 아니면 파일 다운로드 블록
+      if (isImage(post.file_type)) {
+        const a = document.createElement("a");
+        a.className = "thumb";
+        a.href = post.file_url;
+        a.target = "_blank";
+        a.rel = "noopener";
+        const img = document.createElement("img");
+        img.src = post.file_url;
+        img.alt = post.title || "image";
+        img.loading = "lazy";
+        a.appendChild(img);
+        item.appendChild(a);
+      } else {
+        const a = document.createElement("a");
+        a.className = "fileface";
+        a.href = post.file_url;
+        a.target = "_blank";
+        a.rel = "noopener";
+        a.setAttribute("download", post.file_name || "");
+        a.innerHTML =
+          '<svg width="34" height="34" viewBox="0 0 24 24" fill="none" ' +
+          'stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">' +
+          '<path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>' +
+          '<polyline points="14 2 14 8 20 8"/></svg>';
+        const meta = document.createElement("div");
+        meta.className = "fmeta";
+        const fn = document.createElement("div");
+        fn.className = "fname";
+        fn.textContent = post.file_name || "파일";
+        const dl = document.createElement("div");
+        dl.className = "fdl";
+        dl.textContent = "다운로드 ↓";
+        meta.appendChild(fn); meta.appendChild(dl);
+        a.appendChild(meta);
+        item.appendChild(a);
+      }
+
+      // 본문
+      const body = document.createElement("div");
+      body.className = "body";
+      const h = document.createElement("h3");
+      h.textContent = post.title || "(제목 없음)";
+      body.appendChild(h);
+      if (post.description) {
+        const p = document.createElement("p");
+        p.textContent = post.description;
+        body.appendChild(p);
+      }
+      const m = document.createElement("div");
+      m.className = "meta";
+      const tag = document.createElement("span");
+      tag.className = "tag";
+      tag.textContent = isImage(post.file_type) ? "image" : "file";
+      const dt = document.createElement("span");
+      dt.textContent = fmtDate(post.created_at);
+      m.appendChild(tag); m.appendChild(dt);
+      body.appendChild(m);
+
+      item.appendChild(body);
+      grid.appendChild(item);
+      });
+
+      section.appendChild(grid);
+      feed.appendChild(section);
+    });
+  }
+
+  // 주차 선택지 채우기
+  (function () {
+    const sel = $("category");
+    CATEGORIES.forEach((c) => {
+      const o = document.createElement("option");
+      o.value = c; o.textContent = c;
+      sel.appendChild(o);
+    });
+  })();
+
+  loadPosts();
+</script>
+</body>
+</html>
