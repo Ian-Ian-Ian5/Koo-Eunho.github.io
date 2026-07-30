@@ -1,7 +1,7 @@
 ---
 name_ko: "이정환"
 name_en: "Jeong-hwan Lee"
-role: undergrad_researcher
+role: undergrad
 photo: "/assets/images/members/hong_gildong.png"
 email: ""
 joined: 2026
