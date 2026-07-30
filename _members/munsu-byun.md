@@ -8,8 +8,8 @@ joined: 2024
 interests_ko: "그래프 구조 학습"
 interests_en: "Graph Structure Learning"
 scholar: ""
-github: ""
-linkedin: ""
+github: "https://github.com/Ian-Ian-Ian5"
+linkedin: "https://www.linkedin.com/in/munsubyun-111530406/"
 website: ""
 ---
 
