@@ -10,67 +10,102 @@ permalink: /activities/
     <h1>활동사진</h1>
     <p>세미나, 학회, 엠티(MT), 회식 등 연구실 활동 사진을 모아둔 공간입니다.</p>
 
-    {% assign groups = site.data.activities %}
-    {% assign total_photos = 0 %}
-    {% for group in groups %}
-      {% assign total_photos = total_photos | plus: group.photos.size %}
+    {% assign used_files_str = "" %}
+    {% if site.data.activities %}
+      {% for event in site.data.activities %}
+        {% for file in event.files %}
+          {% assign used_files_str = used_files_str | append: file | append: "||" %}
+        {% endfor %}
+      {% endfor %}
+    {% endif %}
+
+    {% assign all_photos = site.static_files | where_exp: "f", "f.path contains '/assets/images/activities/'" | sort: "name" | reverse %}
+
+    {% assign leftover_count = 0 %}
+    {% for photo in all_photos %}
+      {% assign needle = photo.name | append: "||" %}
+      {% unless used_files_str contains needle %}
+        {% assign leftover_count = leftover_count | plus: 1 %}
+      {% endunless %}
     {% endfor %}
 
-    {% if groups and total_photos > 0 %}
-      {% for group in groups %}
-        {% if group.photos and group.photos.size > 0 %}
-          <div class="activity-group">
-            <h2 class="activity-group-title">{{ group.date }}</h2>
-            <div class="grid grid-3 activity-gallery">
-              {% for photo in group.photos %}
-                {% assign photo_path = "/assets/images/activities/" | append: photo %}
-                <a class="activity-photo" href="{{ photo_path | relative_url }}" target="_blank" rel="noopener">
-                  <img src="{{ photo_path | relative_url }}" loading="lazy" alt="{{ group.date }} lab activity photo">
-                </a>
-              {% endfor %}
-            </div>
+    {% assign has_events = false %}
+    {% if site.data.activities and site.data.activities.size > 0 %}{% assign has_events = true %}{% endif %}
+
+    {% if has_events %}
+      {% for event in site.data.activities %}
+        <div class="activity-event">
+          <h3 class="activity-event-title">
+            <span class="activity-event-date">{{ event.date }}</span>
+            {% if event.caption %}<span class="activity-event-caption">{{ event.caption }}</span>{% endif %}
+          </h3>
+          <div class="activity-grid">
+            {% for file in event.files %}
+              {% assign fpath = "/assets/images/activities/" | append: file %}
+              {% assign ext = file | split: "." | last | downcase %}
+              <div class="activity-photo">
+                {% if ext == "mp4" or ext == "webm" or ext == "mov" %}
+                  <video controls preload="metadata">
+                    <source src="{{ fpath | relative_url }}">
+                  </video>
+                {% else %}
+                  <a href="{{ fpath | relative_url }}" target="_blank" rel="noopener">
+                    <img src="{{ fpath | relative_url }}" loading="lazy" alt="{{ event.caption | default: '활동사진' }}">
+                  </a>
+                {% endif %}
+              </div>
+            {% endfor %}
           </div>
-        {% endif %}
+        </div>
       {% endfor %}
-    {% else %}
+    {% endif %}
+
+    {% if leftover_count > 0 %}
+      <div class="activity-grid" {% if has_events %}style="margin-top: 2.5rem;"{% endif %}>
+        {% for photo in all_photos %}
+          {% assign needle = photo.name | append: "||" %}
+          {% unless used_files_str contains needle %}
+            <a class="activity-photo" href="{{ photo.path | relative_url }}" target="_blank" rel="noopener">
+              <img src="{{ photo.path | relative_url }}" loading="lazy" alt="lab activity photo">
+            </a>
+          {% endunless %}
+        {% endfor %}
+      </div>
+    {% endif %}
+
+    {% if has_events == false and leftover_count == 0 %}
       <p style="color: var(--color-text-mute); margin-top: 1.5rem;">아직 올라온 사진이 없습니다.</p>
     {% endif %}
   </div>
 </section>
 
 <style>
-  /* 날짜 그룹 (연구 분야 페이지의 research-group과 동일한 시각 언어) */
-  .activity-group {
-    margin-top: 3rem;
-    padding-top: 2rem;
-    border-top: 1px solid var(--color-border);
+  .activity-event {
+    margin-top: 2.25rem;
   }
-  .activity-group:first-of-type {
-    margin-top: 2rem;
-    padding-top: 0;
-    border-top: none;
+  .activity-event:first-of-type {
+    margin-top: 1.75rem;
   }
-  .activity-group-title {
-    font-size: 1.4rem;
-    margin-bottom: 1.5rem;
-    position: relative;
-    padding-left: 1rem;
+  .activity-event-title {
+    display: flex;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    font-size: 1.05rem;
+    margin-bottom: 0.9rem;
   }
-  .activity-group-title::before {
-    content: "";
-    position: absolute;
-    left: 0;
-    top: 0.2rem;
-    bottom: 0.2rem;
-    width: 4px;
-    background: var(--color-accent);
-    border-radius: 2px;
+  .activity-event-date {
+    color: var(--color-text-mute);
+    font-weight: 500;
+    font-size: 0.92rem;
   }
-
-  /* 사진 갤러리 — 전역 .grid .grid-3 반응형 규칙을 그대로 사용
-     (데스크톱 3열 → 820px 이하 2열 → 520px 이하 1열, main.css 공통 규칙) */
-  .activity-gallery {
-    margin-top: 0;
+  .activity-event-caption {
+    font-weight: 700;
+  }
+  .activity-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 14px;
   }
   .activity-photo {
     display: block;
@@ -81,12 +116,14 @@ permalink: /activities/
     border: 1px solid var(--color-border);
     box-shadow: var(--shadow-card);
   }
-  .activity-photo img {
+  .activity-photo img,
+  .activity-photo video {
     width: 100%;
     height: 100%;
     object-fit: cover;
     display: block;
     transition: transform .25s ease;
+    background: #000;
   }
   .activity-photo:hover img {
     transform: scale(1.06);
