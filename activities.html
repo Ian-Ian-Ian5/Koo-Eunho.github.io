@@ -39,7 +39,7 @@ permalink: /activities/
             <span class="activity-event-date">{{ event.date }}</span>
             {% if event.caption %}<span class="activity-event-caption">{{ event.caption }}</span>{% endif %}
           </h3>
-          <div class="activity-grid">
+          <div class="grid grid-3 activity-grid">
             {% for file in event.files %}
               {% assign fpath = "/assets/images/activities/" | append: file %}
               {% assign ext = file | split: "." | last | downcase %}
@@ -61,7 +61,7 @@ permalink: /activities/
     {% endif %}
 
     {% if leftover_count > 0 %}
-      <div class="activity-grid" {% if has_events %}style="margin-top: 2.5rem;"{% endif %}>
+      <div class="grid grid-3 activity-grid" {% if has_events %}style="margin-top: 2.5rem;"{% endif %}>
         {% for photo in all_photos %}
           {% assign needle = photo.name | append: "||" %}
           {% unless used_files_str contains needle %}
@@ -104,8 +104,6 @@ permalink: /activities/
     font-size: 1.15rem;
   }
   .activity-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
     gap: 20px;
   }
   .activity-photo {
