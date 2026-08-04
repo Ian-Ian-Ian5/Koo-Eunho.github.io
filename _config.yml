@@ -8,8 +8,8 @@ title: "Koo Lab @ JNU"
 short_title: "Koo Lab"
 description: >-
   전남대학교 빅데이터융합학과 구은호 교수 연구실 — AI & Data Science (Deep Learning)
-url: "https://ian-ian-ian5.github.io"
-baseurl: "/Koo-Eunho.github.io"
+url: "https://koo-eunho.kr"
+baseurl: ""
 
 # ----------------------------- Lab metadata ----------------------------------
 lab:
@@ -48,7 +48,7 @@ professor:
 
   # ----- Citation Stats (Google Scholar에서 주기적으로 수동 업데이트) -----
   stats:
-    citations: 287
+    citations: 286
     h_index: 8
     i10_index: 8
   # ----- Education (위에서 아래로 시간 역순) -----
