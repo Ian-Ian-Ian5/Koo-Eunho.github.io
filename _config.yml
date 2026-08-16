@@ -48,7 +48,7 @@ professor:
 
   # ----- Citation Stats (Google Scholar에서 주기적으로 수동 업데이트) -----
   stats:
-    citations: 287
+    citations: 286
     h_index: 8
     i10_index: 8
   # ----- Education (위에서 아래로 시간 역순) -----
