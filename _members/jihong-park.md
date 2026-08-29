@@ -27,8 +27,54 @@ in financial volatility prediction, and PINN-based volatility surface
 calibration with deep OTM smile.
 
 ## Publication paper
-Jeonggyu Huh, Jihong Park<br><br>
-[Volatility Surface Calibration with Deep OTM Smile](https://www.aimspress.com/article/doi/10.3934/nhm.2025043)
+<div style="margin: 1rem 0 1.5rem 0;">
+
+  <span style="
+    display:inline-block;
+    padding:2px 8px;
+    margin-bottom:8px;
+    border-radius:10px;
+    background:#e8e6fb;
+    color:#5750dd;
+    font-size:12px;
+    font-weight:600;">
+    Journal
+  </span>
+
+  <div style="margin-bottom:4px; font-size:14px;">
+    <strong style="color:#5750dd;">Jeonggyu Huh</strong>,
+    <strong style="color:#5750dd;">Jihong Park</strong>
+  </div>
+
+  <div style="margin-bottom:3px;">
+    <a href="https://www.aimspress.com/article/doi/10.3934/nhm.2025043"
+       target="_blank"
+       rel="noopener"
+       style="color:#2b2622; font-weight:700; text-decoration:underline;">
+      Volatility Surface Calibration with Deep OTM Smile ↗
+    </a>
+  </div>
+
+  <div style="font-size:13px; color:#8c8278; font-style:italic; margin-bottom:8px;">
+    Networks and Heterogeneous Media
+  </div>
+
+  <div style="display:flex; flex-wrap:wrap; gap:6px;">
+    <span style="padding:2px 8px; border:1px solid #e9e1d5; border-radius:5px; font-size:11px;">
+      Financial AI
+    </span>
+    <span style="padding:2px 8px; border:1px solid #e9e1d5; border-radius:5px; font-size:11px;">
+      Option Pricing
+    </span>
+    <span style="padding:2px 8px; border:1px solid #e9e1d5; border-radius:5px; font-size:11px;">
+      Deep Learning
+    </span>
+    <span style="padding:2px 8px; border:1px solid #e9e1d5; border-radius:5px; font-size:11px;">
+      PINN
+    </span>
+  </div>
+
+</div>
 
 ## 진행 중인 연구 / Ongoing Research
 
