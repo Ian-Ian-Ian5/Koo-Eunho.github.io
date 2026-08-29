@@ -39,20 +39,21 @@
       year    = {2025}
     }
 
-    - title: "Reliable option pricing through deep learning: An anomaly score-based approach"
-  authors: "**Jihong Park**,"Jeonggyu Huh", Jaegi Jeon"
-  venue: "Networks and Heterogeneous Media"
+- title: "Reliable option pricing through deep learning: An anomaly score-based approach"
+  authors: "**Jihong Park**, Jeonggyu Huh, Jaegi Jeon"
+  venue: "Networks and Heterogeneous Media, 20(3), 987–1009"
   year: 2025
   links:
     scholar: "https://www.aimspress.com/article/doi/10.3934/nhm.2025043"
   bibtex: |
-    @article{koo2025augmented,
-      title   = {Reliable option pricing through deep learning: An anomaly score-based approach},
-      author  = {Jihong Park, Jeonggyu Huh and Jaegi Jeon.},
+    @article{park2025reliable,
+      title = {Reliable option pricing through deep learning: An anomaly score-based approach},
+      author = {Park, Jihong and Huh, Jeonggyu and Jeon, Jaegi},
       journal = {Networks and Heterogeneous Media},
-      volume  = {20},
-      pages   = {987--1009},
-      year    = {2025}
+      volume = {20},
+      number = {3},
+      pages = {987--1009},
+      year = {2025}
     }
 
 # ===========================================================================
