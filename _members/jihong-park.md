@@ -42,8 +42,9 @@ calibration with deep OTM smile.
   </span>
 
   <div style="margin-bottom:4px; font-size:14px;">
-    <strong style="color:#5750dd;">Jeonggyu Huh</strong>,
-    <strong style="color:#5750dd;">Jihong Park</strong>
+    <strong style="color:#5750dd;">Jihong Park</strong>,
+    <strong style="color:#5750dd;">Jeonggyu Huh</strong>
+     <strong style="color:#5750dd;">Jaegi Jeon</strong>
   </div>
 
   <div style="margin-bottom:3px;">
@@ -51,7 +52,7 @@ calibration with deep OTM smile.
        target="_blank"
        rel="noopener"
        style="color:#2b2622; font-weight:700; text-decoration:underline;">
-      Volatility Surface Calibration with Deep OTM Smile ↗
+      Reliable option pricing through deep learning: An anomaly score-based approach ↗
     </a>
   </div>
 
