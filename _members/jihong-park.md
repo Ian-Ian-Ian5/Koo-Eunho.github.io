@@ -27,7 +27,7 @@ in financial volatility prediction, and PINN-based volatility surface
 calibration with deep OTM smile.
 
 ## Publication paper
--Jeonggyu Huh, Jihong Park
+Jeonggyu Huh, Jihong Park<br><br>
 [Volatility Surface Calibration with Deep OTM Smile](https://www.aimspress.com/article/doi/10.3934/nhm.2025043)
 
 ## 진행 중인 연구 / Ongoing Research
