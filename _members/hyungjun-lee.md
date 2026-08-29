@@ -41,4 +41,5 @@ and we explore extensions to GNNs operating on directed simplicial complexes.
 
 ## 학력 / Education
 
-- (예정) MS, 빅데이터융합학과, 전남대학교 (2024 — 현재)
+- MS, 빅데이터과학과, 전남대학교 (2026 03 — 현재)
+- BS 통계학과, 전남대학교 (2026 02 - 졸업)
