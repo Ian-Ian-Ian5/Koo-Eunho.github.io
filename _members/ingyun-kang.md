@@ -36,4 +36,4 @@ and discontinuous solutions.
 ## 학력 / Education
 
 - MS, 빅데이터과학과, 전남대학교(2026 09 - 현재)
-- BS, 사회학과, 전남대학교(2026 08)
+- BS, 사회학과, 전남대학교(2026 08 - 졸업)
