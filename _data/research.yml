@@ -169,9 +169,9 @@
         the internal evidence (logical reasoning vs pattern fitting) of neural
         networks in volatility prediction, and PINN-based volatility surface
         calibration with deep OTM smile.
-      image: ""
+      image: "assets/images/research/Reliable.png"
       paper: "Reliable option pricing through DL · Logical Reasoning vs Pattern Fitting · Rough Volatility + PINN (Jihong Park, PhD)"
-      venue: "—"
+      venue: "Networks and Heterogeneous Media, 2025"
 
 # ---------------------------------------------------------------------------
 - id: pinn
