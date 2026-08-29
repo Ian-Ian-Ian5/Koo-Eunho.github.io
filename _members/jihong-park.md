@@ -84,4 +84,5 @@ calibration with deep OTM smile.
 
 ## 학력 / Education
 
-- (예정) PhD, 빅데이터융합학과, 전남대학교
+- MS-PhD, 수학/통계학과, 전남대학교
+- BS, 통계학과, 전북대학교(졸업)
