@@ -90,16 +90,16 @@
 # ============================================================
 
 - type: announcement
-  date: "2026-08-28"
-  ko: "8월 28일 세미나 발표"
-  en: "Seminar Presentation on August 28"
-
-- type: announcement
-  date: "2026-09-01"
-  ko: "09월 01 개학"
-  en: "September 1: First Day of School"
-
-- type: announcement
   date: "2026-09-04"
   ko: "09월 04일 세미나는 위훈성, 이정환 학생이 발표합니다. 발표 논문은 미리 자료실에 올려주시길 바랍니다."
   en: "At the seminar on September 4, students Wi Hoon-sung and Lee Jeong-hwan will give presentations. Please upload your presentation papers to the resource library in advance."
+
+- type: announcement
+  date: "2026-09-11"
+  ko: "09월 11일 세미나는 강민지, 박송빈 학생이 발표합니다. 기존 인원들은 적극적으로 논문을 읽고 와주시길 바랍니다."
+  en: "Kang Min-ji and Park Song-bin will be presenting at the seminar on September 11. We ask that all existing participants actively read the papers in advance."
+
+- type: announcement
+  date: "2026-09-18"
+  ko: "09월 18일 세미나는 이형준, 강인균 학생이 발표합니다. 발표 논문은 미리 자료실에 올려주시길 바랍니다."
+  en: "Students Lee Hyung-jun and Kang In-kyun will give presentations at the September 18 seminar. Please upload your presentation papers to the resource library in advance."
